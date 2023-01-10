@@ -84,6 +84,6 @@
     "liquidjs": "^10.4.0"
   },
   "dependencies": {
-    "@moduk/frontend": "^0.2.1-alpha.5"
+    "@moduk/frontend": "^0.2.1-alpha.6"
   }
 }
