@@ -6,6 +6,7 @@ require('ts-node').register({
 const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
+const { join } = require('node:path')
 const postcss = require('postcss')
 const postcssFailOnWarn = require('postcss-fail-on-warn')
 
@@ -24,7 +25,8 @@ module.exports = (config) => {
       postcssFailOnWarn,
     ]),
   })
-  config.setLibrary('njk', createNunjucksEnvironment())
+  const nunjucksEnv = createNunjucksEnvironment([join(__dirname, 'src/site/_includes')])
+  config.setLibrary('njk', nunjucksEnv)
   config.addPassthroughCopy({ 'node_modules/@moduk/frontend/dist/assets': 'assets' })
   config.addPassthroughCopy({
     'node_modules/@moduk/frontend/dist/client/moduk-frontend.umd.js': 'moduk-frontend.umd.js',

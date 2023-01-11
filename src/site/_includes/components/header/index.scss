@@ -1,0 +1,10 @@
+@use '@moduk/frontend/src/css/index' as moduk;
+
+.mod-guidance-header {
+  border-bottom: 10px solid moduk.$moduk-brand-colour;
+
+  .govuk-header__container {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+}
