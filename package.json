@@ -74,7 +74,7 @@
     "vitest": "^0.27.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{cjs,js,jsx,mjs,mts,ts,tsx}": [
       "dprint fmt",
       "eslint --max-warnings 0"
     ],
