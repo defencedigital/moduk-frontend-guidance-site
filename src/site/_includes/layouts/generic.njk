@@ -1,0 +1,49 @@
+{% from "moduk/components/header/macro.njk" import modukHeader %}
+{% from "moduk/components/skip-link/macro.njk" import modukSkipLink %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>
+    {%- block pageTitle -%}
+    {%- if title -%}
+      {{ title }} – MOD.UK Design System
+    {%- else -%}
+      MOD.UK Design System
+    {%- endif -%}
+    {%- endblock -%}
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="{{ "src/site/index.scss" | inputToRevvedOutput }}" />
+</head>
+<body class="govuk-template__body">
+<script>
+  document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+</script>
+
+{{- modukSkipLink({
+  href: '#main-content',
+  text: 'Skip to main content'
+}) -}}
+
+{{- modukHeader({
+  homepageUrl: "/",
+  serviceName: "Design System",
+  serviceUrl: "/",
+  classes: 'mod-guidance-header'
+}) -}}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    {% block main %}{% endblock %}
+  </main>
+</div>
+
+<script src="/moduk-frontend.umd.js"></script>
+<script>
+  window.MODUK.initAll()
+</script>
+</body>
+</html>

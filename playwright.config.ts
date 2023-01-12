@@ -46,30 +46,30 @@ const config: PlaywrightTestConfig = {
   projects: [
     {
       name: 'chromium',
-      grepInvert: /@mobile/,
+      grepInvert: /(^(?!@desktop)$|(@tablet|@mobile))/,
       use: {
         ...devices['Desktop Chrome'],
       },
     },
     {
       name: 'firefox',
-      grepInvert: /@mobile/,
+      grepInvert: /(^(?!@desktop)$|(@tablet|@mobile))/,
       use: {
         ...devices['Desktop Firefox'],
       },
     },
     {
       name: 'mobile-chrome',
-      grepInvert: /@desktop/,
+      grepInvert: /(^(?!@mobile)$|(@desktop|@tablet))/,
       use: {
         ...devices['Pixel 5'],
       },
     },
     {
-      name: 'mobile-safari',
-      grepInvert: /@desktop/,
+      name: 'tablet-safari',
+      grepInvert: /(^(?!@tablet)$|(@desktop|@mobile))/,
       use: {
-        ...devices['iPhone 12'],
+        ...devices['iPad (gen 7)'],
       },
     },
   ],

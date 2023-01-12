@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Placeholder page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="{{ "src/site/index.scss" | inputToRevvedOutput }}" />
-</head>
-<body>
-<script>
-  document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
-</script>
-<h1 class="govuk-heading-l">Placeholder page</h1>
-<script src="/moduk-frontend.umd.js"></script>
-<script>
-  window.MODUK.initAll()
-</script>
-</body>
-</html>
+{%- extends "layouts/generic.njk" -%}
+
+{%- set title = "Home" -%}
+
+{%- block main -%}
+<h1 class="govuk-heading-xl">Content to be added</h1>
+{%- endblock -%}
