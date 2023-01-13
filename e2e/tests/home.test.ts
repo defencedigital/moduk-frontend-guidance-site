@@ -10,6 +10,6 @@ test.describe('Home', () => {
   })
 
   test('has the correct heading', async ({ page }) => {
-    await expect(page.getByRole('heading')).toHaveText('Content to be added')
+    await expect(page.getByRole('heading')).toHaveText('Updates')
   })
 })
