@@ -1,0 +1,38 @@
+/**
+ * Based on
+ * https://github.com/alphagov/govuk-design-system/blob/d6882771b1f9e556eca3a2ea46c5f0cb44f5693e/src/stylesheets/components/_inverted-button.scss
+ */
+
+@use '@moduk/frontend/src/css' as moduk;
+
+$button-shadow-size: moduk.$govuk-border-width-form-element;
+$background-colour: moduk.govuk-colour('white');
+$foreground-colour: moduk.$moduk-brand-colour;
+$shadow-colour: moduk.govuk-shade($foreground-colour, 30%);
+$hover-background-colour: moduk.govuk-tint($foreground-colour, 90%);
+
+.guidance-button--inverted,
+.guidance-button--inverted:link,
+.guidance-button--inverted:visited {
+  color: $foreground-colour;
+  background-color: $background-colour;
+  box-shadow: 0 $button-shadow-size 0 $shadow-colour;
+}
+
+.guidance-button--inverted:hover {
+  color: $foreground-colour;
+  background-color: $hover-background-colour;
+}
+
+.guidance-button--inverted:focus:not(:hover) {
+  color: moduk.$govuk-focus-text-colour;
+  background-color: moduk.$govuk-focus-colour;
+}
+
+.guidance-button--inverted:active,
+.guidance-button--inverted:focus {
+  border-color: moduk.$govuk-focus-colour;
+  color: $foreground-colour;
+  background-color: $hover-background-colour;
+  box-shadow: inset 0 0 0 2px moduk.$govuk-focus-colour;
+}

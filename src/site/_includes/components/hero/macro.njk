@@ -1,0 +1,23 @@
+{%- from "moduk/components/button/macro.njk" import modukButton -%}
+
+{%- macro guidanceHero(params) -%}
+
+<div class="guidance-hero">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-xl guidance-hero__title">{{ params.title }}</h1>
+        <p class="guidance-hero__description">Save time by using accessible components with Defence branding.</p>
+
+        {{ modukButton({
+          href: params.button.href,
+          text: params.button.text,
+          classes: "guidance-button--inverted govuk-!-margin-top-6 govuk-!-margin-bottom-0",
+          isStartButton: "true"
+        }) }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- endmacro -%}

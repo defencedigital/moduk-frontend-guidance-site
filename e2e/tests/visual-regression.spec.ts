@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test'
 
-const URLS = [{ url: '/', name: 'home' }]
+import { ALL_PAGES } from './constants'
 
 test.describe('@visual-regression', () => {
-  URLS.forEach(({ url, name }) => {
+  ALL_PAGES.forEach(({ url, name }) => {
     test.describe(url, () => {
       test.beforeEach(async ({ page }) => {
         await page.goto(url)

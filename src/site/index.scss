@@ -1,3 +1,5 @@
-@use '@moduk/frontend/src/css/index';
+@use '@moduk/frontend/src/css';
 
+@use 'components/button';
 @use 'components/header';
+@use 'components/hero';
