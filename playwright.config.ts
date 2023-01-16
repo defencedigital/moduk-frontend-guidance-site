@@ -7,7 +7,6 @@ expect.extend({
     disabledRules?: string[],
   ) => {
     const axeResults = await new AxeBuilder({ page })
-      .include('#root')
       .disableRules(disabledRules ?? [])
       .analyze()
 

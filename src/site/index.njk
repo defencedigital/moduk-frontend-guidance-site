@@ -1,8 +1,19 @@
 {%- extends "layouts/generic.njk" -%}
 
+{%- from "components/hero/macro.njk" import guidanceHero -%}
+
 {%- set title = "Home" -%}
 
 {%- block main -%}
+{{- guidanceHero({
+  title: "Design and build consistent Defence services",
+  description: "Save time by using accessible components with Defence branding.",
+  button: {
+    href: "/get-started/",
+    text: "Get started"
+  }
+}) -}}
+
 <div class="govuk-width-container">
   <h2 class="govuk-heading-l">Updates</h2>
 </div>
