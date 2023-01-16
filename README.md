@@ -129,3 +129,8 @@ npm run test:visual:clean
 
 This can be useful after renaming or deleting visual regression tests or
 component examples.
+
+## Acknowledgements
+
+Some styles and markup are based on the
+[GOV.UK Design System website](https://github.com/alphagov/govuk-design-system).

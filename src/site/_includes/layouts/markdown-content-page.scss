@@ -1,0 +1,51 @@
+/**
+ * Based on
+ * https://github.com/alphagov/govuk-design-system/blob/aa8e3850be94c6c1e0eb7e296b5eca8479c08090/src/stylesheets/components/_split-pane.scss
+ */
+
+@use '@moduk/frontend/src/css' as moduk;
+
+$toc-width: 260px;
+$toc-width-tablet: 210px;
+
+.guidance-content {
+  padding: moduk.govuk-spacing(3) moduk.govuk-spacing(0) moduk.govuk-spacing(4);
+
+  @include moduk.govuk-media-query($from: tablet) {
+    padding: moduk.govuk-spacing(6) 0 moduk.govuk-spacing(8)
+      moduk.govuk-spacing(6);
+  }
+}
+
+.guidance-split-pane {
+  @include moduk.govuk-media-query($from: tablet) {
+    display: flex;
+    position: relative;
+    min-height: 0;
+    overflow: inherit;
+  }
+}
+
+.guidance-split-pane__nav {
+  @include moduk.govuk-media-query($until: tablet) {
+    display: none;
+  }
+
+  @include moduk.govuk-media-query($from: tablet) {
+    width: $toc-width-tablet;
+    flex: 0 0 auto;
+  }
+
+  @include moduk.govuk-media-query($from: desktop) {
+    width: $toc-width;
+  }
+}
+
+.guidance-split-pane__content {
+  @include moduk.govuk-media-query($from: tablet) {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 100%;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,23 @@
+{%- extends "layouts/_base.njk" -%}
+
+{%- from "components/side-nav/macro.njk" import guidanceSideNav -%}
+
+{%- block body -%}
+<div class="guidance-split-pane govuk-width-container">
+  <div class="guidance-split-pane__nav">
+    {{ guidanceSideNav({
+      url: page.url,
+      items: collections[tags[0]] | sort(false, false, 'data.order')
+    }) }}
+  </div>
+  <div class="guidance-split-pane__content">
+    <main class="guidance-content" id="main-content" role="main">
+      <h1 class="govuk-heading-xl">{{ title }}</h2>
+
+      <div class="govuk-body">
+        {{ content | safe }}
+      </div>
+    </main>
+  </div>
+</div>
+{%- endblock -%}

@@ -1,0 +1,56 @@
+/**
+ * Based on
+ * https://github.com/alphagov/govuk-design-system/blob/aa8e3850be94c6c1e0eb7e296b5eca8479c08090/src/stylesheets/components/_subnav.scss
+ */
+
+@use '@moduk/frontend/src/css' as moduk;
+
+.guidance-side-nav {
+  // Additional spacing to accommodate the back to top link
+  margin-bottom: 100px;
+  padding: moduk.govuk-spacing(6) moduk.govuk-spacing(3) 0 0;
+  @include moduk.govuk-font(16);
+}
+
+.guidance-side-nav__section {
+  margin: 0 0 moduk.govuk-spacing(4);
+  padding: 0;
+  list-style-type: none;
+}
+
+.guidance-side-nav__link {
+  padding: 2px 0;
+
+  &.govuk-link {
+    &,
+    &:visited,
+    &:hover {
+      color: moduk.moduk-colour('maroon');
+    }
+  }
+}
+
+.guidance-side-nav__section-item {
+  padding-top: moduk.govuk-spacing(2);
+  padding-bottom: moduk.govuk-spacing(2);
+}
+
+.guidance-side-nav__section-item--current {
+  $_current-indicator-width: 5px;
+  margin-left: -(moduk.govuk-spacing(2) + $_current-indicator-width);
+  padding-left: moduk.govuk-spacing(2);
+  border-left: $_current-indicator-width solid moduk.$moduk-brand-colour;
+  background-color: moduk.govuk-colour('white');
+}
+
+.guidance-side-nav__section-item--current .guidance-side-nav__link {
+  font-weight: bold;
+
+  &.govuk-link {
+    &,
+    &:visited,
+    &:hover {
+      color: moduk.moduk-colour('light-maroon');
+    }
+  }
+}
