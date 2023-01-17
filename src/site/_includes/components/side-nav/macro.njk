@@ -1,0 +1,14 @@
+{%- macro guidanceSideNav(params) -%}
+
+<nav class="guidance-side-nav" aria-labelledby="guidance-side-nav-heading">
+  <h2 class="govuk-visually-hidden" id="guidance-side-nav-heading">Pages in this section</h2>
+  <ul class="guidance-side-nav__section">
+  {%- for item in params.items -%}
+    <li class="guidance-side-nav__section-item{% if item.url == params.url %} guidance-side-nav__section-item--current{% endif %}">
+      <a class="guidance-side-nav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="{{ item.url }}">{{ item.data.title }}</a>
+    </li>
+  {%- endfor -%}
+  </ul>
+</nav>
+
+{%- endmacro -%}

@@ -6,7 +6,7 @@ test.describe('Home', () => {
   })
 
   test('has the correct title tag', async ({ page }) => {
-    expect(await page.title()).toBe('Home – MOD.UK Design System')
+    await expect(page).toHaveTitle('Home – MOD.UK Design System')
   })
 
   test('has the correct level 1 heading', async ({ page }) => {

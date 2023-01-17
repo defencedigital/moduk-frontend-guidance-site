@@ -38,5 +38,6 @@ module.exports = (config) => {
       input: 'src/site',
       output: 'dist',
     },
+    markdownTemplateEngine: 'njk',
   }
 }
