@@ -3,6 +3,7 @@
   "rules": {
     "scss/dollar-variable-pattern": null,
     "selector-class-pattern": null,
-    "string-quotes": "single"
+    "string-quotes": "single",
+    "max-line-length": 200
   }
 }

@@ -12,8 +12,7 @@ $toc-width-tablet: 210px;
   padding: moduk.govuk-spacing(3) moduk.govuk-spacing(0) moduk.govuk-spacing(4);
 
   @include moduk.govuk-media-query($from: tablet) {
-    padding: moduk.govuk-spacing(6) 0 moduk.govuk-spacing(8)
-      moduk.govuk-spacing(6);
+    padding: moduk.govuk-spacing(6) 0 moduk.govuk-spacing(8) govuk-spacing(6);
   }
 }
 

@@ -9,6 +9,7 @@
   // Additional spacing to accommodate the back to top link
   margin-bottom: 100px;
   padding: moduk.govuk-spacing(6) moduk.govuk-spacing(3) 0 0;
+
   @include moduk.govuk-font(16);
 }
 
@@ -37,6 +38,7 @@
 
 .guidance-side-nav__section-item--current {
   $_current-indicator-width: 5px;
+
   margin-left: -(moduk.govuk-spacing(2) + $_current-indicator-width);
   padding-left: moduk.govuk-spacing(2);
   border-left: $_current-indicator-width solid moduk.$moduk-brand-colour;

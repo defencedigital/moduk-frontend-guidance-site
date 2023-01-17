@@ -8,6 +8,7 @@
 .guidance-hero {
   @include moduk.govuk-responsive-padding(7, 'top');
   @include moduk.govuk-responsive-padding(7, 'bottom');
+
   border-bottom: 1px solid moduk.$moduk-brand-colour;
   color: moduk.govuk-colour('white');
   background-color: moduk.$moduk-brand-colour;
@@ -15,10 +16,12 @@
 
 .guidance-hero__title {
   color: moduk.govuk-colour('white');
+
   @include moduk.govuk-responsive-margin(6, 'bottom');
 }
 
 .guidance-hero__description {
   @include moduk.govuk-font(24);
+
   margin-bottom: 0;
 }
