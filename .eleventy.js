@@ -6,6 +6,7 @@ require('ts-node').register({
 const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
+const { get } = require('lodash')
 const { join, relative } = require('node:path')
 const postcss = require('postcss')
 const postcssFailOnWarn = require('postcss-fail-on-warn')
@@ -27,8 +28,13 @@ module.exports = (config) => {
       postcssFailOnWarn,
     ]),
   })
+
   const nunjucksEnv = createNunjucksEnvironment([join(__dirname, 'src/site/_includes')])
   config.setLibrary('njk', nunjucksEnv)
+  config.addNunjucksFilter('rejectattr_path', (array, propertyPath) => (
+    array.filter((item) => !get(item, propertyPath))
+  ))
+
   config.addPassthroughCopy({ 'node_modules/@moduk/frontend/dist/assets': 'assets' })
 
   config.addTemplateFormats('ts')
@@ -36,6 +42,9 @@ module.exports = (config) => {
     read: false,
     permalink: false,
     outputFileExtension: 'js',
+    getData: () => ({
+      eleventyExcludeFromCollections: true,
+    }),
     compile: async (_inputContent, filename) => {
       const compiler = webpack({
         ...webpackConfig,

@@ -89,7 +89,7 @@ const config: PlaywrightTestConfig = {
     video: 'off',
   },
   webServer: {
-    command: 'npm start',
+    command: process.env.CI ? 'npm exec --no -- serve -l 8080 dist' : 'npm start',
     url: 'http://localhost:8080',
     reuseExistingServer: true,
   },
