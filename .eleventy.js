@@ -6,11 +6,13 @@ require('ts-node').register({
 const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
-const { join } = require('node:path')
+const { join, relative } = require('node:path')
 const postcss = require('postcss')
 const postcssFailOnWarn = require('postcss-fail-on-warn')
-
+const webpack = require('webpack')
 const { createNunjucksEnvironment } = require('@moduk/frontend')
+
+const webpackConfig = require('./webpack.config')
 
 module.exports = (config) => {
   config.addPlugin(revPlugin)
@@ -28,8 +30,37 @@ module.exports = (config) => {
   const nunjucksEnv = createNunjucksEnvironment([join(__dirname, 'src/site/_includes')])
   config.setLibrary('njk', nunjucksEnv)
   config.addPassthroughCopy({ 'node_modules/@moduk/frontend/dist/assets': 'assets' })
-  config.addPassthroughCopy({
-    'node_modules/@moduk/frontend/dist/client/moduk-frontend.umd.js': 'moduk-frontend.umd.js',
+
+  config.addTemplateFormats('ts')
+  config.addExtension('ts', {
+    read: false,
+    permalink: false,
+    outputFileExtension: 'js',
+    compile: async (_inputContent, filename) => {
+      const compiler = webpack({
+        ...webpackConfig,
+        entry: filename,
+      })
+
+      return () =>
+        new Promise((resolve, reject) => {
+          compiler.run((err, stats) => {
+            compiler.close((closeErr) => {
+              if (err || closeErr) {
+                reject(err)
+              } else {
+                stats.compilation.assetsInfo.forEach((_value, outFile) => {
+                  // eslint-disable-next-line no-console
+                  console.log(
+                    `[Webpack] Writing ${join(relative(__dirname, compiler.outputPath), outFile)} from ${filename}`,
+                  )
+                })
+                resolve()
+              }
+            })
+          })
+        })
+    },
   })
 
   return {
