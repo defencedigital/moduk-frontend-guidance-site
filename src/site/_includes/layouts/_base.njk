@@ -1,4 +1,5 @@
-{% from "moduk/components/header/macro.njk" import modukHeader %}
+{% from "components/header/macro.njk" import guidanceHeader %}
+{% from "components/navigation/macro.njk" import guidanceNavigation %}
 {% from "moduk/components/skip-link/macro.njk" import modukSkipLink %}
 
 <!DOCTYPE html>
@@ -28,19 +29,36 @@
   text: 'Skip to main content'
 }) -}}
 
-{{- modukHeader({
+{{- guidanceHeader({
   homepageUrl: "/",
   serviceName: "Design System",
   serviceUrl: "/",
   classes: 'guidance-header'
 }) -}}
 
+{{- guidanceNavigation({
+  activeUrl: page.url,
+  items: [
+  {
+    label: 'Home',
+    url: '/',
+    items: []
+  },
+  {
+    label: 'Get started',
+    url: '/get-started/',
+    items: []
+  },
+  {
+    label: 'Components',
+    url: '#',
+    items: []
+  }
+]}) -}}
+
 {%- block body -%}
 {%- endblock -%}
 
-<script src="/moduk-frontend.umd.js"></script>
-<script>
-  window.MODUK.initAll()
-</script>
+<script src="/main.js"></script>
 </body>
 </html>
