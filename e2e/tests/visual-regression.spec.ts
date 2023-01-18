@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 import { ALL_PAGES } from './constants'
 
 test.describe('@visual-regression', () => {
-  ALL_PAGES.forEach(({ url, name }) => {
+  ALL_PAGES.forEach(({ url, screenshotName }) => {
     test.describe(url, () => {
       test.beforeEach(async ({ page }) => {
         await page.goto(url)
@@ -11,7 +11,7 @@ test.describe('@visual-regression', () => {
 
       test('matches the saved screenshot', async ({ page }) => {
         await expect(page.getByRole('document')).toHaveScreenshot([
-          name,
+          screenshotName,
           'screenshot.png',
         ])
       })

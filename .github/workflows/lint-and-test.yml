@@ -18,6 +18,10 @@ jobs:
       - name: Set up environment
         uses: ./.github/actions/prepare-environment
 
+      # Ensure dist/page-list.json has been created
+      - name: Build site
+        run: npm run build
+
       - name: Lint
         run: npm run lint
 
@@ -83,6 +87,9 @@ jobs:
       - name: Set up environment
         uses: ./.github/actions/prepare-environment
 
+      - name: Build site
+        run: npm run build
+
       - name: Run e2e tests
         run: npm run test:e2e
 
@@ -106,6 +113,9 @@ jobs:
 
       - name: Set up environment
         uses: ./.github/actions/prepare-environment
+
+      - name: Build site
+        run: npm run build
 
       - name: Run visual regression tests
         run: npm run test:visual:native
