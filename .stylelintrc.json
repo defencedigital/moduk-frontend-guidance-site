@@ -1,0 +1,9 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "scss/dollar-variable-pattern": null,
+    "selector-class-pattern": null,
+    "string-quotes": "single",
+    "max-line-length": 200
+  }
+}

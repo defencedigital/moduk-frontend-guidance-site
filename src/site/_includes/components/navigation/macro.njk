@@ -1,0 +1,16 @@
+{% macro guidanceNavigation(params) %}
+<nav class="js-guidance-navigation guidance-navigation" aria-labelledby="guidance-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="guidance-navigation-heading">Menu</h2>
+  <div class="guidance-width-container">
+    <ul class="guidance-navigation__list">
+      {% for item in params.items %}
+      <li class="guidance-navigation__list-item{% if params.activeUrl == item.url%} guidance-navigation__list-item--current{% endif %}" >
+        <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-!-font-weight-bold" href="{{item.url}}">
+          {{item.label}}
+        </a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</nav>
+{% endmacro %}
