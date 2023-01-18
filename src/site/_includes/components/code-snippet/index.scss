@@ -1,0 +1,56 @@
+@use '@moduk/frontend/src/css' as moduk;
+
+.guidance-code-snippet {
+  position: relative;
+}
+
+.guidance-copy-button {
+  $copy-button-colour: moduk.govuk-colour('black');
+
+  @include moduk.govuk-font(16);
+
+  display: none;
+  position: absolute;
+  top: moduk.govuk-spacing(4);
+  right: moduk.govuk-spacing(4);
+  min-width: 120px;
+  padding: moduk.govuk-spacing(1) 0;
+  border: 1px solid $copy-button-colour;
+  color: $copy-button-colour;
+  background-color: moduk.govuk-colour('light-grey');
+  box-shadow: 0 2px 0 0 moduk.govuk-colour('black');
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:active,
+  &:focus {
+    padding: (moduk.govuk-spacing(1) - 1px) 0;
+    border: 2px solid moduk.$govuk-focus-colour;
+    outline: 2px solid transparent;
+    box-shadow: none;
+  }
+
+  &:active {
+    margin-top: 2px;
+    box-shadow: none;
+  }
+
+  &:focus:not(:hover) {
+    color: moduk.$govuk-focus-text-colour;
+    background-color: moduk.$govuk-focus-colour;
+    box-shadow: 0 2px 0 0 moduk.$govuk-focus-text-colour;
+  }
+}
+
+.js-enabled {
+  .guidance-copy-button:not(.no-navigator-clipboard) {
+    display: block;
+  }
+
+  .guidance-code-snippet
+    .guidance-copy-button:not(.no-navigator-clipboard)
+    + pre {
+    padding-top: moduk.govuk-spacing(7) + 3px;
+  }
+}

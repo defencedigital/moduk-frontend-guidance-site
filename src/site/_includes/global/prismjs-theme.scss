@@ -1,0 +1,129 @@
+@use 'sass:color';
+@use '../../../../node_modules/@moduk/frontend/src/css/index' as moduk;
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: black;
+  background: none;
+  font-family: ui-monospace, monospace;
+  font-size: 16px;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+code[class*='language-'] {
+  display: inline-block;
+  padding: moduk.govuk-spacing(3);
+  margin: 0;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: moduk.govuk-colour('light-grey');
+}
+
+pre[class*='language-'] {
+  overflow: auto;
+  border: 3px solid transparent;
+
+  &:focus {
+    border: 3px solid moduk.$govuk-focus-text-colour;
+    outline: 3px solid moduk.$govuk-focus-colour;
+  }
+}
+
+:not(pre) > code[class*='language-'] {
+  padding: moduk.govuk-spacing(4);
+  border-radius: 0.3rem;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: moduk.govuk-colour('dark-grey');
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: color.scale(
+    moduk.govuk-colour('pink'),
+    $lightness: -35%,
+    $saturation: 100%
+  );
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: moduk.govuk-colour('green');
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: moduk.govuk-colour('brown');
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: moduk.govuk-colour('blue');
+}
+
+.token.function,
+.token.class-name {
+  color: color.scale(
+    moduk.govuk-colour('pink'),
+    $lightness: -35%,
+    $saturation: 100%
+  );
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: color.scale(
+    moduk.govuk-colour('orange'),
+    $lightness: -35%,
+    $saturation: 100%
+  );
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
