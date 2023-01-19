@@ -89,7 +89,10 @@
       "dprint fmt",
       "eslint --max-warnings 0"
     ],
-    "*.{md,scss,yaml,yml}": [
+    "*.{scss,yaml,yml}": [
+      "dprint fmt"
+    ],
+    "!(src/site/**/*)*.md": [
       "dprint fmt"
     ]
   },
