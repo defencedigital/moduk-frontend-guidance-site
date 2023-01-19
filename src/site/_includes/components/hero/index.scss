@@ -6,8 +6,8 @@
 @use '@moduk/frontend/src/css' as moduk;
 
 .guidance-hero {
-  @include moduk.govuk-responsive-padding(7, 'top');
-  @include moduk.govuk-responsive-padding(7, 'bottom');
+  @include moduk.govuk-responsive-padding(8, 'top');
+  @include moduk.govuk-responsive-padding(8, 'bottom');
 
   border-bottom: 1px solid moduk.$moduk-brand-colour;
   color: moduk.govuk-colour('white');

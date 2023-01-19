@@ -58,4 +58,18 @@ test.describe('Home', () => {
       })
     })
   })
+
+  test.describe('@visual-regression', () => {
+    test('the start button matches the saved screenshot on hover', async ({ page }) => {
+      const startButton = page.getByRole('button', { name: 'Get started' })
+      await startButton.hover()
+      await expect(startButton).toHaveScreenshot('start-button-hover.png')
+    })
+
+    test('the start button matches the saved screenshot on focus', async ({ page }) => {
+      const startButton = page.getByRole('button', { name: 'Get started' })
+      await startButton.focus()
+      await expect(startButton).toHaveScreenshot('start-button-focus.png')
+    })
+  })
 })

@@ -7,9 +7,9 @@
 
 $button-shadow-size: moduk.$govuk-border-width-form-element;
 $background-colour: moduk.govuk-colour('white');
-$foreground-colour: moduk.$moduk-brand-colour;
-$shadow-colour: moduk.govuk-shade($foreground-colour, 30%);
-$hover-background-colour: moduk.govuk-tint($foreground-colour, 90%);
+$foreground-colour: moduk.moduk-colour('maroon');
+$shadow-colour: moduk.moduk-colour('dark-maroon');
+$hover-background-colour: moduk.govuk-colour('light-grey');
 
 .guidance-button--inverted,
 .guidance-button--inverted:link,
