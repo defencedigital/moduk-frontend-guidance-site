@@ -1,4 +1,6 @@
-@use '@moduk/frontend/src/css';
+@use '@moduk/frontend/src/css' with (
+  $govuk-new-link-styles: true
+);
 @use 'global/prismjs-theme';
 @use 'components/button';
 @use 'components/code-snippet';

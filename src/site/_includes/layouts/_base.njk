@@ -38,23 +38,9 @@
 
 {{- guidanceNavigation({
   activeUrl: page.url,
-  items: [
-  {
-    label: 'Home',
-    url: '/',
-    items: []
-  },
-  {
-    label: 'Get started',
-    url: '/get-started/',
-    items: []
-  },
-  {
-    label: 'Components',
-    url: '#',
-    items: []
-  }
-]}) -}}
+  collections: collections
+})
+-}}
 
 {%- block body -%}
 {%- endblock -%}
