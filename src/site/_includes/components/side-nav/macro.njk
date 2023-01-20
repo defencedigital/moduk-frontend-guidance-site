@@ -5,7 +5,7 @@
   <ul class="guidance-side-nav__section">
   {%- for item in params.items | sortBy(['data.order', 'data.title']) -%}
     <li class="guidance-side-nav__section-item{% if item.url == params.url %} guidance-side-nav__section-item--current{% endif %}">
-      <a class="guidance-side-nav__link govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="{{ item.url }}">{{ item.data.title }}</a>
+      <a class="guidance-side-nav__link govuk-link moduk-link--maroon govuk-link--no-visited-state govuk-link--no-underline" href="{{ item.url }}">{{ item.data.title }}</a>
     </li>
   {%- endfor -%}
   </ul>

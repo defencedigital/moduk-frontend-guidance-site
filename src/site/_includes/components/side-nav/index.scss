@@ -21,14 +21,6 @@
 
 .guidance-side-nav__link {
   padding: 2px 0;
-
-  &.govuk-link {
-    &,
-    &:visited,
-    &:hover {
-      color: moduk.moduk-colour('maroon');
-    }
-  }
 }
 
 .guidance-side-nav__section-item {
@@ -47,12 +39,4 @@
 
 .guidance-side-nav__section-item--current .guidance-side-nav__link {
   font-weight: bold;
-
-  &.govuk-link {
-    &,
-    &:visited,
-    &:hover {
-      color: moduk.moduk-colour('light-maroon');
-    }
-  }
 }

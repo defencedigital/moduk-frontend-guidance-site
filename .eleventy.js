@@ -8,11 +8,13 @@ const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
 const { get, sortBy } = require('lodash')
+const { readFileSync } = require('node:fs')
 const { join, relative } = require('node:path')
 const postcss = require('postcss')
 const postcssFailOnWarn = require('postcss-fail-on-warn')
+const prettier = require('prettier')
 const webpack = require('webpack')
-const { createNunjucksEnvironment } = require('@moduk/frontend')
+const { createNunjucksEnvironment, getNunjucksPaths } = require('@moduk/frontend')
 
 const webpackConfig = require('./webpack.config')
 
@@ -35,7 +37,10 @@ module.exports = (config) => {
     },
   })
 
-  const nunjucksEnv = createNunjucksEnvironment([join(__dirname, 'src/site/_includes')])
+  const nunjucksEnv = createNunjucksEnvironment([join(__dirname, 'src/site/_includes')], {
+    trimBlocks: true,
+    lstripBlocks: true,
+  })
   config.setLibrary('njk', nunjucksEnv)
   config.addNunjucksFilter('rejectattr_path', (array, propertyPath) => (
     array && array.filter((item) => !get(item, propertyPath))
@@ -52,6 +57,24 @@ module.exports = (config) => {
   config.addNunjucksFilter('sortBy', (array, sortByKeys) => (
     array && sortBy(array, sortByKeys)
   ))
+
+  config.addShortcode('readTemplate', (filePath) => {
+    const templateDirs = getNunjucksPaths()
+    // eslint-disable-next-line no-restricted-syntax
+    for (const templateDir of templateDirs) {
+      try {
+        return readFileSync(join(templateDir, filePath), 'utf8')
+      } catch {
+        /* Try the next include directory on error */
+      }
+    }
+    throw new Error('readTemplate tag: unexpectedly reached end of template include directories')
+  })
+
+  config.addShortcode(
+    'renderToString',
+    (filePath) => prettier.format(nunjucksEnv.render(filePath, {}), { parser: 'html' }),
+  )
 
   config.addPassthroughCopy({ 'node_modules/@moduk/frontend/dist/assets': 'assets' })
 

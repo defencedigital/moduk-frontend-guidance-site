@@ -1,0 +1,50 @@
+{%- from "components/code-snippet/macro.njk" import guidanceCodeSnippet -%}
+
+{%- macro guidanceComponentPreview(params) -%}
+
+{%- set exampleTemplatePath = "moduk/components/" + params.componentName + "/__examples__/" + params.exampleName + ".njk" -%}
+{%- set idPrefix = params.componentName + "--" + params.exampleName -%}
+
+<div class="guidance-component-preview js-guidance-component-preview">
+  <div class="guidance-component-preview__toolbar">
+    <a href="#" class="govuk-link moduk-link--maroon" target="_blank">
+      Open this <span class="govuk-visually-hidden">{{ exampleTitle | lower }}</span> example in a new tab
+    </a>
+  </div>
+  <div class="guidance-component-preview__preview">
+    <div class="guidance-component-preview__preview-resize-wrapper">
+      {%- include exampleTemplatePath -%}
+    </div>
+  </div>
+  <ul class="guidance-component-preview__tabs" role="tablist">
+    <li class="guidance-component-preview__tab-item" role="presentation">
+      <a class="guidance-component-preview__tab-item-link govuk-link moduk-link--maroon" href="#{{ idPrefix }}--html" role="tab" aria-controls="{{ idPrefix }}--html" data-tab-id="{{ idPrefix }}--html">HTML</a>
+    </li>
+    <li class="guidance-component-preview__tab-item" role="presentation">
+      <a class="guidance-component-preview__tab-item-link govuk-link moduk-link--maroon" href="#{{ idPrefix }}--nunjucks" role="tab" aria-controls="{{ idPrefix }}--nunjucks" data-tab-id="{{ idPrefix }}--nunjucks">Nunjucks</a>
+    </li>
+    <li class="guidance-component-preview__tab-item-spacing" role="presentation">
+    </li>
+  </ul>
+  <div class="guidance-component-preview__mobile-button-wrapper guidance-component-preview__mobile-button-wrapper--first">
+    <a class="guidance-component-preview__mobile-button govuk-link moduk-link--maroon" href="#{{ idPrefix }}--html" aria-controls="{{ idPrefix }}--html" data-tab-id="{{ idPrefix }}--html" role="button">
+      HTML
+    </a>
+  </div>
+  <div class="guidance-component-preview__tab-contents" role="tabpanel" id="{{ idPrefix }}--html">
+    {%- call guidanceCodeSnippet({ language: "html" }) -%}
+    {%- renderToString exampleTemplatePath -%}
+    {%- endcall -%}
+  </div>
+  <div class="guidance-component-preview__mobile-button-wrapper">
+    <a class="guidance-component-preview__mobile-button govuk-link moduk-link--maroon" href="#{{ idPrefix }}--nunjucks" aria-controls="{{ idPrefix }}--nunjucks" data-tab-id="{{ idPrefix }}--nunjucks" role="button">
+      Nunjucks
+    </a>
+  </div>
+  <div class="guidance-component-preview__tab-contents" role="tabpanel" id="{{ idPrefix }}--nunjucks">
+    {%- call guidanceCodeSnippet({ language: "jinja2" }) -%}
+    {%- readTemplate exampleTemplatePath -%}
+    {%- endcall -%}
+  </div>
+</div>
+{%- endmacro -%}
