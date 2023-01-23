@@ -1,0 +1,9 @@
+{%- macro guidanceCodeSnippet(params) -%}
+
+<div class="guidance-code-snippet">
+<button class="guidance-copy-button js-guidance-copy-button" data-code="{{ (params.contents or caller()) | dump }}">Copy code</button>
+{%- highlight params.language -%}
+{{ params.contents or caller() }}
+{%- endhighlight -%}
+</div>
+{%- endmacro -%}

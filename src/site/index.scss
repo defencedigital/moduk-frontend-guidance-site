@@ -1,5 +1,7 @@
 @use '@moduk/frontend/src/css';
+@use 'global/prismjs-theme';
 @use 'components/button';
+@use 'components/code-snippet';
 @use 'components/header';
 @use 'components/hero';
 @use 'components/navigation';

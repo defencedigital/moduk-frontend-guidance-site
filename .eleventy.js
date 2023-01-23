@@ -3,6 +3,7 @@ require('ts-node').register({
   project: 'tsconfig.json',
 })
 
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
@@ -27,6 +28,11 @@ module.exports = (config) => {
       autoprefixer,
       postcssFailOnWarn,
     ]),
+  })
+  config.addPlugin(syntaxHighlight, {
+    preAttributes: {
+      tabindex: 0,
+    },
   })
 
   const nunjucksEnv = createNunjucksEnvironment([join(__dirname, 'src/site/_includes')])

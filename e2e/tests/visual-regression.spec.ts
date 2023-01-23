@@ -12,8 +12,19 @@ test.describe('@visual-regression', () => {
       test('matches the saved screenshot', async ({ page }) => {
         await expect(page.getByRole('document')).toHaveScreenshot([
           screenshotName,
-          'screenshot.png',
+          'js-enabled.png',
         ])
+      })
+
+      test.describe('when JavaScript is disabled', () => {
+        test.use({ javaScriptEnabled: false })
+
+        test('matches the saved screenshot', async ({ page }) => {
+          await expect(page.getByRole('document')).toHaveScreenshot([
+            screenshotName,
+            'js-disabled.png',
+          ])
+        })
       })
     })
   })
