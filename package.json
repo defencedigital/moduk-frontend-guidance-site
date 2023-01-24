@@ -112,6 +112,7 @@
     "ua-parser-js@<1.0.33": "^1.0.33"
   },
   "dependencies": {
-    "@moduk/frontend": "^0.3.0"
+    "@moduk/frontend": "^0.3.0",
+    "core-js": "^3.27.2"
   }
 }

@@ -54,11 +54,13 @@ function createTabManager(componentPreview: HTMLElement) {
 }
 
 export function initComponentPreviews() {
-  const componentPreviews = document.querySelectorAll<HTMLElement>('.js-guidance-component-preview')
+  const componentPreviews = Array.from(document.querySelectorAll<HTMLElement>('.js-guidance-component-preview'))
 
   componentPreviews.forEach((componentPreview) => {
     const tabManager = createTabManager(componentPreview)
-    const tabItems = componentPreview.querySelectorAll<HTMLAnchorElement>('.guidance-component-preview__tab-item-link')
+    const tabItems = Array.from(
+      componentPreview.querySelectorAll<HTMLAnchorElement>('.guidance-component-preview__tab-item-link'),
+    )
 
     tabItems.forEach((tabItem) => {
       tabItem.setAttribute('aria-expanded', 'false')
@@ -69,9 +71,9 @@ export function initComponentPreviews() {
       })
     })
 
-    const mobileButtons = componentPreview.querySelectorAll<HTMLButtonElement>(
+    const mobileButtons = Array.from(componentPreview.querySelectorAll<HTMLButtonElement>(
       '.guidance-component-preview__mobile-button',
-    )
+    ))
     mobileButtons.forEach((button) => {
       button.setAttribute('aria-expanded', 'false')
 
@@ -81,7 +83,7 @@ export function initComponentPreviews() {
       })
     })
 
-    const tabPanels = componentPreview.querySelectorAll('.guidance-component-preview__tab-contents')
+    const tabPanels = Array.from(componentPreview.querySelectorAll('.guidance-component-preview__tab-contents'))
     tabPanels.forEach((tabPanel) => {
       tabPanel.setAttribute('hidden', 'hidden')
     })
