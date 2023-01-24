@@ -2,6 +2,15 @@
 
 $govuk-link-colour: moduk.$moduk-brand-colour;
 $border-width: 4px;
+$navigation-height: 50px;
+
+@mixin only-mobile-visible {
+  display: none;
+
+  @include moduk.govuk-media-query($from: tablet) {
+    display: block;
+  }
+}
 
 .guidance-navigation {
   background-color: moduk.govuk-colour('light-grey');
@@ -12,28 +21,36 @@ $border-width: 4px;
   flex-direction: column;
   margin: 0;
   padding: 0;
+  width: 100%;
 
-  @include moduk.govuk-media-query($from: desktop) {
+  @include moduk.govuk-media-query($from: tablet) {
     flex-direction: row;
     margin: 0 0 0 moduk.govuk-spacing(-4);
+  }
+
+  &[hidden] {
+    display: none;
   }
 }
 
 .guidance-navigation__list-item {
-  padding: moduk.govuk-spacing(3);
+  padding: 0 moduk.govuk-spacing(4);
   list-style: none;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 
-  @include moduk.govuk-media-query($from: desktop) {
-    padding: moduk.govuk-spacing(2) moduk.govuk-spacing(4);
+  @include moduk.govuk-media-query($from: tablet) {
+    height: moduk.govuk-px-to-rem($navigation-height);
+    align-items: center;
+    justify-content: center;
   }
+}
 
-  .govuk-link:not(:focus) {
-    color: moduk.$moduk-brand-colour;
-  }
-
-  .govuk-link:hover {
-    text-decoration: underline;
-  }
+.guidance-navigation__list-item--submenu {
+  padding: moduk.govuk-spacing(3) 0;
 }
 
 .guidance-navigation__list-item--current {
@@ -49,7 +66,7 @@ $border-width: 4px;
     background-color: moduk.$moduk-brand-colour;
   }
 
-  @include moduk.govuk-media-query($from: desktop) {
+  @include moduk.govuk-media-query($from: tablet) {
     &::after {
       top: auto;
       bottom: 0;
@@ -59,8 +76,80 @@ $border-width: 4px;
   }
 }
 
+.guidance-navigation__list--submenu {
+  background: moduk.govuk-colour('white');
+}
+
+.js-enabled .guidance-navigation__list-item--has-collection {
+  padding: 0;
+
+  @include moduk.govuk-media-query($from: tablet) {
+    padding: 0 moduk.govuk-spacing(4);
+  }
+
+  &.guidance-navigation__list-item--current::after {
+    @include only-mobile-visible;
+  }
+}
+
+.guidance-navigation__button {
+  @include moduk.govuk-link-common;
+  @include moduk.govuk-link-style-no-underline;
+  @include moduk.govuk-link-style-no-visited-state;
+
+  margin: moduk.govuk-spacing(3);
+  padding: 0;
+  border: 0;
+  color: moduk.$moduk-brand-colour;
+  background-color: transparent;
+  font-size: moduk.$govuk-root-font-size;
+}
+
+.guidance-navigation__button,
+.guidance-navigation__link {
+  @include moduk.govuk-typography-weight-bold;
+
+  font-size: moduk.govuk-px-to-rem(19px);
+}
+
+.guidance-navigation__link,
+.guidance-navigation__sub-link {
+  margin: moduk.govuk-spacing(3) 0;
+}
+
+.guidance-navigation__button,
+.guidance-navigation__link,
+.guidance-navigation__sub-link {
+  &:not(:focus) {
+    color: moduk.$moduk-brand-colour;
+  }
+
+  &:hover {
+    color: moduk.$moduk-brand-colour;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  @include moduk.govuk-media-query($from: tablet) {
+    margin: 0;
+  }
+}
+
+.js-enabled
+  .guidance-navigation__list-item--has-collection
+  .guidance-navigation__link {
+  @include only-mobile-visible;
+}
+
 .guidance-width-container {
-  @include moduk.govuk-media-query($from: desktop) {
+  @include moduk.govuk-media-query($from: tablet) {
     @include moduk.govuk-width-container;
   }
 }

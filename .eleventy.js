@@ -7,7 +7,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
-const { get } = require('lodash')
+const { get, sortBy } = require('lodash')
 const { join, relative } = require('node:path')
 const postcss = require('postcss')
 const postcssFailOnWarn = require('postcss-fail-on-warn')
@@ -38,7 +38,19 @@ module.exports = (config) => {
   const nunjucksEnv = createNunjucksEnvironment([join(__dirname, 'src/site/_includes')])
   config.setLibrary('njk', nunjucksEnv)
   config.addNunjucksFilter('rejectattr_path', (array, propertyPath) => (
-    array.filter((item) => !get(item, propertyPath))
+    array && array.filter((item) => !get(item, propertyPath))
+  ))
+
+  config.addNunjucksFilter('selectattr_path', (array, propertyPath) => (
+    array && array.filter((item) => get(item, propertyPath))
+  ))
+
+  config.addNunjucksFilter('isUrlInCollection', (array, url) => (
+    array && array.some((item) => item.url === url)
+  ))
+
+  config.addNunjucksFilter('sortBy', (array, sortByKeys) => (
+    array && sortBy(array, sortByKeys)
   ))
 
   config.addPassthroughCopy({ 'node_modules/@moduk/frontend/dist/assets': 'assets' })

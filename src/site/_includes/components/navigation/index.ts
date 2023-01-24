@@ -1,23 +1,16 @@
-/**
- * This utility function is based on the GOV.UK equivalent from the GOV.UK Frontend:
- * https://github.com/alphagov/govuk-frontend/blob/8850e53c6f852117bf3a8e32fa883e8f629f659f/package/govuk-esm/components/header/header.mjs
- */
-
 type MediaQuery = MediaQueryListEvent | MediaQueryList
+type ToggleControl = (mediaQuery: MediaQuery) => void
 
-function navigation() {
-  let menuIsOpen = false
-  const menuButton = document.querySelector<HTMLButtonElement>('.guidance-js-header-toggle')
-  const menuEl = document.querySelector<HTMLElement>('.js-guidance-navigation')
-  if (!(menuButton && menuEl)) {
-    return
-  }
-
-  const mediaQueryList = window.matchMedia('(min-width: 48.0625em)')
+function navigation(menuButton: HTMLButtonElement, menuEl: HTMLElement, mediaQueryList: MediaQuery) {
+  let menuIsOpen = menuButton.getAttribute('data-initial-open') === 'true'
 
   const toggleState = (mediaQuery: MediaQuery) => {
     if (mediaQuery.matches) {
-      menuEl.removeAttribute('hidden')
+      if (menuEl.getAttribute('data-list-type') === 'primary') {
+        menuEl.removeAttribute('hidden')
+      } else {
+        menuEl.setAttribute('hidden', '')
+      }
       menuButton.setAttribute('hidden', '')
     } else {
       menuButton.removeAttribute('hidden')
@@ -33,19 +26,42 @@ function navigation() {
 
   toggleState(mediaQueryList)
 
+  menuButton.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    menuIsOpen = !menuIsOpen
+    toggleState(mediaQueryList)
+  })
+
+  return toggleState
+}
+
+function initNavigation() {
+  const menuButtons = document.querySelectorAll<HTMLButtonElement>('.js-guidance-toggle')
+
+  const mediaQueryList = window.matchMedia('(min-width: 40.0625em)')
+  const toggleControls: ToggleControl[] = []
+
+  menuButtons.forEach((menuButton) => {
+    const controls = menuButton.getAttribute('aria-controls')
+    const menuEl = controls && document.getElementById(controls)
+    if (menuEl) {
+      toggleControls.push(navigation(menuButton, menuEl, mediaQueryList))
+    }
+  })
+
+  const mediaQueryHandler = (mediaQuery: MediaQuery) => {
+    toggleControls.forEach((toggleControl) => toggleControl(mediaQuery))
+  }
+
   if ('addEventListener' in mediaQueryList) {
-    mediaQueryList.addEventListener('change', toggleState)
+    mediaQueryList.addEventListener('change', mediaQueryHandler)
   } else {
     // addListener is a deprecated function, however addEventListener
     // isn't supported by IE or Safari. We therefore add this in as
     // a fallback for those browsers
     // @ts-expect-error addEventListener' in mediaQueryList == true in libdom this results in mediaQueryList being type never
-    mediaQueryList.addListener(mediaQueryList)
+    mediaQueryList.addListener(mediaQueryHandler)
   }
-  menuButton.addEventListener('click', () => {
-    menuIsOpen = !menuIsOpen
-    toggleState(mediaQueryList)
-  })
 }
 
-export default navigation
+export default initNavigation
