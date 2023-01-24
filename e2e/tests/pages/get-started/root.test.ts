@@ -23,13 +23,13 @@ test.describe('/get-started/', () => {
 
     test.describe('@visual-regression', () => {
       test('the first side nav link matches the saved screenshot on hover', async ({ page }) => {
-        const setupGuideLink = page.getByText('Setup guide for developers')
+        const setupGuideLink = page.locator('nav.guidance-side-nav').getByText('Setup guide for developers')
         await setupGuideLink.hover()
         await expect(setupGuideLink).toHaveScreenshot('side-nav-link-hover.png')
       })
 
       test('the first side nav link matches the saved screenshot on focus', async ({ page }) => {
-        const setupGuideLink = page.getByText('Setup guide for developers')
+        const setupGuideLink = page.locator('nav.guidance-side-nav').getByText('Setup guide for developers')
         await setupGuideLink.focus()
         await expect(setupGuideLink).toHaveScreenshot('side-nav-link-focus.png')
       })

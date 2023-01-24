@@ -1,9 +1,7 @@
 ---
 layout: layouts/markdown-content-page.njk
-title: Get started
-tags: get-started
-is_root: true
-order: 1
+title: Accordion
+tags: components
 ---
 
 Content to be added.

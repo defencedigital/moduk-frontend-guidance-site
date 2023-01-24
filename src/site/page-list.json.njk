@@ -4,6 +4,11 @@ eleventyExcludeFromCollections: true
 ---
 [
 {% for page in collections.all -%}
-  "{{ page.url }}"{% if not loop.last %},{% endif %}
+{
+  "url": "{{ page.url }}",
+  "title": "{{ page.data.title }}",
+  "isRoot": {{ page.data.is_root | default(false) }},
+  "tag": {{ page.data.tags[0] | default(null) | dump | safe}}
+}{% if not loop.last %},{% endif %}
 {% endfor -%}
 ]
