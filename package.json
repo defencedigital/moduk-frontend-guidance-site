@@ -107,7 +107,8 @@
     "@axe-core/playwright": {
       "playwright": "$@playwright/test"
     },
-    "liquidjs": "^10.4.0"
+    "liquidjs": "^10.4.0",
+    "ua-parser-js@<1.0.33": "^1.0.33"
   },
   "dependencies": {
     "@moduk/frontend": "^0.3.0"
