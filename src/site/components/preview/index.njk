@@ -1,0 +1,29 @@
+---
+pagination:
+  data: examples
+  size: 1
+  alias: example
+  addAllPagesToCollections: false
+permalink: 'components/{{ example.componentName }}/preview/{{ example.exampleName }}/index.html'
+---
+{%- set title = example.componentName | title | replace('-', ' ') + ' preview' -%}
+
+{%- extends "layouts/_base.njk" -%}
+
+{%- block headExtra -%}
+<meta name="robots" content="noindex, nofollow">
+{%- endblock -%}
+
+{%- block bodyNav -%}{%- endblock -%}
+
+{%- block body -%}
+<div class="govuk-!-static-padding-6">
+  <main>
+    <h1 class="govuk-visually-hidden">{{ title }} preview</h1>
+
+    {%- include example.template -%}
+  </main>
+</div>
+{%- endblock -%}
+
+{%- block footer -%}{%- endblock -%}

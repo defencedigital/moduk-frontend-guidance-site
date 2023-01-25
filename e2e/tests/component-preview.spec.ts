@@ -17,6 +17,13 @@ test.describe('component preview', () => {
     await expect(page.getByRole(tabRole, { name: 'Nunjucks' })).toHaveAttribute('aria-expanded', 'false')
   })
 
+  test('links to the example in a new tab', async ({ page }) => {
+    await expect(page.getByRole('link', { name: 'Open this back link example in a new tab' })).toHaveAttribute(
+      'href',
+      'preview/default',
+    )
+  })
+
   test.describe('when the HTML tab is clicked', () => {
     test.beforeEach(async ({ page, tabRole }) => {
       await page.getByRole(tabRole, { name: 'HTML' }).click()

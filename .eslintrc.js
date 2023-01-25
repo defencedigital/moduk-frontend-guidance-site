@@ -37,11 +37,11 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: [
         'e2e/**',
-        'examples-site/**',
         '.eleventy.js',
         '*.config.{cjs,js,mjs,ts,mts}',
+        'src/site/_data/**',
+        'src/site/**/*.11tydata.js',
         'vitest/**',
-        'src/test-utils.ts',
         '**/__tests__/**',
         '**/__mocks__/**',
         '**/*.spec.ts',

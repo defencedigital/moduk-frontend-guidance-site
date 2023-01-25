@@ -116,7 +116,6 @@ module.exports = (config) => {
 
   return {
     dir: {
-      data: 'data',
       input: 'src/site',
       output: 'dist',
     },
