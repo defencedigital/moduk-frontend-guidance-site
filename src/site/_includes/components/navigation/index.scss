@@ -12,6 +12,21 @@ $navigation-height: 50px;
   }
 }
 
+@mixin moduk-maroon {
+  &,
+  &:visited {
+    color: moduk.moduk-colour('light-maroon');
+  }
+
+  &:focus {
+    color: moduk.govuk-colour('black');
+  }
+
+  &:hover {
+    color: moduk.moduk-colour('dark-maroon');
+  }
+}
+
 .guidance-navigation {
   background-color: moduk.govuk-colour('light-grey');
 }
@@ -96,13 +111,12 @@ $navigation-height: 50px;
   @include moduk.govuk-link-common;
   @include moduk.govuk-link-style-no-underline;
   @include moduk.govuk-link-style-no-visited-state;
+  @include moduk-maroon;
 
   margin: moduk.govuk-spacing(3);
   padding: 0;
   border: 0;
-  color: moduk.$moduk-brand-colour;
   background-color: transparent;
-  font-size: moduk.$govuk-root-font-size;
 }
 
 .guidance-navigation__button,
@@ -120,14 +134,6 @@ $navigation-height: 50px;
 .guidance-navigation__button,
 .guidance-navigation__link,
 .guidance-navigation__sub-link {
-  &:not(:focus) {
-    color: moduk.$moduk-brand-colour;
-  }
-
-  &:hover {
-    color: moduk.$moduk-brand-colour;
-  }
-
   &::after {
     content: '';
     position: absolute;

@@ -3,10 +3,10 @@ import 'core-js/actual/array/from'
 import * as mod from '@moduk/frontend/client'
 import { initCodeSnippets } from './_includes/components/code-snippet'
 import { initComponentPreviews } from './_includes/components/component-preview'
-import navigation from './_includes/components/navigation'
+import { initNavigation } from './_includes/components/navigation'
 
 initCodeSnippets()
 initComponentPreviews()
-navigation()
+initNavigation()
 
 mod.initAll()

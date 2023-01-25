@@ -16,9 +16,9 @@
           ] | isUrlInCollection(params.activeUrl) %}
 
             <li class="guidance-navigation__list-item{% if collectionIsActive or params.activeUrl == item.url %} guidance-navigation__list-item--current{% endif %}{% if hasCollection %} guidance-navigation__list-item--has-collection{% endif%}">
-              <a class="guidance-navigation__link govuk-link govuk-link--no-underline govuk-!-font-weight-bold" href="{{item.url}}">{{item.data.title}}</a>
+              <a class="guidance-navigation__link govuk-link moduk-link--maroon govuk-link--no-underline govuk-!-font-weight-bold" href="{{item.url}}">{{item.data.title}}</a>
               {% if hasCollection %}
-                <button hidden class="guidance-navigation__button js-guidance-toggle" aria-controls="guidance-navigation__subnav_{{loop.index}}" data-initial-open="{{ collectionIsActive }}">{{item.data.title}}</button>
+                <button hidden class="guidance-navigation__button moduk-link--maroon js-guidance-toggle" aria-controls="guidance-navigation__subnav_{{loop.index}}" data-initial-open="{{ collectionIsActive }}">{{item.data.title}}</button>
                 {% include "./submenu.njk" %}
               {%endif%}
             </li>
