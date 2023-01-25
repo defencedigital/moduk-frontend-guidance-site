@@ -4,8 +4,10 @@
 @use 'global/prismjs-theme';
 @use 'components/button';
 @use 'components/code-snippet';
+@use 'components/component-preview';
 @use 'components/header';
 @use 'components/hero';
+@use 'components/link';
 @use 'components/navigation';
 @use 'components/side-nav';
 @use 'layouts/markdown-content-page';

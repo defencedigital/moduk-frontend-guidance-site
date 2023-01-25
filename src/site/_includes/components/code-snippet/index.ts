@@ -23,7 +23,7 @@ function createTextOverrider(element: HTMLElement, timeoutMs: number) {
 }
 
 export function initCodeSnippets() {
-  const copyButtons = document.querySelectorAll<HTMLElement>('.js-guidance-copy-button')
+  const copyButtons = Array.from(document.querySelectorAll<HTMLElement>('.js-guidance-copy-button'))
 
   copyButtons.forEach((copyButton) => {
     if (!navigator.clipboard?.writeText) {

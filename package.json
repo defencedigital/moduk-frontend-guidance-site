@@ -75,6 +75,7 @@
     "nunjucks": "^3.2.3",
     "postcss": "^8.4.21",
     "postcss-fail-on-warn": "^0.2.1",
+    "prettier": "^2.8.3",
     "sass": "^1.57.1",
     "serve": "^14.1.2",
     "shx": "^0.3.4",
@@ -111,6 +112,7 @@
     "ua-parser-js@<1.0.33": "^1.0.33"
   },
   "dependencies": {
-    "@moduk/frontend": "^0.3.0"
+    "@moduk/frontend": "^0.3.0",
+    "core-js": "^3.27.2"
   }
 }

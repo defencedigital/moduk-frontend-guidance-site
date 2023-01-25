@@ -31,6 +31,7 @@ pre[class*='language-'] {
 pre[class*='language-'] {
   overflow: auto;
   border: 3px solid transparent;
+  margin: 0;
 
   &:focus {
     border: 3px solid moduk.$govuk-focus-text-colour;
