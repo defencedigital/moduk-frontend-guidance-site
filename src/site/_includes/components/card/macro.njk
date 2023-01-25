@@ -1,0 +1,13 @@
+{%- macro guidanceCard(params) -%}
+{% for item in params %}
+  <div class="govuk-grid-column-one-half-from-desktop govuk-!-margin-bottom-8">
+    <h2 class="govuk-heading-m govuk-!-font-weight-bold">{{item.heading}}</h2>
+    <p class="govuk-body">{{item.text}}</p>
+    {%- if item.link -%}
+    <p class="govuk-body govuk-!-margin-bottom-0">
+      <a href="{{item.link.href}}" class="govuk-link moduk-link--maroon govuk-!-font-weight-bold">{{item.link.text}}</a>
+    </p>
+    {%- endif -%}
+  </div>
+{% endfor %}
+{%- endmacro -%}

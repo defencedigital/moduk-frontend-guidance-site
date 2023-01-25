@@ -1,5 +1,6 @@
 {% from "components/header/macro.njk" import guidanceHeader %}
 {% from "components/navigation/macro.njk" import guidanceNavigation %}
+{% from "moduk/components/footer/macro.njk" import modukFooter %}
 {% from "moduk/components/skip-link/macro.njk" import modukSkipLink %}
 
 <!DOCTYPE html>
@@ -43,6 +44,10 @@
 -}}
 
 {%- block body -%}
+{%- endblock -%}
+
+{%- block footer -%}
+  {{ modukFooter() }}
 {%- endblock -%}
 
 <script src="/main.js"></script>

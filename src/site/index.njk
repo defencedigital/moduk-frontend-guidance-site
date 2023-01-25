@@ -6,6 +6,7 @@ order: 0
 {%- extends "layouts/generic.njk" -%}
 
 {%- from "components/hero/macro.njk" import guidanceHero -%}
+{%- from "components/card/macro.njk" import guidanceCard -%}
 
 {%- set title = "Home" -%}
 
@@ -19,7 +20,38 @@ order: 0
   }
 }) -}}
 
+{%- include "components/updates/updates.njk" -%}
+
 <div class="govuk-width-container">
-  <h2 class="govuk-heading-l">Updates</h2>
+  <div class="govuk-main-wrapper govuk-main-wrapper--l">
+    <div class="govuk-grid-row">
+      {{- guidanceCard(
+        [
+          {
+            heading: "Styles",
+            text: "Make your service look like MOD.UK with guides for applying layout, typography, colour and images."
+          },
+          {
+            heading: "Components",
+            text: "Use accessible components, including headers with the Ministry of Defence logo and colours.",
+            link: {
+              text: "Browse components",
+              href: "/components/"
+            }
+          }
+        ]
+      ) -}}
+
+      <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-8">
+      </div>
+
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h2 id="support" class="govuk-heading-m">Support</h2>
+        <p class="govuk-body">Email the MOD.UK Frontend team at <a class="govuk-link moduk-link--maroon" href="mailto:design-system@digital.mod.uk">design-system@digital.mod.uk</a> if you have questions or feedback.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 {%- endblock -%}

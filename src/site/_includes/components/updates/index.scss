@@ -1,0 +1,6 @@
+@use '@moduk/frontend/src/css' as moduk;
+
+.guidance-updates {
+  background-color: moduk.govuk-colour('light-grey');
+  border-bottom: 1px solid moduk.$govuk-border-colour;
+}
