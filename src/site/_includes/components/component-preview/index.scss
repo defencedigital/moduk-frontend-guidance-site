@@ -36,15 +36,20 @@ $border-value: 1px solid moduk.$govuk-border-colour;
   border-bottom: $border-value;
 }
 
+.guidance-component-preview__preview-wrapper {
+  background-image: url('assets/images/chequerboard.svg');
+}
+
 .guidance-component-preview__preview {
   position: relative;
+  background-color: moduk.govuk-colour('white');
   overflow: hidden;
   resize: both;
   max-width: 100%;
   outline: $border-value;
 }
 
-.guidance-component-preview__preview-resize-wrapper {
+.guidance-component-preview__preview-component {
   padding: moduk.govuk-spacing(6);
 }
 

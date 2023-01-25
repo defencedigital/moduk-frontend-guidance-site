@@ -77,6 +77,7 @@ module.exports = (config) => {
   )
 
   config.addPassthroughCopy({ 'node_modules/@moduk/frontend/dist/assets': 'assets' })
+  config.addPassthroughCopy({ 'src/site/_public': '.' })
 
   config.addTemplateFormats('ts')
   config.addExtension('ts', {
