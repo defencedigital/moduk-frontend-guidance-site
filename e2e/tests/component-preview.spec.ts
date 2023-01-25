@@ -55,6 +55,7 @@ test.describe('component preview', () => {
         })
 
         test(`matches the saved screenshot when the ${tabName} tab is focused`, async ({ page, tabRole }) => {
+          await page.mouse.move(0, 0)
           await page.getByRole(tabRole, { name: tabName }).focus()
           const componentPreview = page.locator('.guidance-component-preview')
           await expect(componentPreview).toHaveScreenshot(`component-preview-${tabName.toLowerCase()}-tab-focused.png`)
