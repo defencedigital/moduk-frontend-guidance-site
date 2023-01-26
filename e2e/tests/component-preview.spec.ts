@@ -20,6 +20,7 @@ test.describe('component preview', () => {
   test.describe('when the HTML tab is clicked', () => {
     test.beforeEach(async ({ page, tabRole }) => {
       await page.getByRole(tabRole, { name: 'HTML' }).click()
+      await page.mouse.move(0, 0)
     })
 
     test('shows the HTML tab contents', async ({ page, tabRole }) => {
@@ -37,11 +38,30 @@ test.describe('component preview', () => {
     })
 
     test.describe('@visual-regression', () => {
+      test('matches the saved screenshot when the preview is resized', async ({ page }) => {
+        const boundingBox = await page.locator('.guidance-component-preview__preview').boundingBox()
+
+        if (!boundingBox) {
+          throw new Error('boundingBox was null')
+        }
+
+        const boxRight = boundingBox.x + boundingBox.width
+        const boxBottom = boundingBox.y + boundingBox.height
+
+        await page.mouse.move(boxRight - 1, boxBottom - 1)
+        await page.mouse.down()
+        await page.mouse.move(boxRight - 100, boxBottom - 1)
+
+        const componentPreview = page.locator('.guidance-component-preview')
+        await expect(componentPreview).toHaveScreenshot(
+          'component-preview-resized.png',
+        )
+      })
+
       const TABS = ['HTML', 'Nunjucks']
 
       TABS.forEach((tabName) => {
         test(`matches the saved screenshot when the ${tabName} tab is not hovered`, async ({ page }) => {
-          await page.mouse.move(0, 0)
           const componentPreview = page.locator('.guidance-component-preview')
           await expect(componentPreview).toHaveScreenshot(
             `component-preview-${tabName.toLowerCase()}-tab-unhovered.png`,
@@ -55,7 +75,6 @@ test.describe('component preview', () => {
         })
 
         test(`matches the saved screenshot when the ${tabName} tab is focused`, async ({ page, tabRole }) => {
-          await page.mouse.move(0, 0)
           await page.getByRole(tabRole, { name: tabName }).focus()
           const componentPreview = page.locator('.guidance-component-preview')
           await expect(componentPreview).toHaveScreenshot(`component-preview-${tabName.toLowerCase()}-tab-focused.png`)

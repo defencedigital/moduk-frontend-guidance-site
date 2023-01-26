@@ -11,9 +11,11 @@
       Open this <span class="govuk-visually-hidden">{{ exampleTitle | lower }}</span> example in a new tab
     </a>
   </div>
-  <div class="guidance-component-preview__preview">
-    <div class="guidance-component-preview__preview-resize-wrapper">
-      {%- include exampleTemplatePath -%}
+  <div class="guidance-component-preview__preview-wrapper">
+    <div class="guidance-component-preview__preview">
+      <div class="guidance-component-preview__preview-component">
+        {%- include exampleTemplatePath -%}
+      </div>
     </div>
   </div>
   <ul class="guidance-component-preview__tabs" role="tablist">

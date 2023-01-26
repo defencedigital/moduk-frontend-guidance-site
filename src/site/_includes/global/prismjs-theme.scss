@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '../../../../node_modules/@moduk/frontend/src/css/index' as moduk;
+@use '@moduk/frontend/src/css/index' as moduk;
 
 code[class*='language-'],
 pre[class*='language-'] {
@@ -49,7 +49,7 @@ pre[class*='language-'] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: slategray;
+  color: moduk.govuk-colour('dark-grey');
 }
 
 .token.punctuation {
