@@ -1,4 +1,5 @@
 @use '@moduk/frontend/src/css' as moduk;
+@use 'global/links';
 
 $govuk-link-colour: moduk.$moduk-brand-colour;
 $border-width: 4px;
@@ -9,21 +10,6 @@ $navigation-height: 50px;
 
   @include moduk.govuk-media-query($from: tablet) {
     display: block;
-  }
-}
-
-@mixin moduk-maroon {
-  &,
-  &:visited {
-    color: moduk.moduk-colour('light-maroon');
-  }
-
-  &:focus {
-    color: moduk.govuk-colour('black');
-  }
-
-  &:hover {
-    color: moduk.moduk-colour('dark-maroon');
   }
 }
 
@@ -49,7 +35,7 @@ $navigation-height: 50px;
 }
 
 .guidance-navigation__list-item {
-  padding: 0 moduk.govuk-spacing(4);
+  padding: 0 moduk.govuk-spacing(3);
   list-style: none;
   position: relative;
   display: flex;
@@ -58,6 +44,7 @@ $navigation-height: 50px;
   flex-direction: column;
 
   @include moduk.govuk-media-query($from: tablet) {
+    padding: 0 moduk.govuk-spacing(4);
     height: moduk.govuk-px-to-rem($navigation-height);
     align-items: center;
     justify-content: center;
@@ -111,7 +98,7 @@ $navigation-height: 50px;
   @include moduk.govuk-link-common;
   @include moduk.govuk-link-style-no-underline;
   @include moduk.govuk-link-style-no-visited-state;
-  @include moduk-maroon;
+  @include links.moduk-link-maroon;
 
   margin: moduk.govuk-spacing(3);
   padding: 0;
