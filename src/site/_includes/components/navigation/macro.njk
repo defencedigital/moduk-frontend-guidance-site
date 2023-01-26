@@ -1,9 +1,9 @@
-{% macro guidanceNavigation(params) %}
+{%- macro guidanceNavigation(params) -%}
   <nav id="guidance-navigation" class="js-guidance-navigation guidance-navigation" aria-labelledby="guidance-navigation-heading" data-list-type="primary">
     <h2 class="govuk-visually-hidden" id="guidance-navigation-heading">Menu</h2>
     <div class="guidance-width-container">
       <ul class="guidance-navigation__list">
-        {% for item in params.collections.all | selectattr_path('data.is_root') | sort(false, false, 'data.order') %}
+        {%- for item in params.collections.all | selectattr_path('data.is_root') | sort(false, false, 'data.order') -%}
           {% set hasCollection = params.collections[
             item
               .data
@@ -17,14 +17,13 @@
 
             <li class="guidance-navigation__list-item{% if collectionIsActive or params.activeUrl == item.url %} guidance-navigation__list-item--current{% endif %}{% if hasCollection %} guidance-navigation__list-item--has-collection{% endif%}">
               <a class="guidance-navigation__link govuk-link moduk-link--maroon govuk-link--no-underline govuk-!-font-weight-bold" href="{{item.url}}">{{item.data.title}}</a>
-              {% if hasCollection %}
+              {%- if hasCollection -%}
                 <button hidden class="guidance-navigation__button moduk-link--maroon js-guidance-toggle" aria-controls="guidance-navigation__subnav_{{loop.index}}" data-initial-open="{{ collectionIsActive }}">{{item.data.title}}</button>
-                {% include "./submenu.njk" %}
+                {%- include "./submenu.njk" -%}
               {%endif%}
             </li>
-          {% endfor %}
-
+          {%- endfor -%}
         </ul>
     </div>
   </nav>
-{% endmacro %}
+{%- endmacro -%}

@@ -2,13 +2,13 @@
   <li class="guidance-navigation__list-item {% if params.activeUrl == item.url %} guidance-navigation__list-item--current{% endif %}">
     <a class="guidance-navigation__sub-link govuk-link moduk-link--maroon govuk-link--no-underline" href="{{item.url}}">{{item.data.title}} overview</a>
   </li>
-  {% for childItem in params.collections[
+  {%- for childItem in params.collections[
     item
       .data
       .tags[0]
-  ] | rejectattr_path('data.is_root') | sortBy(['data.order', 'data.title']) %}
+  ] | rejectattr_path('data.is_root') | sortBy(['data.order', 'data.title']) -%}
     <li class="guidance-navigation__list-item {% if params.activeUrl == childItem.url %} guidance-navigation__list-item--current{% endif %}">
       <a class="guidance-navigation__sub-link govuk-link moduk-link--maroon govuk-link--no-underline" href="{{childItem.url}}">{{childItem.data.title}}</a>
     </li>
-  {% endfor %}
+  {%- endfor -%}
 </ul>
