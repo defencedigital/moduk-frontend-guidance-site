@@ -1,0 +1,28 @@
+@use '@moduk/frontend/src/css' as moduk;
+@use 'global/markdown';
+
+.guidance-options-table {
+  .govuk-table__header,
+  .govuk-table__cell {
+    padding-right: moduk.govuk-spacing(2);
+    word-break: break-word;
+  }
+
+  @include moduk.govuk-media-query(mobile) {
+    table-layout: fixed;
+  }
+}
+
+.guidance-options__limit-table-cell {
+  @include moduk.govuk-media-query(mobile) {
+    width: 29%;
+  }
+}
+
+.guidance-macro-option-description {
+  @include markdown.markdown-styles;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}

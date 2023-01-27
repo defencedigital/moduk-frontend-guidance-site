@@ -11,7 +11,8 @@ The button component helps users carry out an action like starting an applicatio
 
 {{ guidanceComponentPreview({
   componentName: "button",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["button"]
 }) }}
 
 ## How it works
@@ -25,7 +26,8 @@ Use a default button for the main call to action on a page.
 {{ guidanceComponentPreview({
   componentName: "button",
   exampleName: "default",
-  idSuffix: "default"
+  idSuffix: "default",
+  macroOptions: macroOptions["button"]
 }) }}
 
 ### Start buttons
@@ -34,7 +36,8 @@ Use a start button for the main call to action on your service’s start page.
 
 {{ guidanceComponentPreview({
   componentName: "button",
-  exampleName: "start"
+  exampleName: "start",
+  macroOptions: macroOptions["button"]
 }) }}
 
 ### Secondary buttons
@@ -43,7 +46,8 @@ Use secondary buttons for secondary calls to action on a page.
 
 {{ guidanceComponentPreview({
   componentName: "button",
-  exampleName: "secondary"
+  exampleName: "secondary",
+  macroOptions: macroOptions["button"]
 }) }}
 
 ### Warning buttons
@@ -52,7 +56,8 @@ Warning buttons are designed to make users think carefully before they use them.
 
 {{ guidanceComponentPreview({
   componentName: "button",
-  exampleName: "warning"
+  exampleName: "warning",
+  macroOptions: macroOptions["button"]
 }) }}
 
 ### Disabled buttons
@@ -61,7 +66,8 @@ Disabled buttons have poor contrast and can confuse some users, so avoid them if
 
 {{ guidanceComponentPreview({
   componentName: "button",
-  exampleName: "disabled"
+  exampleName: "disabled",
+  macroOptions: macroOptions["button"]
 }) }}
 
 ### Grouping buttons
@@ -70,7 +76,8 @@ Use a button group when two or more buttons are placed together.
 
 {{ guidanceComponentPreview({
   componentName: "button",
-  exampleName: "grouping"
+  exampleName: "grouping",
+  macroOptions: macroOptions["button"]
 }) }}
 
 ## Changes from the GOV.UK version

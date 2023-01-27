@@ -13,7 +13,8 @@ Use the text input component when you need to let users enter text that’s no l
 
 {{ guidanceComponentPreview({
   componentName: "input",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["input"]
 }) }}
 
 [See GOV.UK text input component guidance](https://design-system.service.gov.uk/components/text-input/) for:
@@ -31,7 +32,8 @@ If you’re asking just [one question per page](https://design-system.service.go
 
 {{ guidanceComponentPreview({
   componentName: "input",
-  exampleName: "with-page-heading"
+  exampleName: "with-page-heading",
+  macroOptions: macroOptions["input"]
 }) }}
 
 ### If you’re asking more than one question on the page
@@ -40,28 +42,32 @@ If you’re asking more than one question on the page, do not set the contents o
 
 {{ guidanceComponentPreview({
   componentName: "input",
-  exampleName: "not-as-page-heading"
+  exampleName: "not-as-page-heading",
+  macroOptions: macroOptions["input"]
 }) }}
 
 ### Prefixes and suffixes
 
 {{ guidanceComponentPreview({
   componentName: "input",
-  exampleName: "with-prefix-and-suffix"
+  exampleName: "with-prefix-and-suffix",
+  macroOptions: macroOptions["input"]
 }) }}
 
 ### Text inputs with a prefix
 
 {{ guidanceComponentPreview({
   componentName: "input",
-  exampleName: "with-prefix"
+  exampleName: "with-prefix",
+  macroOptions: macroOptions["input"]
 }) }}
 
 ### Text inputs with a suffix
 
 {{ guidanceComponentPreview({
   componentName: "input",
-  exampleName: "with-suffix"
+  exampleName: "with-suffix",
+  macroOptions: macroOptions["input"]
 }) }}
 
 ## Changes from the GOV.UK version

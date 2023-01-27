@@ -13,7 +13,8 @@ Use the textarea component when you need to let users enter an amount of text th
 
 {{ guidanceComponentPreview({
   componentName: "textarea",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["textarea"]
 }) }}
 
 [See GOV.UK textarea component guidance](https://design-system.service.gov.uk/components/textarea/) for:
@@ -31,7 +32,8 @@ If you’re asking just [one question per page](https://design-system.service.go
 
 {{ guidanceComponentPreview({
   componentName: "textarea",
-  exampleName: "with-page-heading"
+  exampleName: "with-page-heading",
+  macroOptions: macroOptions["textarea"]
 }) }}
 
 ### If you’re asking more than one question on the page
@@ -40,7 +42,8 @@ If you’re asking more than one question on the page, do not set the contents o
 
 {{ guidanceComponentPreview({
   componentName: "textarea",
-  exampleName: "not-as-page-heading"
+  exampleName: "not-as-page-heading",
+  macroOptions: macroOptions["textarea"]
 }) }}
 
 ### Error messages
@@ -49,7 +52,8 @@ Error messages should be styled like this:
 
 {{ guidanceComponentPreview({
   componentName: "textarea",
-  exampleName: "with-error"
+  exampleName: "with-error",
+  macroOptions: macroOptions["textarea"]
 }) }}
 
 ## Changes from the GOV.UK version

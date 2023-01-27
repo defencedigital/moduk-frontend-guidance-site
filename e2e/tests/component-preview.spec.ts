@@ -115,6 +115,35 @@ test.describe('component preview', () => {
       await expect(page.getByRole(tabRole, { name: 'HTML' })).toHaveAttribute('aria-expanded', 'true')
       await expect(page.getByRole(tabRole, { name: 'Nunjucks' })).toHaveAttribute('aria-expanded', 'false')
     })
+
+    test.describe('@visual-regression', () => {
+      test('matches the saved screenshot', async ({ page }) => {
+        const componentPreview = page.locator('.guidance-component-preview')
+        await expect(componentPreview).toHaveScreenshot(
+          'component-preview-nunjucks-tab-open.png',
+        )
+      })
+
+      // Note: Separate, smaller screenshots to avoid
+      // https://github.com/microsoft/playwright/issues/12077
+      test.describe('nunjucks macro options link', () => {
+        test('matches the saved screenshot', async ({ page }) => {
+          await page.mouse.move(0, 0)
+          const detailsSummary = page.locator('summary', { hasText: 'Nunjucks macro options' })
+          await expect(detailsSummary).toHaveScreenshot(
+            'component-preview-nunjucks-tab-open-macro-options-details-default.png',
+          )
+        })
+
+        test('matches the saved screenshot when hovered', async ({ page }) => {
+          const detailsSummary = page.locator('summary', { hasText: 'Nunjucks macro options' })
+          await detailsSummary.hover()
+          await expect(detailsSummary).toHaveScreenshot(
+            'component-preview-nunjucks-tab-open-macro-options-details-hovered.png',
+          )
+        })
+      })
+    })
   })
 
   test.describe('when JavaScript is disabled', () => {

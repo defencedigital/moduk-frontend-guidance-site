@@ -13,7 +13,8 @@ The accordion component lets users show and hide sections of related content on 
 
 {{ guidanceComponentPreview({
   componentName: "accordion",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["accordion"]
 }) }}
 
 [See GOV.UK accordion component guidance](https://design-system.service.gov.uk/components/accordion/) for:

@@ -11,7 +11,8 @@ Use the inset text component to differentiate a block of text from the content t
 
 {{ guidanceComponentPreview({
   componentName: "inset-text",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["inset-text"]
 }) }}
 
 [See GOV.UK inset text component guidance](https://design-system.service.gov.uk/components/inset-text/) for:

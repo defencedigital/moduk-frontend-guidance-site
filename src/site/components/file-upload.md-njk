@@ -11,7 +11,8 @@ Help users select and upload a file.
 
 {{ guidanceComponentPreview({
   componentName: "file-upload",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["file-upload"]
 }) }}
 
 [See GOV.UK file upload component guidance](https://design-system.service.gov.uk/components/file-upload/) for:

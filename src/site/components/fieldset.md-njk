@@ -11,7 +11,8 @@ Use the fieldset component to group related form inputs.
 
 {{ guidanceComponentPreview({
   componentName: "fieldset",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["fieldset"]
 }) }}
 
 [See GOV.UK error summary component guidance](https://design-system.service.gov.uk/components/fieldset/) for:

@@ -11,7 +11,8 @@ The tabs component lets users navigate between related sections of content, disp
 
 {{ guidanceComponentPreview({
   componentName: "tabs",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["tabs"]
 }) }}
 
 [See GOV.UK tabs component guidance](https://design-system.service.gov.uk/components/tabs/) for:

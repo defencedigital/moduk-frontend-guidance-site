@@ -16,7 +16,8 @@ Use this component if your service sets any cookies on a user’s device.
 
 {{ guidanceComponentPreview({
   componentName: "cookie-banner",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["cookie-banner"]
 }) }}
 
 [See GOV.UK cookie banner component guidance](https://design-system.service.gov.uk/components/cookie-banner/) for:
@@ -32,14 +33,16 @@ Use this component if your service sets any cookies on a user’s device.
 
 {{ guidanceComponentPreview({
   componentName: "cookie-banner",
-  exampleName: "accepted"
+  exampleName: "accepted",
+  macroOptions: macroOptions["cookie-banner"]
 }) }}
 
 ### When the user has rejected cookies
 
 {{ guidanceComponentPreview({
   componentName: "cookie-banner",
-  exampleName: "rejected"
+  exampleName: "rejected",
+  macroOptions: macroOptions["cookie-banner"]
 }) }}
 
 ## Changes from the GOV.UK version

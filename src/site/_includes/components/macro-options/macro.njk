@@ -1,0 +1,31 @@
+{% from "components/macro-options-table/macro.njk" import guidanceMacroOptionsTable %}
+
+{% macro guidanceMacroOptions(params) -%}
+
+<p>
+  Use options to customise the appearance, content and behaviour of a component when using a macro, for example, changing the text.
+</p>
+<p>
+  Some options are required for the macro to work; these are marked as "Required" in the option description.
+</p>
+<p>
+  If you’re using Nunjucks macros in production with "html" options, or ones ending with "html", you must sanitise the HTML to protect against  <a class="moduk-link--maroon govuk-link" href="https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting">cross-site scripting exploits</a>.
+</p>
+
+{{ guidanceMacroOptionsTable({
+  name: 'Primary options',
+  table: params.macroOptions.primary,
+  tableId: 'primary',
+  exampleId: params.exampleId
+}) }}
+
+{%- for nestedTable in params.macroOptions.nested -%}
+{{ guidanceMacroOptionsTable({
+  name: 'Options for ' + nestedTable.name | replace('-', ' '),
+  table: nestedTable.params,
+  tableId: nestedTable.path,
+  exampleId: params.exampleId
+}) }}
+{%- endfor -%}
+
+{%- endmacro %}

@@ -14,7 +14,8 @@ Use the radios component when users can only select one option from a list.
 
 {{ guidanceComponentPreview({
   componentName: "radios",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["radios"]
 }) }}
 
 [See GOV.UK radios component guidance](https://design-system.service.gov.uk/components/radios/) for when not to use this component.
@@ -29,7 +30,8 @@ If you are asking just [one question per page](https://design-system.service.gov
 
 {{ guidanceComponentPreview({
   componentName: "radios",
-  exampleName: "with-page-heading"
+  exampleName: "with-page-heading",
+  macroOptions: macroOptions["radios"]
 }) }}
 
 ### If you’re asking more than one question on the page
@@ -38,49 +40,56 @@ If you’re asking more than one question on the page, do not set the contents o
 
 {{ guidanceComponentPreview({
   componentName: "radios",
-  exampleName: "not-as-page-heading"
+  exampleName: "not-as-page-heading",
+  macroOptions: macroOptions["radios"]
 }) }}
 
 ### Inline radios
 
 {{ guidanceComponentPreview({
   componentName: "radios",
-  exampleName: "inline"
+  exampleName: "inline",
+  macroOptions: macroOptions["radios"]
 }) }}
 
 ### Radio items with hints
 
 {{ guidanceComponentPreview({
   componentName: "radios",
-  exampleName: "with-item-hint"
+  exampleName: "with-item-hint",
+  macroOptions: macroOptions["radios"]
 }) }}
 
 ### Radio items with a text divider
 
 {{ guidanceComponentPreview({
   componentName: "radios",
-  exampleName: "with-divider-option"
+  exampleName: "with-divider-option",
+  macroOptions: macroOptions["radios"]
 }) }}
 
 ### Conditionally revealing a related question
 
 {{ guidanceComponentPreview({
   componentName: "radios",
-  exampleName: "with-conditional-reveal"
+  exampleName: "with-conditional-reveal",
+  macroOptions: macroOptions["radios"]
 }) }}
 
 ### Smaller radios
 
 {{ guidanceComponentPreview({
   componentName: "radios",
-  exampleName: "small"
+  exampleName: "small",
+  macroOptions: macroOptions["radios"]
 }) }}
 
 ### Error messages
 
 {{ guidanceComponentPreview({
   componentName: "radios",
-  exampleName: "with-error-message"
+  exampleName: "with-error-message",
+  macroOptions: macroOptions["radios"]
 }) }}
 
 ## Changes from the GOV.UK version

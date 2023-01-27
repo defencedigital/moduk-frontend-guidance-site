@@ -14,7 +14,8 @@ Help users know how much text they can enter when there is a limit on the number
 
 {{ guidanceComponentPreview({
   componentName: "character-count",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["character-count"]
 }) }}
 
 [See GOV.UK character count component guidance](https://design-system.service.gov.uk/components/character-count/) for:
@@ -33,7 +34,8 @@ If you’re asking just [one question per page](https://design-system.service.go
 {{ guidanceComponentPreview({
   componentName: "character-count",
   exampleName: "with-page-heading",
-  idSuffix: "one-question"
+  idSuffix: "one-question",
+  macroOptions: macroOptions["character-count"]
 }) }}
 
 
@@ -43,7 +45,8 @@ If you’re asking more than one question on the page, do not set the contents o
 
 {{ guidanceComponentPreview({
   componentName: "character-count",
-  exampleName: "not-as-page-heading"
+  exampleName: "not-as-page-heading",
+  macroOptions: macroOptions["character-count"]
 }) }}
 
 ## Changes from the GOV.UK version

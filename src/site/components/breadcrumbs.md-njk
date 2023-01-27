@@ -14,7 +14,8 @@ The breadcrumbs component helps users to understand where they are within a webs
 
 {{ guidanceComponentPreview({
   componentName: "breadcrumbs",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["breadcrumbs"]
 }) }}
 
 [See GOV.UK breadcrumbs component guidance](https://design-system.service.gov.uk/components/breadcrumbs/) for:

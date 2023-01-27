@@ -14,7 +14,8 @@ Let users select one or more options by using the checkboxes component.
 
 {{ guidanceComponentPreview({
   componentName: "checkboxes",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["checkboxes"]
 }) }}
 
 [See GOV.UK checkboxes component guidance](https://design-system.service.gov.uk/components/checkboxes/) for:
@@ -33,7 +34,8 @@ If you’re asking just [one question per page](https://design-system.service.go
 {{ guidanceComponentPreview({
   componentName: "checkboxes",
   exampleName: "with-page-heading",
-  idSuffix: "default"
+  idSuffix: "default",
+  macroOptions: macroOptions["checkboxes"]
 }) }}
 
 ### If you’re asking more than one question on the page
@@ -43,35 +45,40 @@ If you’re asking more than one question on the page, do not set the contents o
 
 {{ guidanceComponentPreview({
   componentName: "checkboxes",
-  exampleName: "not-as-page-heading"
+  exampleName: "not-as-page-heading",
+  macroOptions: macroOptions["checkboxes"]
 }) }}
 
 ### Checkbox items with hints
 
 {{ guidanceComponentPreview({
   componentName: "checkboxes",
-  exampleName: "with-item-hint"
+  exampleName: "with-item-hint",
+  macroOptions: macroOptions["checkboxes"]
 }) }}
 
 ### Checkbox items with a text divider
 
 {{ guidanceComponentPreview({
   componentName: "checkboxes",
-  exampleName: "with-none-option"
+  exampleName: "with-none-option",
+  macroOptions: macroOptions["checkboxes"]
 }) }}
 
 ### Conditionally revealing a related question
 
 {{ guidanceComponentPreview({
   componentName: "checkboxes",
-  exampleName: "with-conditional-reveal"
+  exampleName: "with-conditional-reveal",
+  macroOptions: macroOptions["checkboxes"]
 }) }}
 
 ### Smaller checkboxes
 
 {{ guidanceComponentPreview({
   componentName: "checkboxes",
-  exampleName: "small"
+  exampleName: "small",
+  macroOptions: macroOptions["checkboxes"]
 }) }}
 
 
@@ -79,7 +86,8 @@ If you’re asking more than one question on the page, do not set the contents o
 
 {{ guidanceComponentPreview({
   componentName: "checkboxes",
-  exampleName: "with-error-message"
+  exampleName: "with-error-message",
+  macroOptions: macroOptions["checkboxes"]
 }) }}
 
 ## Changes from the GOV.UK version

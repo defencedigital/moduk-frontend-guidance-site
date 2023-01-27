@@ -11,7 +11,8 @@ Use the back link component to help users go back to the previous page in a mult
 
 {{ guidanceComponentPreview({
   componentName: "back-link",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["back-link"]
 }) }}
 
 [See GOV.UK back link component guidance](https://design-system.service.gov.uk/components/back-link/) for:
