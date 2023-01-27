@@ -65,9 +65,10 @@ export function initComponentPreviews() {
     tabItems.forEach((tabItem) => {
       tabItem.setAttribute('aria-expanded', 'false')
 
-      tabItem.addEventListener('click', () => {
+      tabItem.addEventListener('click', (event) => {
         tabManager.activateTab(tabItem)
-        // Let the default handler kick in to scroll to the tab contents if necessary
+        event.preventDefault()
+        event.stopPropagation()
       })
     })
 
@@ -77,9 +78,10 @@ export function initComponentPreviews() {
     mobileButtons.forEach((button) => {
       button.setAttribute('aria-expanded', 'false')
 
-      button.addEventListener('click', () => {
+      button.addEventListener('click', (event) => {
         tabManager.activateTab(button)
-        // Let the default handler kick in to scroll to the tab contents if necessary
+        event.preventDefault()
+        event.stopPropagation()
       })
     })
 
