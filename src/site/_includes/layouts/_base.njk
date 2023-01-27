@@ -16,6 +16,7 @@
     {%- endif -%}
     {%- endblock -%}
   </title>
+  {%- block headExtra -%}{%- endblock -%}
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="{{ "src/site/index.scss" | inputToRevvedOutput }}" />
@@ -25,6 +26,7 @@
   document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
 </script>
 
+{%- block bodyNav -%}
 {{- modukSkipLink({
   href: '#main-content',
   text: 'Skip to main content'
@@ -42,6 +44,7 @@
   collections: collections
 })
 -}}
+{%- endblock -%}
 
 {%- block body -%}
 {%- endblock -%}
