@@ -32,7 +32,7 @@ $border-value: 1px solid moduk.$govuk-border-colour;
 
 .guidance-component-preview__toolbar {
   padding: moduk.govuk-spacing(2);
-  font-size: 14px;
+  font-size: moduk.govuk-px-to-rem(14px);
   border-bottom: $border-value;
 }
 
