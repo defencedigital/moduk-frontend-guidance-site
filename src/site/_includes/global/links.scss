@@ -1,0 +1,16 @@
+@use '@moduk/frontend/src/css' as moduk;
+
+@mixin moduk-link-maroon {
+  &,
+  &:visited {
+    color: moduk.moduk-colour('light-maroon');
+  }
+
+  &:focus {
+    color: moduk.govuk-colour('black');
+  }
+
+  &:hover {
+    color: moduk.moduk-colour('dark-maroon');
+  }
+}

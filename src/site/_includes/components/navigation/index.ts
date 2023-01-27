@@ -35,7 +35,7 @@ function navigation(menuButton: HTMLButtonElement, menuEl: HTMLElement, mediaQue
   return toggleState
 }
 
-function initNavigation() {
+export function initNavigation() {
   const menuButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.js-guidance-toggle'))
 
   const mediaQueryList = window.matchMedia('(min-width: 40.0625em)')
@@ -63,5 +63,3 @@ function initNavigation() {
     mediaQueryList.addListener(mediaQueryHandler)
   }
 }
-
-export default initNavigation
