@@ -98,10 +98,7 @@
       "dprint fmt",
       "stylelint"
     ],
-    "*.{yaml,yml}": [
-      "dprint fmt"
-    ],
-    "!(src/site/**/*)*.md": [
+    "*.{md,yaml,yml}": [
       "dprint fmt"
     ]
   },
