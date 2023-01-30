@@ -5,16 +5,10 @@
 @mixin markdown-styles {
   h1 {
     @extend %govuk-heading-xl;
-    @include moduk.govuk-responsive-margin(6, 'bottom');
   }
 
   h2 {
     @extend %govuk-heading-l;
-    @include moduk.govuk-responsive-margin(2, 'bottom');
-  }
-
-  p + h2 {
-    @include moduk.govuk-responsive-padding(2, 'top');
   }
 
   h3 {
@@ -66,5 +60,14 @@
       font-size: moduk.govuk-px-to-rem(16px);
       word-break: break-word;
     }
+  }
+
+  pre + h2 {
+    padding-top: moduk.govuk-spacing(2);
+  }
+
+  pre + h3,
+  pre + h4 {
+    padding-top: moduk.govuk-spacing(1);
   }
 }
