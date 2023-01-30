@@ -26,7 +26,9 @@ test.describe('component preview', () => {
 
   test.describe('when the HTML tab is clicked', () => {
     test.beforeEach(async ({ page, tabRole }) => {
-      await page.getByRole(tabRole, { name: 'HTML' }).click()
+      const htmlTabButton = page.getByRole(tabRole, { name: 'HTML' })
+      await htmlTabButton.click()
+      await htmlTabButton.blur()
       await page.mouse.move(0, 0)
     })
 
@@ -34,6 +36,10 @@ test.describe('component preview', () => {
       await expect(page.getByRole('tabpanel')).toContainText('<a href')
       await expect(page.getByRole(tabRole, { name: 'HTML' })).toHaveAttribute('aria-expanded', 'true')
       await expect(page.getByRole(tabRole, { name: 'Nunjucks' })).toHaveAttribute('aria-expanded', 'false')
+    })
+
+    test('does not change the URL', async ({ page }) => {
+      await expect(page).toHaveURL(/\/components\/back-link\/$/)
     })
 
     test('switches to the Nunjucks tab contents when that tab is clicked', async ({ page, tabRole }) => {
