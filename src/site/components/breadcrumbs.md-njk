@@ -1,0 +1,37 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Breadcrumbs
+description: Help users orientate themselves and navigate pages within a hierarchical structure.
+tags: components
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+The breadcrumbs component helps users to understand where they are within a website’s structure and move between levels.
+
+{{ guidanceComponentPreview({
+  componentName: "breadcrumbs",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK breadcrumbs component guidance](https://design-system.service.gov.uk/components/breadcrumbs/) for:
+
+- when to use this component
+- when not to use it
+- how it works
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
