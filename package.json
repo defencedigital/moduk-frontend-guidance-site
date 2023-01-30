@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/defencedigital/moduk-frontend-guidance-site#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "^2.0.0-beta.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "@axe-core/playwright": "^4.5.2",
     "@babel/core": "^7.20.12",
@@ -98,19 +98,14 @@
       "dprint fmt",
       "stylelint"
     ],
-    "*.{yaml,yml}": [
-      "dprint fmt"
-    ],
-    "!(src/site/**/*)*.md": [
+    "*.{md,yaml,yml}": [
       "dprint fmt"
     ]
   },
   "overrides": {
     "@axe-core/playwright": {
       "playwright": "$@playwright/test"
-    },
-    "liquidjs": "^10.4.0",
-    "ua-parser-js@<1.0.33": "^1.0.33"
+    }
   },
   "dependencies": {
     "@moduk/frontend": "^0.3.2",

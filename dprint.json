@@ -22,7 +22,6 @@
   "excludes": [
     "dist/",
     "node_modules/",
-    "src/site/**/*.md",
     "*-lock.json"
   ],
   "plugins": [

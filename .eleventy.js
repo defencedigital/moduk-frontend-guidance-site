@@ -79,6 +79,19 @@ module.exports = (config) => {
   config.addPassthroughCopy({ 'node_modules/@moduk/frontend/dist/assets': 'assets' })
   config.addPassthroughCopy({ 'src/site/_public': '.' })
 
+  config.addExtension('md-njk', {
+    key: 'njk',
+    getData: (inputPath) => {
+      if (inputPath.match(/\.md-njk$/)) {
+        return {
+          templateEngineOverride: 'njk,md',
+        }
+      }
+
+      return {}
+    },
+  })
+
   config.addTemplateFormats('ts')
   config.addExtension('ts', {
     read: false,
@@ -119,6 +132,6 @@ module.exports = (config) => {
       input: 'src/site',
       output: 'dist',
     },
-    markdownTemplateEngine: 'njk',
+    markdownTemplateEngine: false,
   }
 }
