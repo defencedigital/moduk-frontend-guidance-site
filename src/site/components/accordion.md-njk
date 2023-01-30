@@ -1,7 +1,37 @@
 ---
 layout: layouts/markdown-content-page.njk
 title: Accordion
+description: The accordion component lets users show and hide sections of related content on a page.
 tags: components
 ---
 
-Content to be added.
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+The accordion component lets users show and hide sections of related content on a page.
+
+{{ guidanceComponentPreview({
+  componentName: "accordion",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK accordion component guidance](https://design-system.service.gov.uk/components/accordion/) for:
+
+- when to use this component
+- when not to use it
+- how it works
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.

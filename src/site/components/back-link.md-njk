@@ -4,7 +4,6 @@ title: Back link
 tags: components
 ---
 
-{%- from "components/code-snippet/macro.njk" import guidanceCodeSnippet -%}
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
 
 Content to be added.
