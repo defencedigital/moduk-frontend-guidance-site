@@ -57,7 +57,7 @@
     "@types/node": "^18.11.18",
     "@types/nunjucks": "^3.2.1",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "@typescript-eslint/parser": "^5.48.2",
+    "@typescript-eslint/parser": "^5.49.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
     "dprint": "^0.34.4",
