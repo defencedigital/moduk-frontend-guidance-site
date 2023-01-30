@@ -13,7 +13,7 @@ test.describe('@visual-regression', () => {
         await expect(page.getByRole('document')).toHaveScreenshot([
           screenshotName,
           'js-enabled.png',
-        ])
+        ], { scale: 'css', timeout: 20_000 })
       })
 
       test.describe('when JavaScript is disabled', () => {
@@ -23,7 +23,7 @@ test.describe('@visual-regression', () => {
           await expect(page.getByRole('document')).toHaveScreenshot([
             screenshotName,
             'js-disabled.png',
-          ])
+          ], { scale: 'css', timeout: 20_000 })
         })
       })
     })
