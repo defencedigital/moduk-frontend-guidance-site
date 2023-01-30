@@ -6,7 +6,7 @@ pre[class*='language-'] {
   color: black;
   background: none;
   font-family: ui-monospace, monospace;
-  font-size: 16px;
+  font-size: moduk.govuk-px-to-rem(16px);
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -19,7 +19,7 @@ pre[class*='language-'] {
 
 code[class*='language-'] {
   display: inline-block;
-  padding: moduk.govuk-spacing(3);
+  padding: moduk.govuk-spacing(1);
   margin: 0;
 }
 
@@ -32,6 +32,7 @@ pre[class*='language-'] {
   overflow: auto;
   border: 3px solid transparent;
   margin: 0;
+  @include moduk.govuk-responsive-margin(4, 'bottom');
 
   &:focus {
     border: 3px solid moduk.$govuk-focus-text-colour;

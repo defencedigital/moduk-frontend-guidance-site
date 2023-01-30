@@ -2,6 +2,14 @@
 
 .guidance-code-snippet {
   position: relative;
+
+  pre {
+    margin: 0;
+  }
+
+  code {
+    padding: moduk.govuk-spacing(3);
+  }
 }
 
 .guidance-copy-button {

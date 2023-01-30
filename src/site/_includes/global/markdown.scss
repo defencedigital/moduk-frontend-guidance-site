@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '@moduk/frontend/src/css' as moduk;
 @use 'global/links';
 
@@ -52,6 +53,18 @@
     a {
       @include moduk.govuk-link-common;
       @include links.moduk-link-maroon;
+    }
+
+    code {
+      padding: 3px 5px;
+      background: moduk.govuk-colour('light-grey');
+      color: color.scale(
+        moduk.govuk-colour('pink'),
+        $lightness: -35%,
+        $saturation: 100%
+      );
+      font-size: moduk.govuk-px-to-rem(16px);
+      word-break: break-word;
     }
   }
 }
