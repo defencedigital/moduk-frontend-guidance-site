@@ -1,0 +1,57 @@
+@use '@moduk/frontend/src/css' as moduk;
+@use 'global/links';
+
+@mixin markdown-styles {
+  h1 {
+    @extend %govuk-heading-xl;
+    @include moduk.govuk-responsive-margin(6, 'bottom');
+  }
+
+  h2 {
+    @extend %govuk-heading-l;
+    @include moduk.govuk-responsive-margin(2, 'bottom');
+  }
+
+  p + h2 {
+    @include moduk.govuk-responsive-padding(2, 'top');
+  }
+
+  h3 {
+    @extend %govuk-heading-m;
+  }
+
+  h4 {
+    @extend %govuk-heading-s;
+  }
+
+  p {
+    @extend %govuk-body-m;
+  }
+
+  strong,
+  b {
+    @include moduk.govuk-typography-weight-bold;
+  }
+
+  ul,
+  ol {
+    @extend %govuk-list;
+  }
+
+  ol {
+    @extend %govuk-list--number;
+  }
+
+  ul {
+    @extend %govuk-list--bullet;
+  }
+
+  ul,
+  ol,
+  p {
+    a {
+      @include moduk.govuk-link-common;
+      @include links.moduk-link-maroon;
+    }
+  }
+}

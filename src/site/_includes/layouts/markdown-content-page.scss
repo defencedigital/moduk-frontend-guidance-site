@@ -4,12 +4,18 @@
  */
 
 @use '@moduk/frontend/src/css' as moduk;
+@use 'global/markdown';
 
 $toc-width: 260px;
 $toc-width-tablet: 210px;
 
 .guidance-content {
   @include moduk.govuk-responsive-padding(6, 'top');
+  @include moduk.govuk-responsive-padding(8, 'bottom');
+
+  & > .govuk-body > {
+    @include markdown.markdown-styles;
+  }
 }
 
 .guidance-split-pane {
