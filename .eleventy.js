@@ -18,6 +18,8 @@ const { createNunjucksEnvironment, getNunjucksPaths } = require('@moduk/frontend
 
 const webpackConfig = require('./webpack.config')
 
+const templatePath = join(__dirname, 'src/site/_includes')
+
 module.exports = (config) => {
   config.addPlugin(revPlugin)
   config.addPlugin(sassPlugin, {
@@ -37,7 +39,7 @@ module.exports = (config) => {
     },
   })
 
-  const nunjucksEnv = createNunjucksEnvironment([join(__dirname, 'src/site/_includes')], {
+  const nunjucksEnv = createNunjucksEnvironment([templatePath], {
     trimBlocks: true,
     lstripBlocks: true,
   })
@@ -59,7 +61,7 @@ module.exports = (config) => {
   ))
 
   config.addShortcode('readTemplate', (filePath) => {
-    const templateDirs = getNunjucksPaths()
+    const templateDirs = [...getNunjucksPaths(), templatePath]
     // eslint-disable-next-line no-restricted-syntax
     for (const templateDir of templateDirs) {
       try {

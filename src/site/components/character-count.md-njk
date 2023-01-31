@@ -1,0 +1,61 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Character count
+description: Tell users how many characters or words they can enter into a textarea.
+tags: components
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+{%- from "moduk/components/character-count/macro.njk" import modukCharacterCount -%}
+
+Help users know how much text they can enter when there is a limit on the number of characters.
+
+{{ guidanceComponentPreview({
+  componentName: "character-count",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK character count component guidance](https://design-system.service.gov.uk/components/character-count/) for:
+
+- when to use this component
+- when not to use it
+
+## How it works
+
+[See GOV.UK character count component guidance](https://design-system.service.gov.uk/components/character-count/) for detail on how this component works.
+
+### If you’re asking one question on the page
+
+If you’re asking just [one question per page](https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page) as recommended, you can set the contents of the `<label>` as the page heading.
+
+{{ guidanceComponentPreview({
+  componentName: "character-count",
+  exampleName: "with-page-heading",
+  idSuffix: "one-question"
+}) }}
+
+
+### If you’re asking more than one question on the page
+
+If you’re asking more than one question on the page, do not set the contents of the `<label>` as the page heading.
+
+{{ guidanceComponentPreview({
+  componentName: "character-count",
+  exampleName: "not-as-page-heading"
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
