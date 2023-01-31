@@ -1,0 +1,90 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Button
+description: Use the button component to help users carry out an action.
+tags: components
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+The button component helps users carry out an action like starting an application or saving their information.
+
+{{ guidanceComponentPreview({
+  componentName: "button",
+  exampleName: "default"
+}) }}
+
+## How it works
+
+[See GOV.UK button component guidance](https://design-system.service.gov.uk/components/button/) for detail on how this component works.
+
+### Default buttons
+
+Use a default button for the main call to action on a page.
+
+{{ guidanceComponentPreview({
+  componentName: "button",
+  exampleName: "default",
+  idSuffix: "default"
+}) }}
+
+### Start buttons
+
+Use a start button for the main call to action on your service’s start page.
+
+{{ guidanceComponentPreview({
+  componentName: "button",
+  exampleName: "start"
+}) }}
+
+### Secondary buttons
+
+Use secondary buttons for secondary calls to action on a page.
+
+{{ guidanceComponentPreview({
+  componentName: "button",
+  exampleName: "secondary"
+}) }}
+
+### Warning buttons
+
+Warning buttons are designed to make users think carefully before they use them. They only work if used very sparingly. Most services should not need one.
+
+{{ guidanceComponentPreview({
+  componentName: "button",
+  exampleName: "warning"
+}) }}
+
+### Disabled buttons
+
+Disabled buttons have poor contrast and can confuse some users, so avoid them if possible.
+
+{{ guidanceComponentPreview({
+  componentName: "button",
+  exampleName: "disabled"
+}) }}
+
+### Grouping buttons
+
+Use a button group when two or more buttons are placed together.
+
+{{ guidanceComponentPreview({
+  componentName: "button",
+  exampleName: "grouping"
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
