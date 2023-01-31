@@ -9,6 +9,7 @@ const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
 const { parse } = require('node-html-parser')
 const { get, sortBy } = require('lodash')
+const markdownItAnchor = require('markdown-it-anchor')
 const { readFileSync } = require('node:fs')
 const { join, relative } = require('node:path')
 const postcss = require('postcss')
@@ -39,6 +40,8 @@ module.exports = (config) => {
       tabindex: 0,
     },
   })
+
+  config.amendLibrary('md', (mdLib) => mdLib.use(markdownItAnchor))
 
   const nunjucksEnv = createNunjucksEnvironment([templatePath], {
     trimBlocks: true,
