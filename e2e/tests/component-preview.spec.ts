@@ -64,6 +64,7 @@ test.describe('component preview', () => {
         await page.mouse.move(boxRight - 1, boxBottom - 1)
         await page.mouse.down()
         await page.mouse.move(boxRight - 100, boxBottom - 1)
+        await page.mouse.up()
 
         const componentPreview = page.locator('.guidance-component-preview')
         await expect(componentPreview).toHaveScreenshot(
