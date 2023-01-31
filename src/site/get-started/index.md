@@ -13,7 +13,7 @@ Frontend.
 You can use MOD.UK Frontend to build digital services:
 
 - in a production environment
-- using [HMTL and CSS components](/components/)
+- using [HTML and CSS components](/components/)
 - with Ministry of Defence branding
 - consistent with the
   [GOV.UK Service Standard](https://www.gov.uk/service-manual/service-standard)
