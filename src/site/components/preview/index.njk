@@ -7,6 +7,7 @@ pagination:
 permalink: 'components/{{ example.componentName }}/preview/{{ example.exampleName }}/index.html'
 ---
 {%- set title = example.componentName | title | replace('-', ' ') + ' preview' -%}
+{%- set htmlClass = "" -%}
 
 {%- extends "layouts/_base.njk" -%}
 

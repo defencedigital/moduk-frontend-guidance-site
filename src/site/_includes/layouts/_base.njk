@@ -7,8 +7,10 @@
   "MOD.UK Frontend contains the code for components you’ll need to build user "
   + "interfaces for Defence products and services." -%}
 
+{% if htmlClass == undefined %}{%- set htmlClass = "govuk-template" -%}{% endif %}
+
 <!DOCTYPE html>
-<html lang="en" class="govuk-template">
+<html lang="en" {% if htmlClass %}class="{{ htmlClass }}"{% endif %}>
 <head>
   <meta charset="utf-8">
   <title>
