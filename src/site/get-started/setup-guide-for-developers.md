@@ -52,8 +52,8 @@ not using Sass.
 
 ### Install Nunjucks
 
-[Install Nunjucks](https://www.npmjs.com/package/nunjucks "https://www.npmjs.com/package/nunjucks")
-version 3.2.3 or higher if you want to use MOD.UK Frontend’s Nunjucks macros:
+[Install Nunjucks](https://www.npmjs.com/package/nunjucks) version 3.2.3 or
+higher if you want to use MOD.UK Frontend’s Nunjucks macros:
 
 ```shell
 npm install nunjucks
@@ -77,11 +77,11 @@ When the installation finishes, the `@moduk/frontend` package will be in your
 
 ## 2. Add the HTML for a component to your application
 
-[Copy the HTML for the accordion component](components/accordion/) and paste it
+[Copy the HTML for the accordion component](/components/accordion/) and paste it
 into a page or template in your application. The accordion will help you check
 everything is working, including the JavaScript in step 5.
 
-In production we recommend [using Nunjucks](get-started/using-nunjucks) if
+In production we recommend [using Nunjucks](/get-started/using-nunjucks/) if
 you’re able to.
 
 ## 3. Load the CSS
