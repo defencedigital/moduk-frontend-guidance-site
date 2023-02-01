@@ -3,7 +3,13 @@
 {%- macro guidanceComponentPreview(params) -%}
 
 {%- set exampleTemplatePath = "moduk/components/" + params.componentName + "/__examples__/" + params.exampleName + ".njk" -%}
-{%- set idPrefix = params.componentName + "--" + params.exampleName -%}
+{%- if params.idSuffix -%}
+  {%- set idSuffix = "--" + params.idSuffix -%}
+{%- else -%}
+  {%- set idSuffix = "" -%}
+{%- endif -%}
+
+{%- set idPrefix = params.componentName + "--" + params.exampleName + idSuffix -%}
 
 <div class="guidance-component-preview js-guidance-component-preview">
   <div class="guidance-component-preview__toolbar">
