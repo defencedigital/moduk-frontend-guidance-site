@@ -1,0 +1,56 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Date input
+description: Use the date input component to help users enter a memorable date.
+tags: components
+visual_regression:
+  selector: main
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Use the date input component to help users enter a memorable date or one they can easily look up.
+
+{{ guidanceComponentPreview({
+  componentName: "date-input",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK date input component guidance](https://design-system.service.gov.uk/components/date-input/) for:
+
+- when to use this component
+- when not to use it
+
+## How it works
+
+[See GOV.UK date input component guidance](https://design-system.service.gov.uk/components/date-input/) for detail on how this component works.
+
+### If you’re asking one question on the page
+
+{{ guidanceComponentPreview({
+  componentName: "date-input",
+  exampleName: "with-page-heading"
+}) }}
+
+### If you’re asking more than one question on the page
+
+{{ guidanceComponentPreview({
+  componentName: "date-input",
+  exampleName: "not-as-page-heading"
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.

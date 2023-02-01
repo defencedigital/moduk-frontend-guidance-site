@@ -109,7 +109,7 @@
     }
   },
   "dependencies": {
-    "@moduk/frontend": "^0.3.2",
+    "@moduk/frontend": "^0.3.3",
     "core-js": "^3.27.2"
   }
 }

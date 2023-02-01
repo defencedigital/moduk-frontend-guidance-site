@@ -4,6 +4,7 @@ import { ALL_PAGES } from './constants'
 
 const DISABLED_RULES: Record<string, string[]> = {
   '/components/character-count/': ['heading-order'],
+  '/components/date-input/': ['heading-order'],
 }
 
 test.describe('@accessibility', () => {
