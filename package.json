@@ -73,6 +73,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "lodash": "^4.17.21",
+    "node-html-parser": "^6.1.4",
     "nunjucks": "^3.2.3",
     "postcss": "^8.4.21",
     "postcss-fail-on-warn": "^0.2.1",

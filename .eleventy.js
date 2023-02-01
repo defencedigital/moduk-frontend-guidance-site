@@ -7,6 +7,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
+const { parse } = require('node-html-parser')
 const { get, sortBy } = require('lodash')
 const { readFileSync } = require('node:fs')
 const { join, relative } = require('node:path')
@@ -59,6 +60,11 @@ module.exports = (config) => {
   config.addNunjucksFilter('sortBy', (array, sortByKeys) => (
     array && sortBy(array, sortByKeys)
   ))
+
+  config.addShortcode(
+    'renderMinified',
+    (filePath) => parse(nunjucksEnv.render(filePath, {})).removeWhitespace().toString(),
+  )
 
   config.addShortcode('readTemplate', (filePath) => {
     const templateDirs = [...getNunjucksPaths(), templatePath]
