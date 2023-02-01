@@ -3,6 +3,8 @@ layout: layouts/markdown-content-page.njk
 title: Accordion
 description: The accordion component lets users show and hide sections of related content on a page.
 tags: components
+visual_regression:
+  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

@@ -3,6 +3,8 @@ layout: layouts/markdown-content-page.njk
 title: Button
 description: Use the button component to help users carry out an action.
 tags: components
+visual_regression:
+  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

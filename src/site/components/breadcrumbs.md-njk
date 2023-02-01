@@ -3,6 +3,8 @@ layout: layouts/markdown-content-page.njk
 title: Breadcrumbs
 description: Help users orientate themselves and navigate pages within a hierarchical structure.
 tags: components
+visual_regression:
+  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

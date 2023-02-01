@@ -8,7 +8,8 @@ eleventyExcludeFromCollections: true
   "url": "{{ page.url }}",
   "title": "{{ page.data.title }}",
   "isRoot": {{ page.data.is_root | default(false) }},
-  "tag": {{ page.data.tags[0] | default(null) | dump | safe}}
+  "tag": {{ page.data.tags[0] | default(null) | dump | safe}},
+  "visualRegression": {{ page.data.visual_regression | default({}) | dump | safe }}
 }{% if not loop.last %},{% endif %}
 {% endfor -%}
 ]
