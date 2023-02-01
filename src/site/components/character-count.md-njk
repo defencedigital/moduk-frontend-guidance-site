@@ -3,6 +3,8 @@ layout: layouts/markdown-content-page.njk
 title: Character count
 description: Tell users how many characters or words they can enter into a textarea.
 tags: components
+visual_regression:
+  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

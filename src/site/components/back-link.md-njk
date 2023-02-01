@@ -3,6 +3,8 @@ layout: layouts/markdown-content-page.njk
 title: Back link
 description: Use the back link component to help users go back to the previous page in a multi-page transaction.
 tags: components
+visual_regression:
+  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
