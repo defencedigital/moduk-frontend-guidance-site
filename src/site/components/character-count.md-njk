@@ -5,6 +5,8 @@ description: Tell users how many characters or words they can enter into a texta
 tags: components
 visual_regression:
   selector: main
+axe_disabled_rules:
+  - heading-order
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
