@@ -1,0 +1,61 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Cookie banner
+description: Allow users to accept or reject cookies which are not essential to making your service work.
+tags: components
+visual_regression:
+  selector: main
+axe_disabled_rules:
+  - landmark-unique
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+
+Allow users to accept or reject cookies which are not essential to making your service work.
+
+Use this component if your service sets any cookies on a user’s device.
+
+{{ guidanceComponentPreview({
+  componentName: "cookie-banner",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK cookie banner component guidance](https://design-system.service.gov.uk/components/cookie-banner/) for:
+
+-   when to use this component
+-   when not to use it
+
+## How it works
+
+[See GOV.UK cookies banner component guidance](https://design-system.service.gov.uk/components/cookie-banner/) for detail on how this component works.
+
+### When the user has accepted cookies
+
+{{ guidanceComponentPreview({
+  componentName: "cookie-banner",
+  exampleName: "accepted"
+}) }}
+
+### When the user has rejected cookies
+
+{{ guidanceComponentPreview({
+  componentName: "cookie-banner",
+  exampleName: "rejected"
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
