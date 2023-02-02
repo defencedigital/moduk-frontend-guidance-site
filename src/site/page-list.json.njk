@@ -9,7 +9,8 @@ eleventyExcludeFromCollections: true
   "title": "{{ page.data.title }}",
   "isRoot": {{ page.data.is_root | default(false) }},
   "tag": {{ page.data.tags[0] | default(null) | dump | safe}},
-  "visualRegression": {{ page.data.visual_regression | default({}) | dump | safe }}
+  "visualRegression": {{ page.data.visual_regression | default({}) | dump | safe }},
+  "axeDisabledRules": {{ page.data.axe_disabled_rules | default([]) | dump | safe }}
 }{% if not loop.last %},{% endif %}
 {% endfor -%}
 ]

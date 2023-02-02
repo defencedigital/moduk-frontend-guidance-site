@@ -5,6 +5,8 @@ description: Components are reusable parts of the user interface.
 tags: components
 is_root: true
 order: 3
+visual_regression:
+  selector: main
 ---
 
 Components are reusable parts of the user interface.

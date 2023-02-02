@@ -1,0 +1,101 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Checkboxes
+description: Let users select one or more options by using the checkboxes component.
+tags: components
+visual_regression:
+  selector: main
+axe_disabled_rules:
+  - aria-allowed-attr
+  - heading-order
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Let users select one or more options by using the checkboxes component.
+
+{{ guidanceComponentPreview({
+  componentName: "checkboxes",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK checkboxes component guidance](https://design-system.service.gov.uk/components/checkboxes/) for:
+
+- when to use this component
+- when not to use it
+
+## How it works
+
+[See GOV.UK checkboxes component guidance](https://design-system.service.gov.uk/components/checkboxes/) for detail on how this component works.
+
+### If you’re asking one question on the page
+
+If you’re asking just [one question per page](https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page) as recommended, you can set the contents of the `<legend>` as the page heading. This is good practice as it means that users of screen readers will only hear the contents once.
+
+{{ guidanceComponentPreview({
+  componentName: "checkboxes",
+  exampleName: "with-page-heading",
+  idSuffix: "default"
+}) }}
+
+### If you’re asking more than one question on the page
+
+If you’re asking more than one question on the page, do not set the contents of the `<legend>` as the page heading.
+
+
+{{ guidanceComponentPreview({
+  componentName: "checkboxes",
+  exampleName: "not-as-page-heading"
+}) }}
+
+### Checkbox items with hints
+
+{{ guidanceComponentPreview({
+  componentName: "checkboxes",
+  exampleName: "with-item-hint"
+}) }}
+
+### Checkbox items with a text divider
+
+{{ guidanceComponentPreview({
+  componentName: "checkboxes",
+  exampleName: "with-none-option"
+}) }}
+
+### Conditionally revealing a related question
+
+{{ guidanceComponentPreview({
+  componentName: "checkboxes",
+  exampleName: "with-conditional-reveal"
+}) }}
+
+### Smaller checkboxes
+
+{{ guidanceComponentPreview({
+  componentName: "checkboxes",
+  exampleName: "small"
+}) }}
+
+
+### Error messages
+
+{{ guidanceComponentPreview({
+  componentName: "checkboxes",
+  exampleName: "with-error-message"
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.

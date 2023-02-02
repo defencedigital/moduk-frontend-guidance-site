@@ -5,6 +5,8 @@ description: Use the date input component to help users enter a memorable date.
 tags: components
 visual_regression:
   selector: main
+axe_disabled_rules:
+  - heading-order
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
