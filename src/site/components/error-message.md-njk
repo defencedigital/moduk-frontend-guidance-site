@@ -1,0 +1,39 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Error message
+description: When there is a validation error, use an error message to explain what went wrong and how to fix it.
+tags: components
+visual_regression:
+  selector: main
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Show an error message next to the field and in the error summary when there is a validation error.
+
+{{ guidanceComponentPreview({
+  componentName: "date-input",
+  exampleName: "with-whole-date-error"
+}) }}
+
+[See GOV.UK error message component guidance](https://design-system.service.gov.uk/components/error-message/) for:
+
+- when to use this component
+- when not to use it
+- how it works, including how to write common error messages
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
