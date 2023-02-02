@@ -1,0 +1,39 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Details
+description: Make a page easier to scan by letting users reveal more detailed information only if they need it.
+tags: components
+visual_regression:
+  selector: main
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Make a page easier to scan by letting users reveal more detailed information only if they need it.
+
+{{ guidanceComponentPreview({
+  componentName: "details",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK details component guidance](https://design-system.service.gov.uk/components/details/) for:
+
+- when to use this component 
+- when not to use it
+- how it works
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
