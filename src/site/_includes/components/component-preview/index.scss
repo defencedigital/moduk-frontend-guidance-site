@@ -53,6 +53,12 @@ $border-value: 1px solid moduk.$govuk-border-colour;
 
 .guidance-component-preview__preview-component {
   padding: moduk.govuk-spacing(6);
+
+  // Force margins that are normally added using media queries
+  .govuk-width-container {
+    margin-right: moduk.$govuk-gutter;
+    margin-left: moduk.$govuk-gutter;
+  }
 }
 
 .guidance-component-preview__tabs {
