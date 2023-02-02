@@ -189,7 +189,7 @@ If the app JavaScript folder is `public`, you can copy with these commands:
 cp node_modules/@moduk/frontend/dist/client/moduk-frontend.umd.js public/
 ```
 
-Windows (command prompt):
+**Windows (command prompt):**
 
 ```batch
 copy node_modules\@moduk\frontend\dist\client\moduk-frontend.umd.js public\
