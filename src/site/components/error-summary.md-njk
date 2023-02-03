@@ -1,0 +1,38 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Error summary
+description: Use an error summary when there is a validation error.
+tags: components
+visual_regression:
+  selector: main
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Use this component at the top of a page to summarise any errors a user has made.
+
+{{ guidanceComponentPreview({
+  componentName: "error-summary",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK error summary component guidance](https://design-system.service.gov.uk/components/error-summary/) for:
+
+- when to use this component
+- how it works
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
