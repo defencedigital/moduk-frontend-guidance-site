@@ -81,7 +81,7 @@ When the installation finishes, the `@moduk/frontend` package will be in your
 into a page or template in your application. The accordion will help you check
 everything is working, including the JavaScript in step 5.
 
-In production we recommend [using Nunjucks](/get-started/using-nunjucks/) if
+In production we recommend [using Nunjucks](/get-started/use-nunjucks/) if
 you’re able to.
 
 ## 3. Load the CSS

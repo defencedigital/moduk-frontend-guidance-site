@@ -63,11 +63,15 @@
   }
 
   pre + h2 {
-    padding-top: moduk.govuk-spacing(2);
+    @include moduk.govuk-responsive-padding(4, 'top');
   }
 
   pre + h3,
   pre + h4 {
     padding-top: moduk.govuk-spacing(1);
+
+    @include moduk.govuk-media-query($from: tablet) {
+      padding-top: moduk.govuk-spacing(2);
+    }
   }
 }
