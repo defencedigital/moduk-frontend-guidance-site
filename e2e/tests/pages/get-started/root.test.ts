@@ -18,7 +18,7 @@ test.describe('/get-started/', () => {
       const links = page.locator('nav.guidance-side-nav').getByRole('link')
       await expect(links).toHaveCount(2)
       await expect(links.nth(0)).toHaveAttribute('href', '/get-started/setup-guide-for-developers/')
-      await expect(links.nth(1)).toHaveAttribute('href', '/get-started/using-nunjucks/')
+      await expect(links.nth(1)).toHaveAttribute('href', '/get-started/use-nunjucks/')
     })
 
     test.describe('@visual-regression', () => {
