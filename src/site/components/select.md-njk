@@ -1,0 +1,51 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Select
+description: Help users select an item from a list
+tags: components
+visual_regression:
+  selector: main
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+The select component allows users to choose from a list of available options.
+
+{{ guidanceComponentPreview({
+  componentName: "select",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK select component guidance](https://design-system.service.gov.uk/components/select/) for:
+
+-   when to use this component
+-   when not to use it
+
+## How it works
+
+[See GOV.UK select component guidance](https://design-system.service.gov.uk/components/select/) for detail on how this component works.
+
+### Select with hint
+
+You can add hint text to help the user understand the options and choose one of them.
+
+{{ guidanceComponentPreview({
+  componentName: "select",
+  exampleName: "with-hint"
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
