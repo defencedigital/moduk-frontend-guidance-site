@@ -1,0 +1,71 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Textarea
+description: Help users provide detailed information using the textarea component.
+tags: components
+visual_regression:
+  selector: main
+axe_disabled_rules:
+  - heading-order
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Use the textarea component when you need to let users enter an amount of text that’s longer than a single line.
+
+{{ guidanceComponentPreview({
+  componentName: "textarea",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK textarea component guidance](https://design-system.service.gov.uk/components/textarea/) for:
+
+- when to use this component
+- when not to use it
+
+## How it works
+
+[See GOV.UK textarea component guidance](https://design-system.service.gov.uk/components/textarea/) for detail on how this component works.
+
+### If you’re asking one question on the page
+
+If you’re asking just [one question per page](https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page) as recommended, you can set the contents of the `<label>` as the page heading. This is good practice as it means that users of screen readers will only hear the contents once.
+
+{{ guidanceComponentPreview({
+  componentName: "textarea",
+  exampleName: "with-page-heading"
+}) }}
+
+### If you’re asking more than one question on the page
+
+If you’re asking more than one question on the page, do not set the contents of the `<label>` as the page heading.
+
+{{ guidanceComponentPreview({
+  componentName: "textarea",
+  exampleName: "not-as-page-heading"
+}) }}
+
+### Error messages
+
+Error messages should be styled like this:
+
+{{ guidanceComponentPreview({
+  componentName: "textarea",
+  exampleName: "with-error"
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
