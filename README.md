@@ -130,6 +130,15 @@ npm run test:visual:clean
 This can be useful after renaming or deleting visual regression tests or
 component examples.
 
+## Configuration
+
+The `BASE_URL` environment variable can be set at build time to override the
+base URL of Open Graph images specified in `<meta>` tags. If not set, it
+defaults to using the images on the production site.
+
+The `NO_INDEX` environment variable can be set at build time to add a `noindex`
+`<meta>` tag to all pages.
+
 ## Acknowledgements
 
 Some styles and markup are based on the

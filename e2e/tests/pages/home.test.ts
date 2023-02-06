@@ -6,7 +6,16 @@ test.describe('Home', () => {
   })
 
   test('has the correct title tag', async ({ page }) => {
-    await expect(page).toHaveTitle('Home – MOD.UK Design System')
+    await expect(page).toHaveTitle('MOD.UK Design System')
+  })
+
+  test('has the correct meta tags', async ({ page }) => {
+    const html = await page.content()
+    await expect(html).toContain('<meta property="og:title" content="MOD.UK Design System">')
+    await expect(html).toContain(
+      '<meta property="og:description" content="Design and build consistent Defence services.">',
+    )
+    await expect(html).toContain('<meta property="twitter:card" content="summary_large_image">')
   })
 
   test('has the correct level 1 heading', async ({ page }) => {
