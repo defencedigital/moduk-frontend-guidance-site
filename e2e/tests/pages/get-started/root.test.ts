@@ -16,9 +16,10 @@ test.describe('/get-started/', () => {
   test.describe('@tablet-and-desktop', () => {
     test('has the expected side nav links', async ({ page }) => {
       const links = page.locator('nav.guidance-side-nav').getByRole('link')
-      await expect(links).toHaveCount(2)
+      await expect(links).toHaveCount(3)
       await expect(links.nth(0)).toHaveAttribute('href', '/get-started/setup-guide-for-developers/')
       await expect(links.nth(1)).toHaveAttribute('href', '/get-started/use-nunjucks/')
+      await expect(links.nth(2)).toHaveAttribute('href', '/get-started/silence-deprecation-warnings-in-dart-sass/')
     })
 
     test.describe('@visual-regression', () => {
