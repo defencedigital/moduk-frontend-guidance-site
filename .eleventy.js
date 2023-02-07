@@ -85,6 +85,9 @@ module.exports = (config) => {
   )
 
   config.addPassthroughCopy({ 'node_modules/@moduk/frontend/dist/assets': 'assets' })
+  config.addPassthroughCopy({
+    'node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js': 'iframeResizer.contentWindow.min.js',
+  })
   config.addPassthroughCopy({ 'src/site/_public': '.' })
 
   config.addExtension('md-njk', {

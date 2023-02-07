@@ -1,0 +1,28 @@
+---
+pagination:
+  data: examples
+  size: 1
+  alias: example
+  addAllPagesToCollections: false
+permalink: 'components/{{ example.componentName }}/preview/{{ example.exampleName }}/embed.html'
+eleventyExcludeFromCollections: true
+---
+{%- set title = example.componentName | title | replace('-', ' ') + ' preview' -%}
+{%- set htmlClass = "" -%}
+
+{%- extends "layouts/_base.njk" -%}
+
+{%- block headExtra -%}
+<meta name="robots" content="noindex, nofollow">
+{%- endblock -%}
+
+{%- block bodyNav -%}{%- endblock -%}
+
+{%- block body -%}
+<div class="govuk-!-static-padding-6">
+  {%- include example.template -%}
+</div>
+<script src="/iframeResizer.contentWindow.min.js"></script>
+{%- endblock -%}
+
+{%- block footer -%}{%- endblock -%}

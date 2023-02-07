@@ -61,6 +61,12 @@ $border-value: 1px solid moduk.$govuk-border-colour;
   }
 }
 
+.guidance-component-preview__preview--iframe {
+  display: block;
+  width: 100%;
+  border: none;
+}
+
 .guidance-component-preview__tabs {
   display: none;
   list-style-type: none;
