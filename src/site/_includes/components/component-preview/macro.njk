@@ -18,8 +18,8 @@
     </a>
   </div>
   <div class="guidance-component-preview__preview-wrapper">
-    <div class="guidance-component-preview__preview">
-      <div class="guidance-component-preview__preview-component">
+    <div class="guidance-component-preview__preview {% if params.iframe %} js-guidance-component-preview-iframe guidance-component-preview__preview--iframe{% endif %}" data-example-name="{{ params.exampleName }}" data-iframe-id="{{ idPrefix }}--iframe" data-iframe-title="{{params.componentName}} {{params.exampleName}} example">
+      <div class="guidance-component-preview__preview-component" >
         {%- renderMinified exampleTemplatePath -%}
       </div>
     </div>

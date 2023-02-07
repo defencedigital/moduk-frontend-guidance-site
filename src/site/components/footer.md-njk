@@ -1,0 +1,78 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Footer
+description: The footer provides copyright, licensing and other information about your service and department.
+tags: components
+visual_regression:
+  selector: main
+axe_disabled_rules:
+  - landmark-unique
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+The footer provides copyright, licensing and other information about your service.
+
+{{ guidanceComponentPreview({
+  componentName: "footer",
+  exampleName: "default",
+  iframe: true
+}) }}
+
+## When to use this component
+
+Use the footer at the bottom of every page of your service.
+
+## How it works
+
+[See GOV.UK footer component guidance](https://design-system.service.gov.uk/components/footer/) for detail on how this component works.
+
+### Footer without links
+
+{{ guidanceComponentPreview({
+  componentName: "footer",
+  exampleName: "default",
+  idSuffix: "without-links",
+  iframe: true
+}) }}
+
+### Footer with links
+
+{{ guidanceComponentPreview({
+  componentName: "footer",
+  exampleName: "with-links",
+  iframe: true
+}) }}
+
+### Footer with secondary navigation
+
+{{ guidanceComponentPreview({
+  componentName: "footer",
+  exampleName: "with-secondary-navigation",
+  iframe: true
+}) }}
+
+### Footer with links and secondary navigation
+
+{{ guidanceComponentPreview({
+  componentName: "footer",
+  exampleName: "with-secondary-navigation-and-links",
+  iframe: true
+}) }}
+
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
