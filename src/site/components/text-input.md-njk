@@ -1,0 +1,83 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Text input
+description: Help users enter information with the text input component.
+tags: components
+visual_regression:
+  selector: main
+axe_disabled_rules:
+  - heading-order
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Use the text input component when you need to let users enter text that’s no longer than a single line, such as their name or phone number.
+
+{{ guidanceComponentPreview({
+  componentName: "input",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK text input component guidance](https://design-system.service.gov.uk/components/text-input/) for:
+
+-   when to use this component
+-   when not to use it
+
+## How it works
+
+[See GOV.UK text input component guidance](https://design-system.service.gov.uk/components/text-input/) for detail on how this component works.
+
+### If you’re asking one question on the page
+
+If you’re asking just [one question per page](https://design-system.service.gov.uk/patterns/question-pages/#start-by-asking-one-question-per-page) as recommended, you can set the contents of the `<label>` as the page heading. This is good practice as it means that users of screen readers will only hear the contents once.
+
+{{ guidanceComponentPreview({
+  componentName: "input",
+  exampleName: "with-page-heading"
+}) }}
+
+### If you’re asking more than one question on the page
+
+If you’re asking more than one question on the page, do not set the contents of the `<label>` as the page heading.
+
+{{ guidanceComponentPreview({
+  componentName: "input",
+  exampleName: "not-as-page-heading"
+}) }}
+
+### Prefixes and suffixes
+
+{{ guidanceComponentPreview({
+  componentName: "input",
+  exampleName: "with-prefix-and-suffix"
+}) }}
+
+### Text inputs with a prefix
+
+{{ guidanceComponentPreview({
+  componentName: "input",
+  exampleName: "with-prefix"
+}) }}
+
+### Text inputs with a suffix
+
+{{ guidanceComponentPreview({
+  componentName: "input",
+  exampleName: "with-suffix"
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
