@@ -1,0 +1,39 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Tag
+description: The tag component indicates the status of something, such as an item on a task list or a phase banner.
+tags: components
+visual_regression:
+  selector: main
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Use the tag component to show users the status of something.
+
+{{ guidanceComponentPreview({
+  componentName: "tag",
+  exampleName: "default"
+}) }}
+
+[See GOV.UK phase banner component guidance](https://design-system.service.gov.uk/components/tag/) for:
+
+- when to use this component
+- how it works
+- using colour with tags
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font and the colours.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
