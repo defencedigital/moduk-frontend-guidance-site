@@ -1,6 +1,7 @@
 {% from "components/header/macro.njk" import guidanceHeader %}
 {% from "components/navigation/macro.njk" import guidanceNavigation %}
 {% from "moduk/components/footer/macro.njk" import modukFooter %}
+{% from "moduk/components/phase-banner/macro.njk" import modukPhaseBanner %}
 {% from "moduk/components/skip-link/macro.njk" import modukSkipLink -%}
 
 {%- set defaultDescription =
@@ -48,7 +49,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="{{ "src/site/index.scss" | inputToRevvedOutput }}">
 </head>
-<body class="govuk-template__body">
+<body class="govuk-template__body moduk--primary-nav-expanded{% if bodyClasses %} {{ bodyClasses }}{% endif %}">
 <script>
   document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
 </script>
@@ -59,12 +60,22 @@
   text: 'Skip to main content'
 }) -}}
 
-{{- guidanceHeader({
+{% call guidanceHeader({
   homepageUrl: "/",
   serviceName: "Design System",
   serviceUrl: "/",
   classes: 'guidance-header'
+}) %}
+
+{{- modukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  classes: "guidance-phase-banner govuk-width-container",
+  html: 'This is a new service – your <a class="govuk-link moduk-link--maroon" href="mailto:{{ vars.contactEmail }}">feedback</a> will help us to improve it.'
 }) -}}
+
+{% endcall %}
 
 {{- guidanceNavigation({
   activeUrl: page.url,
