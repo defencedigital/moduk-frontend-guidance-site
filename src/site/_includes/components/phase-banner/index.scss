@@ -1,0 +1,14 @@
+@use '@moduk/frontend/src/css' as moduk;
+
+.govuk-phase-banner.guidance-phase-banner {
+  @include moduk.govuk-media-query($from: tablet) {
+    border-bottom: none;
+  }
+}
+
+.moduk--primary-nav-expanded,
+.moduk--has-hero {
+  .govuk-phase-banner.guidance-phase-banner {
+    border-bottom: none;
+  }
+}

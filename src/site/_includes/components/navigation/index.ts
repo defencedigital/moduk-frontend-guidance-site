@@ -1,12 +1,24 @@
 type MediaQuery = MediaQueryListEvent | MediaQueryList
 type ToggleControl = (mediaQuery: MediaQuery) => void
 
+const MENU_EXPANDED_BODY_CLASS = 'moduk--primary-nav-expanded'
+
 function navigation(menuButton: HTMLButtonElement, menuEl: HTMLElement, mediaQueryList: MediaQuery) {
   let menuIsOpen = menuButton.getAttribute('data-initial-open') === 'true'
 
   const toggleState = (mediaQuery: MediaQuery) => {
+    const isPrimary = menuEl.getAttribute('data-list-type')
+
+    if (isPrimary) {
+      if (mediaQuery.matches || menuIsOpen) {
+        document.body.classList.add(MENU_EXPANDED_BODY_CLASS)
+      } else {
+        document.body.classList.remove(MENU_EXPANDED_BODY_CLASS)
+      }
+    }
+
     if (mediaQuery.matches) {
-      if (menuEl.getAttribute('data-list-type') === 'primary') {
+      if (isPrimary) {
         menuEl.removeAttribute('hidden')
       } else {
         menuEl.setAttribute('hidden', '')
