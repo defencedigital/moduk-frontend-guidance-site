@@ -4,6 +4,7 @@ const commitlintConfig = require('./commitlint.config')
 module.exports = {
   git: {
     commit: false,
+    push: false,
     requireBranch: 'main',
     requireCommits: true,
     // eslint-disable-next-line no-template-curly-in-string
@@ -15,6 +16,10 @@ module.exports = {
     releaseName: 'v${version}',
   },
   npm: false,
+  hooks: {
+    // eslint-disable-next-line no-template-curly-in-string
+    'before:github:release': 'git push origin v${version}',
+  },
   plugins: {
     '@release-it/conventional-changelog': {
       parserOpts: commitlintConfig.parserPreset.parserOpts,
