@@ -1,0 +1,44 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Notification banner
+description: Use a notification banner to tell the user about something they need to know about, but that’s not directly related to the page content.
+tags: components
+visual_regression:
+  selector: main
+axe_disabled_rules:
+  - landmark-unique
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Use a notification banner to tell the user about something they need to know about, but that’s not directly related to the page content.
+
+{{ guidanceComponentPreview({
+  componentName: "notification-banner",
+  exampleName: "default",
+  iframe: true
+}) }}
+
+Use a notification banner to tell the user about something they need to know about, but that’s not directly related to the page content.
+
+[See GOV.UK notification banner component guidance](https://design-system.service.gov.uk/components/notification-banner/) for:
+
+- when to use this component
+- when not to use it 
+- how it works
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font and colours.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
