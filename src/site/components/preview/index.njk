@@ -8,12 +8,9 @@ permalink: 'components/{{ example.componentName }}/preview/{{ example.exampleNam
 ---
 {%- set title = example.componentName | title | replace('-', ' ') + ' preview' -%}
 {%- set htmlClass = "" -%}
+{%- set noIndex = 1 -%}
 
 {%- extends "layouts/_base.njk" -%}
-
-{%- block headExtra -%}
-<meta name="robots" content="noindex, nofollow">
-{%- endblock -%}
 
 {%- block bodyNav -%}{%- endblock -%}
 

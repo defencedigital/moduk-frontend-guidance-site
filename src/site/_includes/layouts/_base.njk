@@ -7,26 +7,45 @@
   "MOD.UK Frontend contains the code for components you’ll need to build user "
   + "interfaces for Defence products and services." -%}
 
+{%- set headTitle = headTitle | default(title) -%}
+{%- set computedDescription = description or defaultDescription -%}
+{%- set siteName = "MOD.UK Design System" -%}
+
+{%- if headTitle -%}
+  {%- set computedTitle = headTitle + " – " + siteName -%}
+{%- else -%}
+  {%- set computedTitle = siteName -%}
+{%- endif -%}
+
 {% if htmlClass == undefined %}{%- set htmlClass = "govuk-template" -%}{% endif %}
 
 <!DOCTYPE html>
 <html lang="en" {% if htmlClass %}class="{{ htmlClass }}"{% endif %}>
 <head>
   <meta charset="utf-8">
-  <title>
-    {%- block pageTitle -%}
-    {%- if title -%}
-      {{ title }} – MOD.UK Design System
-    {%- else -%}
-      MOD.UK Design System
-    {%- endif -%}
-    {%- endblock -%}
-  </title>
+  <title>{{ computedTitle }}</title>
   {% block headExtra -%}{%- endblock %}
-  <meta name="description" content="{{ description or defaultDescription }}">
-  <meta property="og:description" content="{{ description or defaultDescription }}">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% if noIndex or vars.noIndex %}
+  <meta name="robots" content="noindex, nofollow">
+  {% endif %}
+  <meta name="description" content="{{ computedDescription }}">
+  <meta property="og:title" content="{{ computedTitle }}">
+  <meta property="og:description" content="{{ computedDescription }}">
+  <meta property="og:site_name" content="{{ siteName }}">
+  <meta property="og:image" content="{{ vars.baseUrl }}/assets/images/tile-social.png">
+  <meta property="og:image:alt" content="Ministry of Defence">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:locale" content="en_GB">
+  <meta property="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/icon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icon-180.png">
+  <link rel="mask-icon" href="/assets/icon-safari-mask.svg" color="#532A45">
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="{{ "src/site/index.scss" | inputToRevvedOutput }}">
 </head>
 <body class="govuk-template__body">

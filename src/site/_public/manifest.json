@@ -1,0 +1,69 @@
+{
+  "name": "MOD.UK Design System",
+  "short_name": "MOD.UK Design System",
+  "description": "Design and build consistent Defence services.",
+  "display": "browser",
+  "icons": [
+    {
+      "src": "assets/images/icon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-44.png",
+      "sizes": "44x44",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-70.png",
+      "sizes": "70x70",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-71.png",
+      "sizes": "71x71",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-150.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-270.png",
+      "sizes": "270x270",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-310.png",
+      "sizes": "310x310",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/tile-310.png",
+      "sizes": "310x150",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/images/icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
