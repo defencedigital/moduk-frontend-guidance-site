@@ -11,8 +11,11 @@ $toc-width-tablet: 210px;
 
 .guidance-content {
   @include moduk.govuk-responsive-padding(6, 'top');
-  @include moduk.govuk-responsive-padding(6, 'left');
   @include moduk.govuk-responsive-padding(8, 'bottom');
+
+  @include moduk.govuk-media-query($from: tablet) {
+    padding-left: moduk.govuk-spacing(6);
+  }
 
   & > .govuk-body > {
     @include markdown.markdown-styles;
