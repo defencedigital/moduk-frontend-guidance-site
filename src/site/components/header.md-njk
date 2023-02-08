@@ -1,0 +1,81 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Header
+description: The header component shows users they are on a Ministry of Defence site and which service they are using.
+tags: components
+visual_regression:
+  selector: main
+axe_disabled_rules:
+  - landmark-unique
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+The header component shows users they are on a Ministry of Defence site and which service they are using.
+
+{{ guidanceComponentPreview({
+  componentName: "header",
+  exampleName: "default",
+  iframe: true
+}) }}
+
+## When to use this component
+
+You must use the header at the top of every page if your service uses MOD.UK Frontend.
+
+## When not to use this component
+
+You must not use the header if the general public will use your service.
+
+## How it works
+
+### Default header
+
+Use the default header if your service has 5 pages or fewer.
+
+{{ guidanceComponentPreview({
+  componentName: "header",
+  exampleName: "default",
+  idSuffix: "default-2",
+  iframe: true
+}) }}
+
+### Header with service name
+
+Use the header with a service name if your service is more than 5 pages long - this can help users understand which service they are using.
+
+{{ guidanceComponentPreview({
+  componentName: "header",
+  exampleName: "with-service-name",
+  iframe: true
+}) }}
+
+### Header with service name and navigation
+
+Use the header with navigation if you need to include basic navigation, contact or account management links.
+
+{{ guidanceComponentPreview({
+  componentName: "header",
+  exampleName: "with-service-name-and-navigation",
+  iframe: true
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the:
+
+- font
+- colours
+- logo
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
