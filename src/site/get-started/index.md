@@ -29,4 +29,5 @@ how to install using npm.
 
 ## Design library
 
-MOD.UK Frontend components are also available in a design library in Figma.
+MOD.UK Frontend components are also available in a
+[design library in Figma](/get-started/design-library/).

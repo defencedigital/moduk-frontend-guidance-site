@@ -16,12 +16,13 @@ test.describe('/get-started/', () => {
   test.describe('@tablet-and-desktop', () => {
     test('has the expected side nav links', async ({ page }) => {
       const links = page.locator('nav.guidance-side-nav').getByRole('link')
-      await expect(links).toHaveCount(5)
+      await expect(links).toHaveCount(6)
       await expect(links.nth(0)).toHaveAttribute('href', '/get-started/setup-guide-for-developers/')
-      await expect(links.nth(1)).toHaveAttribute('href', '/get-started/use-nunjucks/')
-      await expect(links.nth(2)).toHaveAttribute('href', '/get-started/silence-deprecation-warnings-in-dart-sass/')
-      await expect(links.nth(3)).toHaveAttribute('href', '/get-started/use-a-module-bundler/')
-      await expect(links.nth(4)).toHaveAttribute('href', '/get-started/change-the-image-assets-path/')
+      await expect(links.nth(1)).toHaveAttribute('href', '/get-started/design-library/')
+      await expect(links.nth(2)).toHaveAttribute('href', '/get-started/use-nunjucks/')
+      await expect(links.nth(3)).toHaveAttribute('href', '/get-started/silence-deprecation-warnings-in-dart-sass/')
+      await expect(links.nth(4)).toHaveAttribute('href', '/get-started/use-a-module-bundler/')
+      await expect(links.nth(5)).toHaveAttribute('href', '/get-started/change-the-image-assets-path/')
     })
 
     test.describe('@visual-regression', () => {

@@ -1,0 +1,32 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Design library
+description: Use the design library to design and prototype Defence services.
+tags: get-started
+order: 150
+---
+
+
+You can use the design library to design and prototype Defence services.
+
+The library has:
+
+- components from the MOD.UK Design System
+- additional experimental components
+- styles, including colours and typography
+
+## Use the library
+
+[View and use the design library in Figma]({{ vars.figmaLink }}).
+
+We’ve built the library in Figma, an online design app. We’re working with the
+Foundry to introduce a Defence Figma account for designers. You can still view
+and use the design library if you do not have a Defence Figma account. 
+
+## Give feedback and get support
+
+Please give your feedback on the library and anything that would help you use
+it.
+
+Email the MOD.UK Frontend team at
+[design-system@digital.mod.uk](mailto:design-system@digital.mod.uk).
