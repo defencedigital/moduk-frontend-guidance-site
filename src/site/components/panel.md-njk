@@ -1,0 +1,40 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Panel
+description: The panel component is a visible container used on confirmation or results pages.
+tags: components
+visual_regression:
+  selector: main
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+The panel component is a visible container used on confirmation or results pages to highlight important content.
+
+{{ guidanceComponentPreview({
+  componentName: "panel",
+  exampleName: "default",
+  iframe: true
+}) }}
+
+[See GOV.UK panel component guidance](https://design-system.service.gov.uk/components/panel/) for:
+
+- when to use this component
+- when not to use it
+- how it works
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
