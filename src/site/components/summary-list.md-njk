@@ -1,0 +1,64 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Summary list
+description: Use the summary list to summarise information, for example, a user’s responses at the end of a form.
+tags: components
+visual_regression:
+  selector: main
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Use the summary list to summarise information, for example, a user’s responses at the end of a form.
+
+{{ guidanceComponentPreview({
+  componentName: "summary-list",
+  exampleName: "default",
+  iframe: true
+}) }}
+
+[See GOV.UK summary list component guidance](https://design-system.service.gov.uk/components/summary-list/) for:
+
+- when to use this component
+- when not to use it
+
+## How it works
+
+[See GOV.UK summary list component guidance](https://design-system.service.gov.uk/components/summary-list/) for detail on how this component works.
+
+### Adding actions to each row
+
+You can add actions to a summary list, like a ‘Change’ link to let users go back and edit some of or all of their answers.
+
+{{ guidanceComponentPreview({
+  componentName: "summary-list",
+  exampleName: "default",
+  idSuffix: "action-on-each-row",
+  iframe: true
+}) }}
+
+### Removing the borders
+
+If your summary list does not have any actions, you can choose to remove the separating borders with the `govuk-summary-list--no-border` class.
+
+{{ guidanceComponentPreview({
+  componentName: "summary-list",
+  exampleName: "with-no-border",
+  iframe: true
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
