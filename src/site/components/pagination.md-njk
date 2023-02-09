@@ -1,0 +1,91 @@
+---
+layout: layouts/markdown-content-page.njk
+title: Pagination
+description: Help users navigate collections of numbered pages like search results.
+tags: components
+visual_regression:
+  selector: main
+axe_disabled_rules:
+  - landmark-unique
+---
+
+{%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
+
+Help users navigate forwards and backwards through a series of pages.
+
+{{ guidanceComponentPreview({
+  componentName: "pagination",
+  exampleName: "default",
+  iframe: true
+}) }}
+
+[See GOV.UK pagination component guidance](https://design-system.service.gov.uk/components/pagination/) for:
+
+- when to use this component
+- when not to use it
+
+## How it works
+
+[See GOV.UK pagination component guidance](https://design-system.service.gov.uk/components/pagination/) for detail on how this component works.
+
+### For smaller numbers of pages
+
+Use ‘Previous’ and ‘Next’ links to let users navigate through a small number of pages. Stack the links vertically, so they’re more obvious to screen magnifier users when they’re zoomed in:
+
+{{ guidanceComponentPreview({
+  componentName: "pagination",
+  exampleName: "with-next-and-previous-only",
+  iframe: true
+}) }}
+
+#### Add link labels to describe pages
+
+You can use link labels to give more context:
+
+{{ guidanceComponentPreview({
+  componentName: "pagination",
+  exampleName: "with-link-labels",
+  iframe: true
+}) }}
+
+### For larger numbers of pages
+
+Use a list-type layout if users need to navigate through large numbers of pages. For example, long lists of search results.
+
+{{ guidanceComponentPreview({
+  componentName: "pagination",
+  exampleName: "with-ellipses",
+  iframe: true
+}) }}
+
+#### First pages and last pages
+
+Do not show the previous page link on the first page — and do not show the next page link on the last page.
+
+{{ guidanceComponentPreview({
+  componentName: "pagination",
+  exampleName: "on-the-first-page",
+  iframe: true
+}) }}
+
+{{ guidanceComponentPreview({
+  componentName: "pagination",
+  exampleName: "on-the-last-page",
+  iframe: true
+}) }}
+
+## Changes from the GOV.UK version
+
+MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+
+For this component we’ve changed the font.
+
+## Have you tested this component?
+
+Let us know how we could improve this component or share your user research findings.
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+
+## Need help?
+
+Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
