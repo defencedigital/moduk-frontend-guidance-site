@@ -46,5 +46,6 @@ please email us at
 
 ## Design library
 
-MOD.UK Frontend components are also available in a design library in Figma. You
-can use these components for designing and prototyping user interfaces.
+MOD.UK Frontend components are also available in a
+[design library in Figma](/get-started/design-library/). You can use these
+components for designing and prototyping user interfaces.
