@@ -13,8 +13,7 @@ Use the summary list to summarise information, for example, a user’s responses
 
 {{ guidanceComponentPreview({
   componentName: "summary-list",
-  exampleName: "default",
-  iframe: true
+  exampleName: "default"
 }) }}
 
 [See GOV.UK summary list component guidance](https://design-system.service.gov.uk/components/summary-list/) for:
@@ -33,8 +32,7 @@ You can add actions to a summary list, like a ‘Change’ link to let users go 
 {{ guidanceComponentPreview({
   componentName: "summary-list",
   exampleName: "default",
-  idSuffix: "action-on-each-row",
-  iframe: true
+  idSuffix: "action-on-each-row"
 }) }}
 
 ### Removing the borders
@@ -43,8 +41,7 @@ If your summary list does not have any actions, you can choose to remove the sep
 
 {{ guidanceComponentPreview({
   componentName: "summary-list",
-  exampleName: "with-no-border",
-  iframe: true
+  exampleName: "with-no-border"
 }) }}
 
 ## Changes from the GOV.UK version

@@ -13,8 +13,7 @@ Use the phase banner component to show users your service is still being worked 
 
 {{ guidanceComponentPreview({
   componentName: "phase-banner",
-  exampleName: "default",
-  iframe: true
+  exampleName: "default"
 }) }}
 
 [See GOV.UK phase banner component guidance](https://design-system.service.gov.uk/components/phase-banner/) for:

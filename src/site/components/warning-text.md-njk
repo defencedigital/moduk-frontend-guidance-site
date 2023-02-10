@@ -15,8 +15,7 @@ Use the warning text component when you need to warn users about something impor
 
 {{ guidanceComponentPreview({
   componentName: "warning-text",
-  exampleName: "default",
-  iframe: true
+  exampleName: "default"
 }) }}
 
 [See GOV.UK warning text component guidance](https://design-system.service.gov.uk/components/warning-text/) for how it works.

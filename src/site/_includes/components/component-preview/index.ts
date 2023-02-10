@@ -59,7 +59,7 @@ function createTabManager(componentPreview: HTMLElement) {
 export function initComponentPreviewsIframe() {
   const createIframe = (componentPreviewContentItem: HTMLElement) => {
     const iframeEl = document.createElement('iframe')
-    const { exampleName, iframeId, iframeTitle } = componentPreviewContentItem.dataset
+    const { exampleName, iframeId, iframeTitle, componentName } = componentPreviewContentItem.dataset
 
     if (!exampleName || !iframeId || !iframeTitle) {
       return null
@@ -72,7 +72,7 @@ export function initComponentPreviewsIframe() {
     iframeEl.id = iframeId
     iframeEl.style.height = `${componentPreviewContentItem.clientHeight}px`
     iframeEl.className = componentPreviewContentItem.className
-    iframeEl.src = `preview/${exampleName}/embed.html`
+    iframeEl.src = `/components/${componentName}/preview/${exampleName}/embed.html`
     iframeEl.title = iframeTitle
 
     return iframeEl

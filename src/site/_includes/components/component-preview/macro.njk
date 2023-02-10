@@ -10,15 +10,16 @@
 {%- endif -%}
 
 {%- set idPrefix = params.componentName + "--" + params.exampleName + idSuffix -%}
+{%- set iframe = params.iframe | default(true) -%}
 
 <div class="guidance-component-preview js-guidance-component-preview">
   <div class="guidance-component-preview__toolbar">
-    <a href="preview/{{ params.exampleName }}" class="govuk-link moduk-link--maroon" target="_blank">
+    <a href="/components/{{ params.componentName }}/preview/{{ params.exampleName }}" class="govuk-link moduk-link--maroon" target="_blank">
       Open this <span class="govuk-visually-hidden">{{ params.componentName | lower | replace('-', ' ') }}</span> example in a new tab
     </a>
   </div>
   <div class="guidance-component-preview__preview-wrapper">
-    <div class="guidance-component-preview__preview {% if params.iframe %} js-guidance-component-preview-iframe guidance-component-preview__preview--iframe{% endif %}" data-example-name="{{ params.exampleName }}" data-iframe-id="{{ idPrefix }}--iframe" data-iframe-title="{{params.componentName}} {{params.exampleName}} example">
+    <div class="guidance-component-preview__preview{% if iframe %} js-guidance-component-preview-iframe guidance-component-preview__preview--iframe{% endif %}" data-example-name="{{ params.exampleName }}" data-iframe-id="{{ idPrefix }}--iframe" data-component-name="{{ params.componentName }}" data-iframe-title="{{params.componentName}} {{params.exampleName}} example">
       <div class="guidance-component-preview__preview-component" >
         {%- renderMinified exampleTemplatePath -%}
       </div>

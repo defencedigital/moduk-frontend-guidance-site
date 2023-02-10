@@ -15,8 +15,7 @@ The header component shows users they are on a Ministry of Defence site and whic
 
 {{ guidanceComponentPreview({
   componentName: "header",
-  exampleName: "default",
-  iframe: true
+  exampleName: "default"
 }) }}
 
 ## When to use this component
@@ -36,8 +35,7 @@ Use the default header if your service has 5 pages or fewer.
 {{ guidanceComponentPreview({
   componentName: "header",
   exampleName: "default",
-  idSuffix: "default-2",
-  iframe: true
+  idSuffix: "default-2"
 }) }}
 
 ### Header with service name
@@ -46,8 +44,7 @@ Use the header with a service name if your service is more than 5 pages long - t
 
 {{ guidanceComponentPreview({
   componentName: "header",
-  exampleName: "with-service-name",
-  iframe: true
+  exampleName: "with-service-name"
 }) }}
 
 ### Header with service name and navigation
@@ -56,8 +53,7 @@ Use the header with navigation if you need to include basic navigation, contact 
 
 {{ guidanceComponentPreview({
   componentName: "header",
-  exampleName: "with-service-name-and-navigation",
-  iframe: true
+  exampleName: "with-service-name-and-navigation"
 }) }}
 
 ## Changes from the GOV.UK version

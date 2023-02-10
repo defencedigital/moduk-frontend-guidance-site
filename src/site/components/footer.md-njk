@@ -15,8 +15,7 @@ The footer provides copyright, licensing and other information about your servic
 
 {{ guidanceComponentPreview({
   componentName: "footer",
-  exampleName: "default",
-  iframe: true
+  exampleName: "default"
 }) }}
 
 ## When to use this component
@@ -32,32 +31,28 @@ Use the footer at the bottom of every page of your service.
 {{ guidanceComponentPreview({
   componentName: "footer",
   exampleName: "default",
-  idSuffix: "without-links",
-  iframe: true
+  idSuffix: "without-links"
 }) }}
 
 ### Footer with links
 
 {{ guidanceComponentPreview({
   componentName: "footer",
-  exampleName: "with-links",
-  iframe: true
+  exampleName: "with-links"
 }) }}
 
 ### Footer with secondary navigation
 
 {{ guidanceComponentPreview({
   componentName: "footer",
-  exampleName: "with-secondary-navigation",
-  iframe: true
+  exampleName: "with-secondary-navigation"
 }) }}
 
 ### Footer with links and secondary navigation
 
 {{ guidanceComponentPreview({
   componentName: "footer",
-  exampleName: "with-secondary-navigation-and-links",
-  iframe: true
+  exampleName: "with-secondary-navigation-and-links"
 }) }}
 
 
