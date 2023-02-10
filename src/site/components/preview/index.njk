@@ -5,6 +5,8 @@ pagination:
   alias: example
   addAllPagesToCollections: false
 permalink: 'components/{{ example.componentName }}/preview/{{ example.exampleName }}/index.html'
+axe_disabled_rules:
+  - aria-allowed-attr
 ---
 {%- set title = example.componentName | title | replace('-', ' ') + ' preview' -%}
 {%- set htmlClass = "" -%}

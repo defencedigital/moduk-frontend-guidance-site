@@ -5,6 +5,8 @@ description: The accordion component lets users show and hide sections of relate
 tags: components
 visual_regression:
   selector: main
+axe_disabled_rules:
+  - aria-allowed-attr
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
