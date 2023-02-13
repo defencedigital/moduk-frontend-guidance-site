@@ -81,7 +81,7 @@
     "postcss-fail-on-warn": "^0.2.1",
     "prettier": "^2.8.3",
     "release-it": "^15.6.0",
-    "sass": "^1.57.1",
+    "sass": "^1.58.0",
     "serve": "^14.2.0",
     "shx": "^0.3.4",
     "stylelint": "^14.16.1",
