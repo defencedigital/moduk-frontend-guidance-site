@@ -5,8 +5,6 @@ description: >-
   Use the warning text component when you need to warn users about something important, such
   as legal consequences of an action, or lack of action, that they might take.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Footer
 description: The footer provides copyright, licensing and other information about your service and department.
 tags: components
-visual_regression:
-  selector: main
 axe_disabled_rules:
   - landmark-unique
 ---

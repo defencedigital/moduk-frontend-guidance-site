@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: File upload
 description: Help users select and upload a file.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

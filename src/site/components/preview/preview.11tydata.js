@@ -20,4 +20,7 @@ const examples = [...paths, ...localExamples].map((path) => {
 
 module.exports = {
   examples,
+  visual_regression: {
+    selector: undefined,
+  },
 }

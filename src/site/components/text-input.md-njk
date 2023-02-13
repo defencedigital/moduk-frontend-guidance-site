@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Text input
 description: Help users enter information with the text input component.
 tags: components
-visual_regression:
-  selector: main
 axe_disabled_rules:
   - heading-order
 ---

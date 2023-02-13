@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Header
 description: The header component shows users they are on a Ministry of Defence site and which service they are using.
 tags: components
-visual_regression:
-  selector: main
 axe_disabled_rules:
   - landmark-unique
 ---

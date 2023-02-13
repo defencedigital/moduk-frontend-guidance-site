@@ -5,6 +5,7 @@ description: Help users orientate themselves and navigate pages within a hierarc
 tags: components
 visual_regression:
   selector: main
+  skip_js_disabled: true
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

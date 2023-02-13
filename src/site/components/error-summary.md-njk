@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Error summary
 description: Use an error summary when there is a validation error.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Radios
 description: Let users select a single option from a list using the radios component.
 tags: components
-visual_regression:
-  selector: main
 axe_disabled_rules:
   - aria-allowed-attr
   - heading-order

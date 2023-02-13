@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Summary list
 description: Use the summary list to summarise information, for example, a user’s responses at the end of a form.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

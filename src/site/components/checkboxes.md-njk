@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Checkboxes
 description: Let users select one or more options by using the checkboxes component.
 tags: components
-visual_regression:
-  selector: main
 axe_disabled_rules:
   - aria-allowed-attr
   - heading-order

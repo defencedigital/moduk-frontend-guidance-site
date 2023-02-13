@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Cookie banner
 description: Allow users to accept or reject cookies which are not essential to making your service work.
 tags: components
-visual_regression:
-  selector: main
 axe_disabled_rules:
   - landmark-unique
 ---

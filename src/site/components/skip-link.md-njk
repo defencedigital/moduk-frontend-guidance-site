@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Skip link
 description: Use the skip link component to help keyboard-only users skip to the main content on a page.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

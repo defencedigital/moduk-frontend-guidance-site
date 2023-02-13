@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Error message
 description: When there is a validation error, use an error message to explain what went wrong and how to fix it.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
