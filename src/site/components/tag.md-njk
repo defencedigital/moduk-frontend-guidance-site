@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Tag
 description: The tag component indicates the status of something, such as an item on a task list or a phase banner.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

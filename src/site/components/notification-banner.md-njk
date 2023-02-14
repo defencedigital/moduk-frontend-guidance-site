@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Notification banner
 description: Use a notification banner to tell the user about something they need to know about, but that’s not directly related to the page content.
 tags: components
-visual_regression:
-  selector: main
 axe_disabled_rules:
   - landmark-unique
 ---

@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Select
 description: Help users select an item from a list
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Panel
 description: The panel component is a visible container used on confirmation or results pages.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

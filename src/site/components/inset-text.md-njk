@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Inset text
 description: Use the inset text component to differentiate a block of text from the content that surrounds it.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

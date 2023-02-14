@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Phase banner
 description: Use the phase banner component to show users your service is still being worked on.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

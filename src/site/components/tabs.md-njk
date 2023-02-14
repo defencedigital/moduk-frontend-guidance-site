@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Tabs
 description: Tabs can be a helpful way of letting users quickly switch between related information.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

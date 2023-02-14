@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Fieldset
 description: Use the fieldset component to group related form inputs.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}

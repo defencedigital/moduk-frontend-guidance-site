@@ -3,8 +3,6 @@ layout: layouts/markdown-content-page.njk
 title: Table
 description: Use the table component to make information easier to compare and scan for users.
 tags: components
-visual_regression:
-  selector: main
 ---
 
 {%- from "components/component-preview/macro.njk" import guidanceComponentPreview -%}
