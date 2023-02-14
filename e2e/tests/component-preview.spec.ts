@@ -20,7 +20,7 @@ test.describe('component preview', () => {
   test('links to the example in a new tab', async ({ page }) => {
     await expect(page.getByRole('link', { name: 'Open this back link example in a new tab' })).toHaveAttribute(
       'href',
-      '/components/back-link/preview/default',
+      '/components/back-link/preview/default/',
     )
   })
 
