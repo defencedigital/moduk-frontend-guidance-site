@@ -16,6 +16,33 @@ test.describe('navigation', () => {
     test('navigation is visible', async ({ page }) => {
       await expect(page.getByRole('navigation', { name: 'Menu' })).toBeVisible()
     })
+
+    test.describe('@visual-regression', () => {
+      test('hover', async ({ page }) => {
+        const navigation = await page.getByRole('navigation')
+        await navigation.getByRole('link', { name: 'Home' }).hover()
+        await expect(navigation).toHaveScreenshot(
+          'navigation-hover.png',
+        )
+      })
+
+      test('focus', async ({ page }) => {
+        const navigation = await page.getByRole('navigation')
+        await navigation.getByRole('link', { name: 'Home' }).focus()
+        await expect(navigation).toHaveScreenshot(
+          'navigation-focus.png',
+        )
+      })
+
+      test('hover and focus', async ({ page }) => {
+        const navigation = await page.getByRole('navigation')
+        await navigation.getByRole('link', { name: 'Home' }).hover()
+        await navigation.getByRole('link', { name: 'Home' }).focus()
+        await expect(navigation).toHaveScreenshot(
+          'navigation-hover-focus.png',
+        )
+      })
+    })
   })
 
   test.describe('@mobile', () => {
