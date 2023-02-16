@@ -6,11 +6,12 @@
     color: moduk.moduk-colour('light-maroon');
   }
 
-  &:focus {
-    color: moduk.govuk-colour('black');
-  }
-
   &:hover {
     color: moduk.moduk-colour('dark-maroon');
+  }
+
+  &:active,
+  &:focus {
+    color: moduk.govuk-colour('black');
   }
 }

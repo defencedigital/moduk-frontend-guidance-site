@@ -113,7 +113,7 @@
     }
   },
   "dependencies": {
-    "@moduk/frontend": "^0.3.10",
+    "@moduk/frontend": "^0.4.1",
     "core-js": "^3.27.2",
     "iframe-resizer": "^4.3.3"
   }
