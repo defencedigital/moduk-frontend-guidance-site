@@ -19,5 +19,7 @@ ADD nginx/logging.conf "${NGINX_CONFIGURATION_PATH}"
 ADD nginx/misc-http-section.conf "${NGINX_CONFIGURATION_PATH}"
 ADD nginx/owasp-http-section.conf "${NGINX_CONFIGURATION_PATH}"
 ADD nginx/owasp-server-section.conf "${NGINX_DEFAULT_CONF_PATH}"
+ADD nginx/assets-server-section.conf "${NGINX_DEFAULT_CONF_PATH}"
+COPY nginx/common-server-section.conf "${NGINX_APP_ROOT}/etc/include/"
 
 CMD /opt/app-root/startup.sh
