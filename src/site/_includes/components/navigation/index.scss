@@ -1,5 +1,6 @@
 @use '@moduk/frontend/src/css' as moduk;
 @use 'global/links';
+@use 'global/layout';
 
 $govuk-link-colour: moduk.$moduk-brand-colour;
 $border-width: 4px;
@@ -141,8 +142,8 @@ $navigation-height: 50px;
   @include only-mobile-visible;
 }
 
-.guidance-width-container {
+.guidance-navigation-width-container {
   @include moduk.govuk-media-query($from: tablet) {
-    @include moduk.govuk-width-container;
+    @include layout.guidance-width-container;
   }
 }

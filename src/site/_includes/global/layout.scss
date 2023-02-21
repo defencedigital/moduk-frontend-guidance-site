@@ -1,0 +1,10 @@
+@use '@moduk/frontend/src/css' as moduk;
+
+// We don't change the global width container width so that examples are the current width.
+@mixin guidance-width-container {
+  @include moduk.govuk-width-container(1100px);
+}
+
+.guidance-width-container {
+  @include guidance-width-container;
+}

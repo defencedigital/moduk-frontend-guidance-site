@@ -64,14 +64,15 @@
   homepageUrl: "/",
   serviceName: "Design System",
   serviceUrl: "/",
-  classes: 'guidance-header'
+  classes: "guidance-header",
+  containerClasses: "guidance-width-container"
 }) %}
 
 {{- modukPhaseBanner({
   tag: {
     text: "beta"
   },
-  classes: "guidance-phase-banner govuk-width-container",
+  classes: "guidance-phase-banner guidance-width-container",
   html: 'This is a new service – your <a class="govuk-link moduk-link--maroon" href="mailto:' + vars.contactEmail + '">feedback</a> will help us to improve it.'
 }) -}}
 
@@ -88,7 +89,7 @@
 {%- endblock -%}
 
 {%- block footer -%}
-  {{ modukFooter() }}
+  {{ modukFooter({containerClasses: "guidance-width-container"}) }}
 {%- endblock -%}
 
 <script src="/main.js"></script>
