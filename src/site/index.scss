@@ -2,6 +2,7 @@
   $govuk-new-link-styles: true
 );
 @use 'global/prismjs-theme';
+@use 'global/layout';
 @use 'components/button';
 @use 'components/code-snippet';
 @use 'components/component-preview';

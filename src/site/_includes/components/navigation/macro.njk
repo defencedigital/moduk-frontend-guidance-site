@@ -1,7 +1,7 @@
 {%- macro guidanceNavigation(params) -%}
   <nav id="guidance-navigation" class="js-guidance-navigation guidance-navigation" aria-labelledby="guidance-navigation-heading" data-list-type="primary">
     <h2 class="govuk-visually-hidden" id="guidance-navigation-heading">Menu</h2>
-    <div class="guidance-width-container">
+    <div class="guidance-navigation-width-container">
       <ul class="guidance-navigation__list">
         {%- for item in params.collections.all | selectattr_path('data.is_root') | sort(false, false, 'data.order') -%}
           {% set hasCollection = params.collections[
