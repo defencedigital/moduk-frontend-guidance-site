@@ -6,7 +6,7 @@ USER root
 COPY . /app-build
 WORKDIR /app-build
 
-RUN npm ci
+RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
 RUN npm run build
 
 # Copy to the RedHat Nginx image
