@@ -13,7 +13,7 @@
   <div class="guidance-split-pane__content">
     <main class="guidance-content" id="main-content" role="main">
       {% if pageCaptions[tags[0]] and not is_root %}<span class="govuk-caption-xl">{{ pageCaptions[tags[0]] }}</span>{% endif %}
-      <h1 class="govuk-heading-xl">{{ title }}</h2>
+      <h1 class="govuk-heading-xl">{{ title }}</h1>
 
       <div class="govuk-body">
         {{ content | safe }}
