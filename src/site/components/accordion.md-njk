@@ -36,4 +36,4 @@ Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
 
 ## Need help?
 
-Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
+Email the MOD.UK Frontend team {{ vars.markdownContactEmailLink }} if you have questions or feedback.
