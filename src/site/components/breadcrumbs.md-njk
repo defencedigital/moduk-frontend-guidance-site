@@ -25,7 +25,7 @@ The breadcrumbs component helps users to understand where they are within a webs
 
 ## Changes from the GOV.UK version
 
-MOD.UK Frontend components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
+MOD.UK Design System components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
 
 For this component we’ve changed the font.
 
@@ -33,8 +33,8 @@ For this component we’ve changed the font.
 
 Let us know how we could improve this component or share your user research findings.
 
-Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }}
+Email the MOD.UK Design System team at {{ vars.markdownContactEmailLink }}
 
 ## Need help?
 
-Email the MOD.UK Frontend team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.
+Email the MOD.UK Design System team at {{ vars.markdownContactEmailLink }} if you have questions or feedback.

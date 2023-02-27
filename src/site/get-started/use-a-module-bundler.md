@@ -18,8 +18,8 @@ initAll()
 If that does not work, import `initAll` from
 `@moduk/frontend/dist/client/moduk-frontend.umd.js`.
 
-Remember to check that interactive components such as the accordion still
-function correctly after doing this.
+Remember to check that interactive components still work correctly, for example
+the accordion.
 
 ## Using TypeScript
 
