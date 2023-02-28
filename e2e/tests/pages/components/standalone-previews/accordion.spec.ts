@@ -15,7 +15,7 @@ test.describe('/components/accordion/preview/default', () => {
   })
 
   test('has the correct heading', async ({ page }) => {
-    const heading = page.getByRole('heading')
-    await expect(heading).toHaveText('Accordion preview')
+    const heading = page.getByRole('heading', { level: 1 })
+    await expect(heading).toHaveText('Accordion preview preview')
   })
 })
