@@ -7,9 +7,10 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
-const { parse } = require('node-html-parser')
+const { minify } = require('html-minifier-terser')
 const { get, sortBy } = require('lodash')
 const markdownItAnchor = require('markdown-it-anchor')
+const { parse } = require('node-html-parser')
 const { readFileSync } = require('node:fs')
 const { join, relative } = require('node:path')
 const postcss = require('postcss')
@@ -64,7 +65,7 @@ module.exports = (config) => {
     array && sortBy(array, sortByKeys)
   ))
 
-  config.addShortcode(
+  config.addNunjucksShortcode(
     'renderMinified',
     (filePath) => parse(nunjucksEnv.render(filePath, {})).removeWhitespace().toString(),
   )
@@ -139,6 +140,16 @@ module.exports = (config) => {
           })
         })
     },
+  })
+
+  config.addTransform('htmlMinify', (content, outputPath) => {
+    if (outputPath && !outputPath.endsWith('.html')) {
+      return content
+    }
+    return minify(content, {
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+    })
   })
 
   return {
