@@ -52,8 +52,7 @@ into your application.
 
 ## Protect your website against attacks
 
-You must sanitise any HTML you pass in to Nunjucks macros you’re using in your
-live application to protect your website against cross-site scripting (XSS)
-attacks. You can read more about
-[XSS](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#cross-site_scripting_xss)
-on the MDN website.
+You must sanitise any HTML you pass in to Nunjucks macros in your live
+application to protect against
+[cross-site scripting](https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#cross-site_scripting_xss)
+(XSS) attacks.

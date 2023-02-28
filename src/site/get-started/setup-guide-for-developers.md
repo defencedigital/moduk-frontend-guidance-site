@@ -6,10 +6,10 @@ tags: get-started
 order: 100
 ---
 
-Having set up your application using your chosen framework, get one MOD.UK
-Frontend component working to test everything works.
+Add a MOD.UK Frontend component to your application, so you can test everything
+works
 
-You’ll need to follow these steps:
+You need to:
 
 1. Install MOD.UK Frontend using npm.
 2. Add the HTML for a component to your application.
@@ -17,9 +17,8 @@ You’ll need to follow these steps:
 4. Add the images.
 5. Load the JavaScript.
 
-We’ve assumed you’re able to use npm. Email
-[design-system@digital.mod.uk](mailto:design-system@digital.mod.uk "mailto:design-system@digital.mod.uk")
-if you’re not able to.
+If you have problems using npm, email
+[design-system@digital.mod.uk](mailto:design-system@digital.mod.uk "mailto:design-system@digital.mod.uk").
 
 ## 1. Install MOD.UK Frontend using npm
 
@@ -132,7 +131,7 @@ JavaScript).
 
 ## 4. Add the images
 
-Some components such as the footer have images
+Some components such as the footer have images.
 
 These images will not display until you’ve added MOD.UK Frontend’s assets to
 your application.
@@ -164,8 +163,7 @@ files manually.
 
 ### Add script tag
 
-Add a `<script>` tag at the start of your `<body>` section. Your page should
-look like this example:
+Add a `<script>` at the start of your `<body>` section as follows:
 
 ```html
 <body>
@@ -201,7 +199,7 @@ file manually.
 ### Import JavaScript file and initialise components
 
 Just before the closing `</body>` tag, import the file and initialise the
-components. Your page should look like this example:
+components:
 
 ```html
 <body>
@@ -221,5 +219,5 @@ components. Your page should look like this example:
 ### Run your application
 
 Run your application and check it works the same way as the
-[MOD.UK Design System accordion example](/components/accordion/), by selecting
-the buttons and checking the accordion shows and hides sections.
+[MOD.UK Design System accordion example](/components/accordion/). Select the
+buttons and check the accordion shows and hides sections.
