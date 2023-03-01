@@ -3,16 +3,19 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
+  @include moduk.govuk-typography-responsive(
+    $size: 16,
+    $override-line-height: 1.5
+  );
+
   color: black;
   background: none;
   font-family: ui-monospace, monospace;
-  font-size: moduk.govuk-px-to-rem(16px);
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
   tab-size: 4;
   hyphens: none;
 }
