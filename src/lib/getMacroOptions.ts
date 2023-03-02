@@ -105,10 +105,10 @@ export async function addInternalComponents(transformedOptions: TransformedOptio
   return updatedOptions
 }
 
-function sortTransformedComponents(transformedOptions: TransformedOptions): TransformedOptions {
+function sortTransformedComponents({ nested, ...rest }: TransformedOptions): TransformedOptions {
   return {
-    primary: transformedOptions.primary,
-    nested: sortBy(transformedOptions.nested, 'path'),
+    ...rest,
+    nested: sortBy(nested, 'path'),
   }
 }
 

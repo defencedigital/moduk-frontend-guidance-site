@@ -8,11 +8,13 @@ import * as mod from '@moduk/frontend/client'
 import { initCodeSnippets } from './_includes/components/code-snippet'
 import { initComponentPreviews } from './_includes/components/component-preview'
 import { initCookieBanner } from './_includes/components/cookie'
+import { initMacroOptionsTable } from './_includes/components/macro-options-table'
 import { initNavigation } from './_includes/components/navigation'
 
 initCodeSnippets()
 initComponentPreviews()
 initCookieBanner()
+initMacroOptionsTable()
 initNavigation()
 
 mod.initAll({

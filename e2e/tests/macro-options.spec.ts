@@ -7,10 +7,11 @@ const test = base.extend({
   firstComponentPreview: ({ page }, use) => {
     use(page.locator('.guidance-component-preview').first())
   },
-  clickFirstNunjucksTab: ({ firstComponentPreview, tabRole }, use) => {
+  clickFirstNunjucksTab: ({ firstComponentPreview, page, tabRole }, use) => {
     use(async () => {
       await firstComponentPreview.getByRole(tabRole, { name: 'Nunjucks' }).click()
       await firstComponentPreview.getByText('Nunjucks macro options').click()
+      await page.mouse.move(0, 0)
     })
   },
 })
@@ -26,7 +27,8 @@ test.describe('macro options', () => {
     })
 
     test('links to the tag component', async ({ firstComponentPreview }) => {
-      await expect(firstComponentPreview.getByRole('link', { name: 'tag' })).toHaveAttribute('href', '/components/tag/')
+      const tagLink = firstComponentPreview.getByRole('link', { name: 'tag' })
+      await expect(tagLink).toHaveAttribute('href', '/components/tag/#options--tag--default--details')
     })
 
     test.describe('@visual-regression', () => {
@@ -49,7 +51,7 @@ test.describe('macro options', () => {
     test('links to the error message component', async ({ firstComponentPreview }) => {
       await expect(firstComponentPreview.getByRole('link', { name: 'error message' })).toHaveAttribute(
         'href',
-        '/components/error-message/',
+        '/components/error-message/#options--error-message--default--details',
       )
     })
 
@@ -58,6 +60,29 @@ test.describe('macro options', () => {
         const details = page.locator('details', { hasText: 'Nunjucks macro options' }).first()
         await expect(details).toHaveScreenshot(
           'textarea.png',
+          { scale: 'css' },
+        )
+      })
+    })
+  })
+
+  test.describe('when navigating from a link in another component', () => {
+    test.use({ javaScriptEnabled: true })
+
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/components/error-message/#options--error-message--default--details')
+    })
+
+    test('focuses the summary element', async ({ firstComponentPreview }) => {
+      const summary = firstComponentPreview.locator('summary', { hasText: 'Nunjucks macro options' })
+      await expect(summary).toBeFocused()
+    })
+
+    test.describe('@visual-regression', () => {
+      test('matches the saved screenshot', async ({ firstComponentPreview }) => {
+        const details = firstComponentPreview.locator('details', { hasText: 'Nunjucks macro options' })
+        await expect(details).toHaveScreenshot(
+          'error-message-deep-link.png',
           { scale: 'css' },
         )
       })
@@ -73,13 +98,13 @@ test.describe('macro options', () => {
     test('links to the items section', async ({ firstComponentPreview }) => {
       await expect(firstComponentPreview.getByRole('link', { name: 'items' })).toHaveAttribute(
         'href',
-        '#options-accordion--default--items',
+        '#options--accordion--default--items',
       )
     })
 
     test.describe('@visual-regression', () => {
-      test('matches the saved screenshot', async ({ page }) => {
-        const details = page.locator('details', { hasText: 'Nunjucks macro options' }).first()
+      test('matches the saved screenshot', async ({ firstComponentPreview }) => {
+        const details = firstComponentPreview.locator('details', { hasText: 'Nunjucks macro options' })
         await expect(details).toHaveScreenshot(
           'accordion.png',
           { scale: 'css' },
@@ -97,13 +122,13 @@ test.describe('macro options', () => {
     test('links to the hint section', async ({ firstComponentPreview }) => {
       await expect(firstComponentPreview.getByRole('link', { name: 'hint' })).toHaveAttribute(
         'href',
-        '#options-input--default--hint',
+        '#options--input--default--hint',
       )
     })
 
     test.describe('@visual-regression', () => {
-      test('matches the saved screenshot', async ({ page }) => {
-        const details = page.locator('details', { hasText: 'Nunjucks macro options' }).first()
+      test('matches the saved screenshot', async ({ firstComponentPreview }) => {
+        const details = firstComponentPreview.locator('details', { hasText: 'Nunjucks macro options' })
         await expect(details).toHaveScreenshot(
           'text-input.png',
           { scale: 'css' },

@@ -15,6 +15,12 @@
 {%- set idPrefix = params.componentName + "--" + params.exampleName + idSuffix -%}
 {%- set iframe = params.iframe | default(true) -%}
 
+{% if params.macroOptionsDetailsId -%}
+  {% set macroOptionsDetailsId = params.macroOptionsDetailsId -%}
+{% else -%}
+  {% set macroOptionsDetailsId = "options--" + idPrefix + "--details" -%}
+{% endif -%}
+
 <div class="guidance-component-preview js-guidance-component-preview">
   <div class="guidance-component-preview__toolbar">
     <a href="/components/{{ params.componentName }}/preview/{{ params.exampleName }}/" class="govuk-link moduk-link--maroon" target="_blank">
@@ -59,7 +65,8 @@
       summaryText: "Nunjucks macro options",
       classes: "guidance-details govuk-!-margin-bottom-3",
       attributes:{
-        id: "options-" + idPrefix + "-details"
+        id: macroOptionsDetailsId,
+        "data-tab-id": idPrefix + "--nunjucks"
       }
     }) %}
       {{ guidanceMacroOptions({
