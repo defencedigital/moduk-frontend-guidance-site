@@ -1,0 +1,75 @@
+{%- from "moduk/components/cookie-banner/macro.njk" import modukCookieBanner -%}
+
+{% set html %}
+  <p class="govuk-body">We use some essential cookies to make this website work.</p>
+  <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the website and make improvements.</p>
+{% endset %}
+
+{% set acceptHtml %}
+  <p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="#">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{% set rejectHtml %}
+  <p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="#">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{{ modukCookieBanner({
+  hidden: true,
+  classes: 'js-cookie-guidance-banner--container',
+  ariaLabel: "Cookies on the MOD.UK Design System",
+  messages: [
+    {
+      headingText: "Cookies on the MOD.UK Design System",
+      classes: 'guidance-width-container js-cookie-guidance-banner--permission',
+      html: html,
+      hidden: true,
+      actions: [
+        {
+          text: "Accept analytics cookies",
+          type: "button",
+          name: "cookies",
+          value: "accept"
+        },
+        {
+          text: "Reject analytics cookies",
+          type: "button",
+          name: "cookies",
+          value: "reject"
+        },
+        {
+          text: "View cookies",
+          href: "#"
+        }
+      ]
+    },
+    {
+      html: acceptHtml,
+      role: "alert",
+      tabindex: "-1",
+      hidden: true,
+      classes: 'guidance-width-container js-cookie-guidance-banner--accept',
+      actions: [
+       {
+          type: "button",
+          value: "hide",
+          text: "Hide cookie message"
+      
+        }
+      ]
+    },
+        {
+      html: rejectHtml,
+      classes: 'guidance-width-container js-cookie-guidance-banner--reject',
+      role: "alert",
+      tabindex: "-1",
+      hidden: true,
+      actions: [
+        {
+          value: "hide",
+          type: "button",
+          text: "Hide cookie message"
+        }
+      ]
+    }
+  ]
+}) }}

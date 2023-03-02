@@ -87,6 +87,16 @@ const config: PlaywrightTestConfig = {
       : 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'off',
+    storageState: {
+      // @ts-expect-error The options have been marked as mandatory however the except the same arguments as https://playwright.dev/docs/api/class-browsercontext#browser-context-add-cookies
+      cookies: [{
+        name: 'cookie_preference',
+        value: 'false',
+        expires: Date.now() / 1000 + 1000 * 60 * 60,
+        domain: 'localhost',
+        path: '/',
+      }],
+    },
   },
   webServer: {
     command: process.env.CI ? 'npm exec --no -- serve -l 8080 dist' : 'npm start',
