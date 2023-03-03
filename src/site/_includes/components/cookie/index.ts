@@ -1,3 +1,4 @@
+import { analyticsSetting, removeAnalyticCookies } from './analytics'
 import { getCookie, setCookie } from './cookie'
 
 const COOKIE_BANNER_CLASS_PREFIX = 'js-cookie-guidance-banner'
@@ -34,9 +35,10 @@ export function initCookieBanner() {
 
   const cookiePreference = getCookie(COOKIE_PREFERENCE_KEY)
   if (!cookiePromptEnabled || cookiePreference === '1' || cookiePreference === '0' || !cookieBannerEl) {
+    analyticsSetting(cookiePreference === '1')
     return
   }
-
+  removeAnalyticCookies()
   const { permission, accept, reject } = getCookieMessageElements(cookieBannerEl, ['permission', 'accept', 'reject'])
 
   cookieBannerEl.addEventListener('click', (event) => {
@@ -49,9 +51,11 @@ export function initCookieBanner() {
         permission.hide()
         accept.show()
         setCookie(COOKIE_PREFERENCE_KEY, '1', 365)
+        analyticsSetting(true)
         break
       case 'reject':
         setCookie(COOKIE_PREFERENCE_KEY, '0', 365)
+        analyticsSetting(false)
         permission.hide()
         reject.show()
         break
@@ -62,7 +66,6 @@ export function initCookieBanner() {
         break
     }
   })
-
   cookieBannerEl.removeAttribute('hidden')
   permission.show()
 }

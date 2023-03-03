@@ -1,15 +1,30 @@
-import { expect, test } from '@playwright/test'
+import { expect, Locator, test as base } from '@playwright/test'
+import vars from '../../src/site/_data/vars'
+
+const gaSessionCookie = `_ga_${vars.googleTagId.replace(/^G-/, '')}`
+
+function transformCookieToObject(cookieString: string) {
+  return Object.fromEntries(
+    cookieString.split('; ').map((cookie) => cookie.split('=')),
+  )
+}
+const test = base.extend<{ cookieBanner: Locator }>({
+  cookieBanner: async ({ page }, use) => {
+    const cookieBanner = page.getByRole('region', { name: 'Cookies on the MOD.UK Design System' })
+    await use(cookieBanner)
+  },
+})
 
 test.describe('cookie banner', () => {
   // Remove cookies for these tests
   test.use({ storageState: { cookies: [], origins: [] } })
+
   test.describe('prompt for cookie preferences', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/?cookie_prompt_enabled')
     })
 
-    test('the cookie banner is displayed', async ({ page }) => {
-      const cookieBanner = page.getByRole('region', { name: 'Cookies on the MOD.UK Design System' })
+    test('the cookie banner is displayed', async ({ cookieBanner }) => {
       await expect(cookieBanner.getByRole('button', { name: 'Accept analytics cookies' })).toBeVisible()
       await expect(cookieBanner.getByRole('button', { name: 'Reject analytics cookies' })).toBeVisible()
       await expect(cookieBanner.getByRole('link', { name: 'View cookies' })).toBeVisible()
@@ -19,32 +34,65 @@ test.describe('cookie banner', () => {
       await expect(page).toHaveNoViolations()
     })
 
-    test.describe('selecting a cookie preference', () => {
-      const testCases = [{
-        buttonText: 'Accept analytics cookies',
-        expectedCookieValue: '1',
-        expectedConfirmationMsg: 'You’ve accepted analytics cookies.',
-      }, {
-        buttonText: 'Reject analytics cookies',
-        expectedCookieValue: '0',
-        expectedConfirmationMsg: 'You’ve rejected analytics cookies.',
-      }]
+    test.describe('accept analytics cookies', () => {
+      test.beforeEach(async ({ cookieBanner }) => {
+        await cookieBanner.getByRole('button', { name: 'Accept analytics cookies' }).click()
+      })
 
-      testCases.forEach(({ buttonText, expectedCookieValue, expectedConfirmationMsg }) => {
-        test(buttonText.toLowerCase(), async ({ page, browserName }) => {
-          test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
-          const cookieBanner = page.getByRole('region', { name: 'Cookies on the MOD.UK Design System' })
-          await cookieBanner.getByRole('button', { name: buttonText }).click()
+      test('show the correct message', async ({ cookieBanner, page }) => {
+        await expect(page.getByText('You’ve accepted analytics cookies.')).toBeVisible()
+        await cookieBanner.getByRole('button', { name: 'Hide cookie message' }).click()
+        await expect(cookieBanner).toBeHidden()
+      })
 
-          await expect(page.getByText(expectedConfirmationMsg)).toBeVisible()
+      test('set the design-system-cookie-preference to the correct value', async ({ browserName, page }) => {
+        test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
+        expect(await page.evaluate(() => document.cookie)).toMatch('design-system-cookie-preference=1')
+      })
 
-          await cookieBanner.getByRole('button', { name: 'Hide cookie message' }).click()
+      test('analytics cookies are installed', async ({ browserName, page }) => {
+        test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
 
-          await expect(cookieBanner).toBeHidden()
+        const cookies = await page.evaluate(() => document.cookie)
+        const cookieValues = Object.keys(transformCookieToObject(cookies))
+        expect(cookieValues).toContain('_ga')
+        expect(cookieValues).toContain(gaSessionCookie)
+      })
+    })
 
-          const cookie = await page.evaluate(() => document.cookie)
-          expect(cookie).toMatch(`design-system-cookie-preference=${expectedCookieValue}`)
-        })
+    test.describe('reject analytics cookies', () => {
+      test.beforeEach(async ({ cookieBanner }) => {
+        await cookieBanner.getByRole('button', { name: 'Reject analytics cookies' }).click()
+      })
+
+      test('show the correct message', async ({ cookieBanner, page }) => {
+        await expect(page.getByText('You’ve rejected analytics cookies.')).toBeVisible()
+        await cookieBanner.getByRole('button', { name: 'Hide cookie message' }).click()
+        await expect(cookieBanner).toBeHidden()
+      })
+
+      test('set the design-system-cookie-preference to the correct value', async ({ browserName, page }) => {
+        test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
+        expect(await page.evaluate(() => document.cookie)).toMatch('design-system-cookie-preference=0')
+      })
+
+      test('analytics cookies are not installed', async ({ browserName, page }) => {
+        test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
+
+        const cookies = await page.evaluate(() => document.cookie)
+        const cookieValues = Object.keys(transformCookieToObject(cookies))
+
+        expect(cookieValues).toContain('design-system-cookie-preference')
+        expect(cookieValues).toHaveLength(1)
+
+        expect(
+          await page.evaluate(() => window.dataLayer.find((data) => data['0'] === 'consent' && data['1'] === 'update')),
+        )
+          .toEqual({
+            0: 'consent',
+            1: 'update',
+            2: { analytics_storage: 'denied' },
+          })
       })
     })
 
@@ -57,25 +105,100 @@ test.describe('cookie banner', () => {
     })
   })
 
-  test.describe('cookie preferences has been set', () => {
-    const testCases = ['1', '0']
-    testCases.forEach((value) => {
-      test(`cookie banner does not show when design-system-cookie-preference is set to ${value}`, async ({ page, context, browserName }) => {
-        test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
+  test.describe('cookie preferences has been previously set', () => {
+    test.describe('design-system-cookie-preference is set to 1', () => {
+      test.beforeEach(async ({ context, page }) => {
         await context.addCookies([{
           name: 'design-system-cookie-preference',
-          value,
+          value: '1',
           expires: Date.now() / 1000 + 1000 * 60 * 60,
           domain: 'localhost',
           path: '/',
         }])
-
         await page.goto('/?cookie_prompt_enabled')
-        await expect(page.getByRole('region', { name: 'Cookies on the MOD.UK Design System' })).toBeHidden()
-
-        const cookie = await page.evaluate(() => document.cookie)
-        expect(cookie).toMatch(`design-system-cookie-preference=${value}`)
       })
+
+      test('banner is hidden', async ({ page }) => {
+        await expect(page.getByRole('region', { name: 'Cookies on the MOD.UK Design System' })).toBeHidden()
+      })
+
+      test('analytics cookies are installed', async ({ browserName, page }) => {
+        test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
+        const cookies = await page.evaluate(() => document.cookie)
+        const cookieValues = Object.keys(transformCookieToObject(cookies))
+        expect(cookieValues).toContain('_ga')
+        expect(cookieValues).toContain(gaSessionCookie)
+        expect(
+          await page.evaluate(() => window.dataLayer.find((data) => data['0'] === 'consent' && data['1'] === 'update')),
+        )
+          .toEqual({
+            0: 'consent',
+            1: 'update',
+            2: { analytics_storage: 'granted' },
+          })
+      })
+    })
+
+    test.describe('design-system-cookie-preference is set to 0', () => {
+      test.beforeEach(async ({ context, page }) => {
+        await context.addCookies([{
+          name: 'design-system-cookie-preference',
+          value: '0',
+          expires: Date.now() / 1000 + 1000 * 60 * 60,
+          domain: 'localhost',
+          path: '/',
+        }])
+        await page.goto('/?cookie_prompt_enabled')
+      })
+
+      test('banner is hidden', async ({ page }) => {
+        await expect(page.getByRole('region', { name: 'Cookies on the MOD.UK Design System' })).toBeHidden()
+      })
+
+      test('analytics cookies are not installed', async ({ browserName, page }) => {
+        test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
+
+        expect(
+          await page.evaluate(() => window.dataLayer.find((data) => data['0'] === 'consent' && data['1'] === 'update')),
+        )
+          .toEqual({
+            0: 'consent',
+            1: 'update',
+            2: { analytics_storage: 'denied' },
+          })
+      })
+    })
+  })
+
+  test.describe('cookie preferences expires', () => {
+    test('consent is set to deny and cookies are removed', async ({ context, page, browserName }) => {
+      test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
+      await context.addCookies([{
+        name: '_ga',
+        value: '1',
+        expires: Date.now() / 1000 + 1000 * 60 * 60,
+        domain: 'localhost',
+        path: '/',
+      }, {
+        name: gaSessionCookie,
+        value: '1',
+        expires: Date.now() / 1000 + 1000 * 60 * 60,
+        domain: 'localhost',
+        path: '/',
+      }])
+
+      await page.goto('/?cookie_prompt_enabled')
+
+      expect(
+        await page.evaluate(() => window.dataLayer.find((data) => data['0'] === 'consent' && data['1'] === 'default')),
+      )
+        .toEqual({
+          0: 'consent',
+          1: 'default',
+          2: { analytics_storage: 'denied' },
+        })
+
+      expect(await page.evaluate(() => document.cookie)).toEqual('')
     })
   })
 

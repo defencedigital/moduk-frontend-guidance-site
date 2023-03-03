@@ -14,4 +14,9 @@ declare global {
       toHaveNoViolations(disabledRules?: string[]): Promise<void>
     }
   }
+
+  interface Window {
+    googleTagId: string
+    dataLayer: Record<string, string | Record<string, string>>[]
+  }
 }
