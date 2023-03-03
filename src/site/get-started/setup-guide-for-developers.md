@@ -7,7 +7,7 @@ order: 100
 ---
 
 Add a MOD.UK Frontend component to your application, so you can test everything
-works
+works.
 
 You need to:
 
