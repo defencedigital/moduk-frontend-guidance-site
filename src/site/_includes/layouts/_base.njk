@@ -91,7 +91,12 @@
 {%- endblock -%}
 
 {%- block footer -%}
-  {{ modukFooter({containerClasses: "guidance-width-container"}) }}
+  {{ modukFooter({
+    containerClasses: "guidance-width-container",
+    meta: {
+      items: collections.footerLinks
+    }
+  }) }}
 {%- endblock -%}
 
 <script src="/main.js"></script>

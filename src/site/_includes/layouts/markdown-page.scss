@@ -1,0 +1,11 @@
+@use '@moduk/frontend/src/css' as moduk;
+@use 'global/markdown';
+
+.guidance-markdown-page-content {
+  @include moduk.govuk-responsive-padding(8, 'top');
+  @include moduk.govuk-responsive-padding(8, 'bottom');
+
+  & > .govuk-body > {
+    @include markdown.markdown-styles;
+  }
+}
