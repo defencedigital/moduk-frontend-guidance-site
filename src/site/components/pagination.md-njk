@@ -13,7 +13,8 @@ Help users navigate forwards and backwards through a series of pages.
 
 {{ guidanceComponentPreview({
   componentName: "pagination",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["pagination"]
 }) }}
 
 [See GOV.UK pagination component guidance](https://design-system.service.gov.uk/components/pagination/) for:
@@ -31,7 +32,8 @@ Use ‘Previous’ and ‘Next’ links to let users navigate through a small nu
 
 {{ guidanceComponentPreview({
   componentName: "pagination",
-  exampleName: "with-next-and-previous-only"
+  exampleName: "with-next-and-previous-only",
+  macroOptions: macroOptions["pagination"]
 }) }}
 
 #### Add link labels to describe pages
@@ -40,7 +42,8 @@ You can use link labels to give more context:
 
 {{ guidanceComponentPreview({
   componentName: "pagination",
-  exampleName: "with-link-labels"
+  exampleName: "with-link-labels",
+  macroOptions: macroOptions["pagination"]
 }) }}
 
 ### For larger numbers of pages
@@ -49,7 +52,8 @@ Use a list-type layout if users need to navigate through large numbers of pages.
 
 {{ guidanceComponentPreview({
   componentName: "pagination",
-  exampleName: "with-ellipses"
+  exampleName: "with-ellipses",
+  macroOptions: macroOptions["pagination"]
 }) }}
 
 #### First pages and last pages
@@ -58,12 +62,14 @@ Do not show the previous page link on the first page — and do not show the nex
 
 {{ guidanceComponentPreview({
   componentName: "pagination",
-  exampleName: "on-the-first-page"
+  exampleName: "on-the-first-page",
+  macroOptions: macroOptions["pagination"]
 }) }}
 
 {{ guidanceComponentPreview({
   componentName: "pagination",
-  exampleName: "on-the-last-page"
+  exampleName: "on-the-last-page",
+  macroOptions: macroOptions["pagination"]
 }) }}
 
 ## Changes from the GOV.UK version

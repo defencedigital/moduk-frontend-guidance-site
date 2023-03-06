@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-require('ts-node').register({
-  project: 'tsconfig.json',
-})
+require('ts-node').register()
 
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
 const { minify } = require('html-minifier-terser')
-const { get, sortBy } = require('lodash')
+const { get, kebabCase, sortBy } = require('lodash')
+const MarkdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
 const { parse } = require('node-html-parser')
 const { readFileSync } = require('node:fs')
 const { join, relative } = require('node:path')
+const { runtime: { SafeString } } = require('nunjucks')
 const postcss = require('postcss')
 const postcssFailOnWarn = require('postcss-fail-on-warn')
 const prettier = require('prettier')
@@ -49,19 +49,25 @@ module.exports = (config) => {
     lstripBlocks: true,
   })
   config.setLibrary('njk', nunjucksEnv)
-  config.addNunjucksFilter('rejectattr_path', (array, propertyPath) => (
+
+  const markdownIt = new MarkdownIt()
+  config.addFilter('markdown', (markdown) => markdown && new SafeString(markdownIt.render(markdown)))
+
+  config.addFilter('kebabCase', (value) => value && kebabCase(value))
+
+  config.addFilter('rejectattr_path', (array, propertyPath) => (
     array && array.filter((item) => !get(item, propertyPath))
   ))
 
-  config.addNunjucksFilter('selectattr_path', (array, propertyPath) => (
+  config.addFilter('selectattr_path', (array, propertyPath) => (
     array && array.filter((item) => get(item, propertyPath))
   ))
 
-  config.addNunjucksFilter('isUrlInCollection', (array, url) => (
+  config.addFilter('isUrlInCollection', (array, url) => (
     array && array.some((item) => item.url === url)
   ))
 
-  config.addNunjucksFilter('sortBy', (array, sortByKeys) => (
+  config.addFilter('sortBy', (array, sortByKeys) => (
     array && sortBy(array, sortByKeys)
   ))
 

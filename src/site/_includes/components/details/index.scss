@@ -1,0 +1,9 @@
+@use '@moduk/frontend/src/css' as moduk;
+
+.guidance-details .govuk-details__summary:not(:focus) {
+  color: moduk.moduk-colour('light-maroon');
+
+  &:hover {
+    color: moduk.moduk-colour('dark-maroon');
+  }
+}

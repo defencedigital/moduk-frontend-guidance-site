@@ -13,7 +13,8 @@ Use the date input component to help users enter a memorable date or one they ca
 
 {{ guidanceComponentPreview({
   componentName: "date-input",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["date-input"]
 }) }}
 
 [See GOV.UK date input component guidance](https://design-system.service.gov.uk/components/date-input/) for:
@@ -29,14 +30,16 @@ Use the date input component to help users enter a memorable date or one they ca
 
 {{ guidanceComponentPreview({
   componentName: "date-input",
-  exampleName: "with-page-heading"
+  exampleName: "with-page-heading",
+  macroOptions: macroOptions["date-input"]
 }) }}
 
 ### If you’re asking more than one question on the page
 
 {{ guidanceComponentPreview({
   componentName: "date-input",
-  exampleName: "not-as-page-heading"
+  exampleName: "not-as-page-heading",
+   macroOptions: macroOptions["date-input"]
 }) }}
 
 ## Changes from the GOV.UK version

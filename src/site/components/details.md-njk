@@ -11,7 +11,8 @@ Make a page easier to scan by letting users reveal more detailed information onl
 
 {{ guidanceComponentPreview({
   componentName: "details",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["details"]
 }) }}
 
 [See GOV.UK details component guidance](https://design-system.service.gov.uk/components/details/) for:

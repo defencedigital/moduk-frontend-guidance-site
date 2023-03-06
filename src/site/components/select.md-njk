@@ -11,7 +11,8 @@ The select component allows users to choose from a list of available options.
 
 {{ guidanceComponentPreview({
   componentName: "select",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["select"]
 }) }}
 
 [See GOV.UK select component guidance](https://design-system.service.gov.uk/components/select/) for:
@@ -29,7 +30,8 @@ You can add hint text to help the user understand the options and choose one of 
 
 {{ guidanceComponentPreview({
   componentName: "select",
-  exampleName: "with-hint"
+  exampleName: "with-hint",
+  macroOptions: macroOptions["select"]
 }) }}
 
 ## Changes from the GOV.UK version

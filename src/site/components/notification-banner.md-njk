@@ -13,7 +13,8 @@ Use a notification banner to tell the user about something they need to know abo
 
 {{ guidanceComponentPreview({
   componentName: "notification-banner",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["notification-banner"]
 }) }}
 
 [See GOV.UK notification banner component guidance](https://design-system.service.gov.uk/components/notification-banner/) for:

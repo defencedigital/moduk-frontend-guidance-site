@@ -12,7 +12,8 @@ The panel component is a visible container used on confirmation or results pages
 {{ guidanceComponentPreview({
   componentName: "panel",
   exampleName: "default",
-  iframe: true
+  iframe: true,
+  macroOptions: macroOptions["panel"]
 }) }}
 
 [See GOV.UK panel component guidance](https://design-system.service.gov.uk/components/panel/) for:

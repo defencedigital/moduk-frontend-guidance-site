@@ -11,7 +11,8 @@ Use the skip link component to help keyboard-only users skip to the main content
 
 {{ guidanceComponentPreview({
   componentName: "skip-link",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["skip-link"]
 }) }}
 
 [See GOV.UK skip link component guidance](https://design-system.service.gov.uk/components/skip-link/) for:

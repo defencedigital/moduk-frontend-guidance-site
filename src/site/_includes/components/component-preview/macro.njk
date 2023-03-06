@@ -1,6 +1,9 @@
-{%- from "components/code-snippet/macro.njk" import guidanceCodeSnippet -%}
+{% from "moduk/components/details/macro.njk" import modukDetails %}
 
-{%- macro guidanceComponentPreview(params) -%}
+{% from "components/code-snippet/macro.njk" import guidanceCodeSnippet %}
+{% from "components/macro-options/macro.njk" import guidanceMacroOptions %}
+
+{% macro guidanceComponentPreview(params) -%}
 
 {%- set exampleTemplatePath = "moduk/components/" + params.componentName + "/__examples__/" + params.exampleName + ".njk" -%}
 {%- if params.idSuffix -%}
@@ -51,9 +54,23 @@
     </a>
   </div>
   <div class="guidance-component-preview__tab-contents" role="tabpanel" id="{{ idPrefix }}--nunjucks">
-    {%- call guidanceCodeSnippet({ language: "jinja2" }) -%}
-    {%- readTemplate exampleTemplatePath -%}
-    {%- endcall -%}
+    {% if params.macroOptions -%}
+    {% call modukDetails({
+      summaryText: "Nunjucks macro options",
+      classes: "guidance-details govuk-!-margin-bottom-3",
+      attributes:{
+        id: "options-" + idPrefix + "-details"
+      }
+    }) %}
+      {{ guidanceMacroOptions({
+        macroOptions: params.macroOptions,
+        exampleId: idPrefix
+      }) -}}
+    {% endcall -%}
+    {% endif -%}
+    {% call guidanceCodeSnippet({ language: "jinja2" }) -%}
+    {% readTemplate exampleTemplatePath -%}
+    {% endcall -%}
   </div>
 </div>
-{%- endmacro -%}
+{%- endmacro %}

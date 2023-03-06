@@ -11,7 +11,8 @@ Use the tag component to show users the status of something.
 
 {{ guidanceComponentPreview({
   componentName: "tag",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["tag"]
 }) }}
 
 [See GOV.UK phase banner component guidance](https://design-system.service.gov.uk/components/tag/) for:

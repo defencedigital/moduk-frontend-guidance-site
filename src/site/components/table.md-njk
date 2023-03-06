@@ -11,7 +11,8 @@ Use the table component to make information easier to compare and scan for users
 
 {{ guidanceComponentPreview({
   componentName: "table",
-  exampleName: "default"
+  exampleName: "default",
+  macroOptions: macroOptions["table"]
 }) }}
 
 [See GOV.UK table component guidance](https://design-system.service.gov.uk/components/table/) for:
