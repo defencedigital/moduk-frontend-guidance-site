@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Use a module bundler
 description: This guide will help you use a module bundler like Webpack.
 tags: get-started

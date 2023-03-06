@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Design Library
 description: Use the design library to design and prototype Defence services.
 tags: get-started

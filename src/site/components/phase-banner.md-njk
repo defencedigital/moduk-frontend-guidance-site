@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Phase banner
 description: Use the phase banner component to show users your service is still being worked on.
 tags: components

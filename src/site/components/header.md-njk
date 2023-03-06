@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Header
 description: The header component shows users they are on a Ministry of Defence site and which service they are using.
 tags: components

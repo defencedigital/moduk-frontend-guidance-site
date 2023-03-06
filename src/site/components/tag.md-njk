@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Tag
 description: The tag component indicates the status of something, such as an item on a task list or a phase banner.
 tags: components

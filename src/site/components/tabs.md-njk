@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Tabs
 description: Tabs can be a helpful way of letting users quickly switch between related information.
 tags: components

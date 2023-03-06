@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Inset text
 description: Use the inset text component to differentiate a block of text from the content that surrounds it.
 tags: components

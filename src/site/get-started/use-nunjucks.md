@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Use Nunjucks
 description: This guide will help you use Nunjucks to generate the HTML for components.
 tags: get-started

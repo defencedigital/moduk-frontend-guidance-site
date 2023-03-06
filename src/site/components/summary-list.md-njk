@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Summary list
 description: Use the summary list to summarise information, for example, a user’s responses at the end of a form.
 tags: components

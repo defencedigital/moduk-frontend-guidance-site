@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Accordion
 description: The accordion component lets users show and hide sections of related content on a page.
 tags: components

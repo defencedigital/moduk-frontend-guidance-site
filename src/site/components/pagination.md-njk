@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Pagination
 description: Help users navigate collections of numbered pages like search results.
 tags: components

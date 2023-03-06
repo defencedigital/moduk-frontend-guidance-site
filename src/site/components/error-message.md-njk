@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Error message
 description: When there is a validation error, use an error message to explain what went wrong and how to fix it.
 tags: components
