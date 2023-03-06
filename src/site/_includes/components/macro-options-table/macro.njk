@@ -1,6 +1,6 @@
 {% macro guidanceMacroOptionsTable(params) -%}
 
-<table class="govuk-table guidance-options__table" id="options-{{ params.exampleId }}--{{ params.tableId }}">
+<table class="govuk-table guidance-options__table" id="options--{{ params.exampleId }}--{{ params.tableId }}">
   <caption class="govuk-table__caption govuk-heading-m {% if params.tableId == 'primary' %} govuk-visually-hidden{% endif %}">{{ params.name }}</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -11,6 +11,7 @@
   </thead>
   <tbody class="govuk-table__body guidance-options-table">
     {% for option in params.table -%}
+      {% set slug = option.name | kebabCase -%}
       <tr class="govuk-table__row">
         <th class="govuk-table__header" scope="row">{{option.name}}</th>
         <td class="govuk-table__cell">{{option.type}}</td>
@@ -21,13 +22,13 @@
           {{ option.description | markdown }}
           {% if option.isComponent -%}
             {% if option.name === "hint" or option.name === "label" %}
-              See <a href="#options-{{ params.exampleId }}--{{ option.name }}">{{ option.name }}</a>.
+              See <a href="#options--{{ params.exampleId }}--{{ option.name }}">{{ option.name }}</a>.
             {% else %}
-              See <a href="/components/{{ option.name | kebabCase }}/">{{ option.name | kebabCase | replace('-', ' ') }}</a>.
+              See <a href="/components/{{ slug }}/#options--{{ slug }}--default--details">{{ slug | replace('-', ' ') }}</a>.
             {% endif %}
           {% endif %}
           {% if option.isUnnested %}
-            See <a href="#options-{{ params.exampleId }}--{% if params.tableId === "primary" %}{{ option.name }}{% else %}{{ params.tableId + "." + option.name }}{% endif %}">{{ option.name }}</a>.
+            See <a href="#options--{{ params.exampleId }}--{% if params.tableId === "primary" %}{{ option.name }}{% else %}{{ params.tableId + "." + option.name }}{% endif %}">{{ option.name }}</a>.
           {% endif -%}
         </td>
       </tr>
