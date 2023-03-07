@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Breadcrumbs
 description: Help users orientate themselves and navigate pages within a hierarchical structure.
 tags: components

@@ -15,4 +15,5 @@
 @use 'components/phase-banner';
 @use 'components/side-nav';
 @use 'components/updates';
-@use 'layouts/markdown-content-page';
+@use 'layouts/markdown-page-with-side-nav';
+@use 'layouts/markdown-page';

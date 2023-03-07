@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Change the image assets path
 description: This guide will help you build the CSS to point to your images folder.
 tags: get-started

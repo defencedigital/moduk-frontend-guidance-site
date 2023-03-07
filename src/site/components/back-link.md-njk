@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Back link
 description: Use the back link component to help users go back to the previous page in a multi-page transaction.
 tags: components

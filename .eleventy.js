@@ -94,6 +94,15 @@ module.exports = (config) => {
     (filePath) => prettier.format(nunjucksEnv.render(filePath, {}), { parser: 'html' }),
   )
 
+  config.addCollection('footerLinks', (collectionApi) =>
+    collectionApi.getFilteredByTag(
+      'footer',
+    ).sort(
+      (left, right) => left.data.order - right.data.order,
+    ).map(
+      (page) => ({ text: page.data.title, href: page.url }),
+    ))
+
   config.addPassthroughCopy({ 'node_modules/@moduk/frontend/dist/assets': 'assets' })
   config.addPassthroughCopy({
     'node_modules/iframe-resizer/js/iframeResizer.contentWindow.min.js': 'iframeResizer.contentWindow.min.js',

@@ -9,19 +9,6 @@
 $toc-width: 260px;
 $toc-width-tablet: 210px;
 
-.guidance-content {
-  @include moduk.govuk-responsive-padding(6, 'top');
-  @include moduk.govuk-responsive-padding(8, 'bottom');
-
-  @include moduk.govuk-media-query($from: tablet) {
-    padding-left: moduk.govuk-spacing(6);
-  }
-
-  & > .govuk-body > {
-    @include markdown.markdown-styles;
-  }
-}
-
 .guidance-split-pane {
   @include moduk.govuk-media-query($from: tablet) {
     display: flex;
@@ -46,11 +33,24 @@ $toc-width-tablet: 210px;
   }
 }
 
-.guidance-split-pane__content {
+.guidance-split-pane__content-pane {
   @include moduk.govuk-media-query($from: tablet) {
     display: flex;
     min-width: 0;
     flex: 1 1 100%;
     flex-direction: column;
+  }
+}
+
+.guidance-split-pane__content {
+  @include moduk.govuk-responsive-padding(6, 'top');
+  @include moduk.govuk-responsive-padding(8, 'bottom');
+
+  @include moduk.govuk-media-query($from: tablet) {
+    padding-left: moduk.govuk-spacing(6);
+  }
+
+  & > .govuk-body > {
+    @include markdown.markdown-styles;
   }
 }

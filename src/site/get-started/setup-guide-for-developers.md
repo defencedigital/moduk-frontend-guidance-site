@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Setup guide for developers
 description: This guide explains how to set up your project so you can start using the components in the MOD.UK Frontend in production.
 tags: get-started

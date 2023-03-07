@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Fieldset
 description: Use the fieldset component to group related form inputs.
 tags: components

@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Silence deprecation warnings in Dart Sass
 description: This guide will help you silence deprecation warnings when compiling your Sass.
 tags: get-started

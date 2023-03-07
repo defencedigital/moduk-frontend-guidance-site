@@ -10,8 +10,8 @@
       items: collections[tags[0]] | rejectattr_path('data.is_root') | sort(false, false, 'data.order')
     }) }}
   </div>
-  <div class="guidance-split-pane__content">
-    <main class="guidance-content" id="main-content" role="main">
+  <div class="guidance-split-pane__content-pane">
+    <main class="guidance-split-pane__content" id="main-content" role="main">
       {% if pageCaptions[tags[0]] and not is_root %}<span class="govuk-caption-xl">{{ pageCaptions[tags[0]] }}</span>{% endif %}
       <h1 class="govuk-heading-xl">{{ title }}</h1>
 

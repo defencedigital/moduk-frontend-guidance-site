@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Checkboxes
 description: Let users select one or more options by using the checkboxes component.
 tags: components

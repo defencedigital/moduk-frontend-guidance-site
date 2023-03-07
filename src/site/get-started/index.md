@@ -1,5 +1,5 @@
 ---
-layout: layouts/markdown-content-page.njk
+layout: layouts/markdown-page-with-side-nav.njk
 title: Get started
 description: This guide will help you set up MOD.UK Frontend.
 tags: get-started
