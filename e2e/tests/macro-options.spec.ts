@@ -16,11 +16,12 @@ const test = base.extend({
   },
 })
 
+// The JavaScript is disabled in some of these tests as the iframe
+// resizer causes instability when taking mobile screenshots
 test.describe('macro options', () => {
-  // The iframe resizer is causing instability when taking mobile screenshots
-  test.use({ javaScriptEnabled: false })
-
   test.describe('with link to another component', () => {
+    test.use({ javaScriptEnabled: false })
+
     test.beforeEach(async ({ clickFirstNunjucksTab, page }) => {
       await page.goto('/components/phase-banner/')
       await clickFirstNunjucksTab()
@@ -43,6 +44,8 @@ test.describe('macro options', () => {
   })
 
   test.describe('with link to another component containing a space', () => {
+    test.use({ javaScriptEnabled: false })
+
     test.beforeEach(async ({ clickFirstNunjucksTab, page }) => {
       await page.goto('/components/textarea/')
       await clickFirstNunjucksTab()
@@ -90,6 +93,8 @@ test.describe('macro options', () => {
   })
 
   test.describe('with nested options', () => {
+    test.use({ javaScriptEnabled: false })
+
     test.beforeEach(async ({ clickFirstNunjucksTab, page }) => {
       await page.goto('/components/accordion/')
       await clickFirstNunjucksTab()
@@ -114,6 +119,8 @@ test.describe('macro options', () => {
   })
 
   test.describe('with internal components', () => {
+    test.use({ javaScriptEnabled: false })
+
     test.beforeEach(async ({ clickFirstNunjucksTab, page }) => {
       await page.goto('/components/text-input/')
       await clickFirstNunjucksTab()
