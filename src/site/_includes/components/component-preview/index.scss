@@ -48,6 +48,8 @@ $border-value: 1px solid moduk.$govuk-border-colour;
   background-color: moduk.govuk-colour('white');
   overflow: hidden;
   resize: both;
+  min-height: 60px;
+  min-width: 230px;
   max-width: 100%;
   outline: $border-value;
 }

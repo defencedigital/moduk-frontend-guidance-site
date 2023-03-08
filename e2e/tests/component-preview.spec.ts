@@ -24,6 +24,31 @@ test.describe('component preview', () => {
     )
   })
 
+  test('does not allow resizing smaller than 230px by 60px', async ({ browserName, page }) => {
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=680823
+    test.skip(browserName === 'firefox', 'Firefox does not support resizable iframes')
+
+    const componentPreview = page.locator('.guidance-component-preview__preview')
+    const boundingBox = await componentPreview.boundingBox()
+
+    if (!boundingBox) {
+      throw new Error('boundingBox was null')
+    }
+
+    const boxRight = boundingBox.x + boundingBox.width
+    const boxBottom = boundingBox.y + boundingBox.height
+
+    await page.mouse.move(boxRight - 1, boxBottom - 1)
+    await page.mouse.down()
+    await page.mouse.move(0, 0)
+    await page.mouse.up()
+
+    const resizedBoundingBox = await componentPreview.boundingBox()
+
+    expect(resizedBoundingBox?.width).toBe(230)
+    expect(resizedBoundingBox?.height).toBe(60)
+  })
+
   test.describe('when the HTML tab is clicked', () => {
     test.beforeEach(async ({ page, tabRole }) => {
       const htmlTabButton = page.getByRole(tabRole, { name: 'HTML' })
