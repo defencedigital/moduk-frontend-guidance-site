@@ -48,6 +48,19 @@
   <link rel="mask-icon" href="/assets/icon-safari-mask.svg" color="#532A45">
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="{{ "src/site/index.scss" | inputToRevvedOutput }}">
+  {% if vars.googleTagId %}
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.googleTagId = '{{ vars.googleTagId }}'
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', window.googleTagId);
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ vars.googleTagId }}"></script>
+  {% endif %}
 </head>
 <body class="govuk-template__body moduk--primary-nav-expanded{% if bodyClasses %} {{ bodyClasses }}{% endif %}">
 <script>
