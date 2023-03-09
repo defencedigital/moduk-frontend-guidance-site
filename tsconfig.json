@@ -8,8 +8,7 @@
     "strict": true,
     "skipLibCheck": true,
     "target": "ES2021",
-    "types": ["node", "@types/gtag.js"],
-    "allowJs": true
+    "types": ["node", "@types/gtag.js"]
   },
   "exclude": ["dist", "node_modules"]
 }

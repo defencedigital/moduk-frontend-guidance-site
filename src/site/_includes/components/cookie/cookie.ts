@@ -1,3 +1,5 @@
+export const COOKIE_PREFERENCE_KEY = 'design-system-cookie-preference'
+
 export function getCookie(name: string) {
   const cookies = document.cookie.split('; ')
   return cookies.find((row) => row.startsWith(`${name}=`))?.split('=')[1] || null

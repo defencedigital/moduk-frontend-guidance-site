@@ -1,0 +1,39 @@
+{% from "moduk/components/radios/macro.njk" import modukRadios %}
+{% from "moduk/components/button/macro.njk" import modukButton %}
+
+<noscript>
+  <h2>Change your cookie settings</h2>
+  <p class="govuk-body">We cannot change your cookie settings at the moment because JavaScript is not running in your browser. To fix this, try:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>turning on JavaScript in your browser settings</li>
+    <li>reloading this page</li>
+  </ul>
+</noscript>
+<form name="cookie-settings" hidden class="js-cookie-setting-form">
+    {{ modukRadios({
+      name: "analytics-cookies",
+      fieldset: {
+        legend: {
+          text: "Do you want to accept analytics cookies?",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          id: "analytics-cookies-yes",
+          value: "1",
+          text: "Yes"
+        },
+        {
+          id: "analytics-cookies-no",
+          value: "0",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    {{ modukButton({
+      text: "Save cookie settings",
+      type: "submit"
+    }) }}
+</form>

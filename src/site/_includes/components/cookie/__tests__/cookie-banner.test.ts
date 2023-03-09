@@ -3,7 +3,6 @@ import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { initCookieBanner } from '..'
 import * as analytics from '../analytics'
-import { deleteCookie } from '../cookie'
 
 const html = `
 <div class="js-cookie-guidance-banner--container">
@@ -18,10 +17,10 @@ const html = `
 
 describe('initCookieBanner', () => {
   beforeEach(() => {
-    window.location.href = 'https://localhost?cookie_prompt_enabled'
     document.body.innerHTML = html
   })
   afterEach(() => {
+    // happy-dom issue https://github.com/capricorn86/happy-dom/issues/813
     document.cookie = 'design-system-cookie-preference=unset;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/'
   })
 
@@ -31,7 +30,6 @@ describe('initCookieBanner', () => {
     await userEvent.click(getByRole(document.body, 'button', { name: 'Accept' }))
     expect(analyticsSettingSpy).toHaveBeenCalledWith(true)
     expect(analyticsSettingSpy).toHaveBeenCalledOnce()
-    deleteCookie('design-system-cookie-preference')
   })
 
   it('Reject button calls analyticSetting with false', async () => {

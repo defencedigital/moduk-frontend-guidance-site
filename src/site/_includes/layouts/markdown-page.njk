@@ -6,9 +6,10 @@
 <div class="guidance-width-container">
   <div class="govuk-grid-row">
     <main class="guidance-markdown-page-content govuk-grid-column-two-thirds" id="main-content" role="main">
+      {%- block notification -%}{%- endblock -%}
       <h1 class="govuk-heading-xl">{{ title }}</h1>
       <div class="govuk-body">
-        {{ content | safe }}
+        {% block content %}{{ content | safe }}{% endblock %}
       </div>
     </main>
   </div>

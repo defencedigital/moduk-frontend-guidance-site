@@ -1,5 +1,6 @@
 import AxeBuilder from '@axe-core/playwright'
 import { devices, expect, Page, PlaywrightTestConfig } from '@playwright/test'
+import { cookiePreferenceKey } from './src/lib/cookieSettings'
 
 expect.extend({
   toHaveNoViolations: async (
@@ -90,8 +91,8 @@ const config: PlaywrightTestConfig = {
     storageState: {
       // @ts-expect-error The options have been marked as mandatory however the except the same arguments as https://playwright.dev/docs/api/class-browsercontext#browser-context-add-cookies
       cookies: [{
-        name: 'cookie_preference',
-        value: 'false',
+        name: cookiePreferenceKey,
+        value: '0',
         expires: Date.now() / 1000 + 1000 * 60 * 60,
         domain: 'localhost',
         path: '/',

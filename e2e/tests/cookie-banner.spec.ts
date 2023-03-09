@@ -1,7 +1,7 @@
 import { expect, Locator, test as base } from '@playwright/test'
-import vars from '../../src/site/_data/vars'
+import { cookiePreferenceKey, googleTagId } from '../../src/lib/cookieSettings'
 
-const gaSessionCookie = `_ga_${vars.googleTagId.replace(/^G-/, '')}`
+const gaSessionCookie = `_ga_${googleTagId.replace(/^G-/, '')}`
 
 function transformCookieToObject(cookieString: string) {
   return Object.fromEntries(
@@ -21,7 +21,7 @@ test.describe('cookie banner', () => {
 
   test.describe('prompt for cookie preferences', () => {
     test.beforeEach(async ({ page }) => {
-      await page.goto('/?cookie_prompt_enabled')
+      await page.goto('/')
     })
 
     test('the cookie banner is displayed', async ({ cookieBanner }) => {
@@ -45,9 +45,9 @@ test.describe('cookie banner', () => {
         await expect(cookieBanner).toBeHidden()
       })
 
-      test('set the design-system-cookie-preference to the correct value', async ({ browserName, page }) => {
+      test('set the cookie preference to the correct value', async ({ browserName, page }) => {
         test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
-        expect(await page.evaluate(() => document.cookie)).toMatch('design-system-cookie-preference=1')
+        expect(await page.evaluate(() => document.cookie)).toMatch(`${cookiePreferenceKey}=1`)
       })
 
       test('analytics cookies are installed', async ({ browserName, page }) => {
@@ -71,9 +71,9 @@ test.describe('cookie banner', () => {
         await expect(cookieBanner).toBeHidden()
       })
 
-      test('set the design-system-cookie-preference to the correct value', async ({ browserName, page }) => {
+      test('set the cookie preference to the correct value', async ({ browserName, page }) => {
         test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
-        expect(await page.evaluate(() => document.cookie)).toMatch('design-system-cookie-preference=0')
+        expect(await page.evaluate(() => document.cookie)).toMatch(`${cookiePreferenceKey}=0`)
       })
 
       test('analytics cookies are not installed', async ({ browserName, page }) => {
@@ -82,7 +82,7 @@ test.describe('cookie banner', () => {
         const cookies = await page.evaluate(() => document.cookie)
         const cookieValues = Object.keys(transformCookieToObject(cookies))
 
-        expect(cookieValues).toContain('design-system-cookie-preference')
+        expect(cookieValues).toContain(cookiePreferenceKey)
         expect(cookieValues).toHaveLength(1)
 
         expect(
@@ -106,16 +106,16 @@ test.describe('cookie banner', () => {
   })
 
   test.describe('cookie preferences has been previously set', () => {
-    test.describe('design-system-cookie-preference is set to 1', () => {
+    test.describe('cookie preference is set to 1', () => {
       test.beforeEach(async ({ context, page }) => {
         await context.addCookies([{
-          name: 'design-system-cookie-preference',
+          name: cookiePreferenceKey,
           value: '1',
           expires: Date.now() / 1000 + 1000 * 60 * 60,
           domain: 'localhost',
           path: '/',
         }])
-        await page.goto('/?cookie_prompt_enabled')
+        await page.goto('/')
       })
 
       test('banner is hidden', async ({ page }) => {
@@ -139,16 +139,16 @@ test.describe('cookie banner', () => {
       })
     })
 
-    test.describe('design-system-cookie-preference is set to 0', () => {
+    test.describe('cookie preference is set to 0', () => {
       test.beforeEach(async ({ context, page }) => {
         await context.addCookies([{
-          name: 'design-system-cookie-preference',
+          name: cookiePreferenceKey,
           value: '0',
           expires: Date.now() / 1000 + 1000 * 60 * 60,
           domain: 'localhost',
           path: '/',
         }])
-        await page.goto('/?cookie_prompt_enabled')
+        await page.goto('/')
       })
 
       test('banner is hidden', async ({ page }) => {
@@ -187,7 +187,7 @@ test.describe('cookie banner', () => {
         path: '/',
       }])
 
-      await page.goto('/?cookie_prompt_enabled')
+      await page.goto('/')
 
       expect(
         await page.evaluate(() => window.dataLayer.find((data) => data['0'] === 'consent' && data['1'] === 'default')),
@@ -205,7 +205,7 @@ test.describe('cookie banner', () => {
   test.describe('javaScript disabled', () => {
     test.use({ javaScriptEnabled: false })
     test.beforeEach(async ({ page }) => {
-      await page.goto('/?cookie_prompt_enabled')
+      await page.goto('/')
     })
 
     test('the cookie banner is not displayed', async ({ page }) => {
