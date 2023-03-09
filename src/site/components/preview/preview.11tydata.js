@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const glob = require('glob')
+const { globSync } = require('glob')
 const { basename, dirname, join } = require('node:path')
 
 const modukFrontendLibPath = dirname(require.resolve('@moduk/frontend'))
-const paths = glob.sync(join(modukFrontendLibPath, 'nunjucks/**/__examples__/*.njk'))
-const localExamples = glob.sync(join(__dirname, '../../_includes/moduk/components/**/__examples__/*.njk'))
+const paths = globSync(join(modukFrontendLibPath, 'nunjucks/**/__examples__/*.njk')).sort()
+const localExamples = globSync(join(__dirname, '../../_includes/moduk/components/**/__examples__/*.njk'))
 
 const examples = [...paths, ...localExamples].map((path) => {
   const componentName = basename(dirname(dirname(path)))
