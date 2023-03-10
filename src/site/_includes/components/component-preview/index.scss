@@ -28,6 +28,7 @@ $border-value: 1px solid moduk.$govuk-border-colour;
 .guidance-component-preview {
   border: $border-value;
   border-bottom: none;
+
   @include moduk.govuk-responsive-margin(6, 'top');
   @include moduk.govuk-responsive-margin(6, 'bottom');
 }

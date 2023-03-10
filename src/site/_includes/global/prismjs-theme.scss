@@ -35,6 +35,7 @@ pre[class*='language-'] {
   overflow: auto;
   border: 3px solid transparent;
   margin: 0;
+
   @include moduk.govuk-responsive-margin(4, 'bottom');
 
   &:focus {
