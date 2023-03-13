@@ -23,10 +23,7 @@ test.describe('code snippet', () => {
       await expect(codeSnippet).toHaveScreenshot('copy-snippet-box-focus.png')
     })
 
-    test('the copy button matches the screenshot on focus', async ({ browserName, page }) => {
-      // https://github.com/microsoft/playwright/issues/18901
-      test.skip(browserName === 'webkit', 'WebKit does not support navigator.clipboard on Linux')
-
+    test('the copy button matches the screenshot on focus', async ({ page }) => {
       const codeSnippet = page.getByRole('tabpanel').locator('.guidance-code-snippet')
       const copyButton = codeSnippet.getByRole('button', { name: 'Copy code' })
       await copyButton.focus()

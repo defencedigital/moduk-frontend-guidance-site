@@ -24,9 +24,10 @@ test.describe('component preview', () => {
     )
   })
 
-  test('does not allow resizing smaller than 230px by 60px', async ({ browserName, page }) => {
+  test('does not allow resizing smaller than 230px by 60px', async ({ browserName, isMobile, page }) => {
     // https://bugzilla.mozilla.org/show_bug.cgi?id=680823
     test.skip(browserName === 'firefox', 'Firefox does not support resizable iframes')
+    test.skip(isMobile && browserName === 'webkit', 'headless, mobile WebKit does not support resizing')
 
     const componentPreview = page.locator('.guidance-component-preview__preview')
     const boundingBox = await componentPreview.boundingBox()

@@ -16,10 +16,11 @@ const test = base.extend({
   },
 })
 
-test.describe('macro options', () => {
-  // The iframe resizer is causing instability when taking mobile screenshots
-  test.use({ javaScriptEnabled: false })
+// The JavaScript is disabled in some of these tests as the iframe
+// resizer causes instability when taking mobile screenshots
+test.use({ javaScriptEnabled: false })
 
+test.describe('macro options', () => {
   test.describe('with link to another component', () => {
     test.beforeEach(async ({ clickFirstNunjucksTab, page }) => {
       await page.goto('/components/phase-banner/')
@@ -131,7 +132,7 @@ test.describe('macro options', () => {
         const details = firstComponentPreview.locator('details', { hasText: 'Nunjucks macro options' })
         await expect(details).toHaveScreenshot(
           'text-input.png',
-          { scale: 'css' },
+          { scale: 'css', timeout: 10_000 },
         )
       })
     })
