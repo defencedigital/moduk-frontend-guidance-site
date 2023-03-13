@@ -5,7 +5,7 @@
  The logo has been changed, some CSS classes have been added and there are some slight markup changes.
 #}
 
-{% macro guidanceHeader(params) %}
+{%- macro guidanceHeader(params) -%}
 
 {% set menuButtonText = params.menuButtonText if params.menuButtonText else 'Menu' %}
 
@@ -36,27 +36,24 @@
           </span>
         </a>
       </div>
-      {% if params.serviceName or params.navigation  %}
+      {%- if params.serviceName or params.navigation -%}
       <div class="govuk-header__content">
-      {% if params.serviceName %}
-      {% if params.serviceUrl %}
+      {%- if params.serviceName -%}
+      {%- if params.serviceUrl -%}
         <a href="{{ params.serviceUrl }}" class="govuk-header__link moduk-header__service-name govuk-header__service-name">
           {{ params.serviceName }}
         </a>
-      {% else%}
+      {%- else -%}
         <span class="moduk-header__service-name govuk-header__service-name">
           {{ params.serviceName }}
         </span>
-      {% endif %}
-      {% endif %}
-
-
+      {%- endif -%}
+      {%- endif -%}
         <button type="button" class="govuk-header__menu-button js-guidance-toggle" aria-controls="guidance-navigation" aria-label="{{ params.menuButtonLabel | default('Show or hide menu') }}" hidden>{{ menuButtonText }}</button>
       </div>
-      {% endif %}
+      {%- endif -%}
     </div>
   </div>
-  {{ caller() }}
+  {{- caller() -}}
 </header>
-
-{% endmacro %}
+{%- endmacro -%}

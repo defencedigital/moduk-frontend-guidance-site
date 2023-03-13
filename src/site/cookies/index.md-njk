@@ -1,0 +1,91 @@
+---
+title: Cookies
+description: How we use cookies to make the MOD.UK Design System work and collect information about how you use this website.
+tags: footer
+order: 100
+---
+
+{% extends 'layouts/markdown-page.njk' %}
+{% from "moduk/components/table/macro.njk" import modukTable %}
+{% from "moduk/components/notification-banner/macro.njk" import modukNotificationBanner %}
+
+{% set notificationBannerHtml %}
+  <h3 class="govuk-notification-banner__heading">
+    Your cookie settings were saved
+  </h3>
+  <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="mailto:{{ vars.contactEmail }}">{{ vars.contactEmail }}</a> if you think there’s a problem.</p>
+{% endset %}
+
+{%- block notification -%}
+  {{ modukNotificationBanner({
+      html: notificationBannerHtml,
+      type: "success",
+      classes: "guidance-cookie-notification-banner js-cookie-notification-banner",
+      attributes: {
+        hidden: "hidden"
+      }
+
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+Cookies are small files saved on your phone, tablet or computer when you visit a website.
+
+We use cookies to make the MOD.UK Design System work and collect information about how you use this website.
+
+## Essential cookies
+
+Essential cookies keep your information secure while you use the MOD.UK Design System. We do not need to ask permission to use them.
+
+{{ modukTable({
+    head: [
+      { text: "Name" },
+      { text: "Purpose" },
+      { text: "Expires" }
+    ],
+    rows: [
+      [
+        {text: vars.cookiePreferenceKey },
+        {text: "Saves your cookie consent settings" },
+        {text: "1 year" }
+      ]
+    ]
+  }) }}
+
+## Analytics cookies (optional)
+
+With your permission, we use Google Analytics to collect data about how you use this service. This information helps us to improve our service.
+
+Google is not allowed to use or share our analytics data with anyone.
+
+Google Analytics stores anonymised information about:
+
+- how you got to these sites
+- the pages you visit and how long you spend on each page
+- what you click on while you’re visiting these sites
+
+
+{{ modukTable({
+  head: [
+    { text: "Name" },
+    { text: "Purpose" },
+    { text: "Expires" }
+  ],
+  rows: [
+    [
+      {text: "_ga" },
+      {text:  "Helps us count how many people visit the MOD.UK Design System by tracking if you’ve visited before" },
+      {text: "2 years" }
+    ],
+    [
+      {text: "_ga_" + vars.googleTagId | replace("G-", "")},
+      {text: "Used by Google Analytics to find and track an individual session with your device" },
+      {text: "2 years"}
+    ]
+  ]
+}) }}
+
+{%- include  "components/cookie/cookie-settings.njk" -%}
+
+{% endblock %}
