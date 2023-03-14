@@ -16,12 +16,9 @@ FROM registry.access.redhat.com/ubi9/nginx-120:latest
 
 COPY --from=builder /app-build/dist "${HOME}"
 
-ADD nginx/startup.sh /opt/app-root/startup.sh
-ADD nginx/logging.conf "${NGINX_CONFIGURATION_PATH}"
-ADD nginx/misc-http-section.conf "${NGINX_CONFIGURATION_PATH}"
-ADD nginx/owasp-http-section.conf "${NGINX_CONFIGURATION_PATH}"
-ADD nginx/owasp-server-section.conf "${NGINX_DEFAULT_CONF_PATH}"
-ADD nginx/assets-server-section.conf "${NGINX_DEFAULT_CONF_PATH}"
-COPY nginx/common-server-section.conf "${NGINX_APP_ROOT}/etc/include/"
+COPY nginx/startup.sh /opt/app-root/startup.sh
+COPY nginx/conf/server/*.conf "${NGINX_DEFAULT_CONF_PATH}"
+COPY nginx/conf/http/*.conf "${NGINX_CONFIGURATION_PATH}"
+COPY nginx/conf/include/*.conf "${NGINX_APP_ROOT}/etc/include/"
 
 CMD /opt/app-root/startup.sh
