@@ -1,0 +1,11 @@
+---
+layout: layouts/markdown-page.njk
+title: Page not found
+permalink: 404.html
+---
+
+If you typed the web address, check it is correct.
+
+If you pasted the web address, check you copied the entire address.
+
+You can [browse from the homepage]({{ vars.baseUrl }}).

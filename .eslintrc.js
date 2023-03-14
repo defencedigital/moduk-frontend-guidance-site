@@ -53,6 +53,7 @@ module.exports = {
     indent: 'off',
     'max-len': 'off',
     'object-curly-newline': 'off',
+    'operator-linebreak': 'off',
     semi: ['error', 'never'],
     'semi-style': 'off',
     'unicorn/prefer-node-protocol': 'error',

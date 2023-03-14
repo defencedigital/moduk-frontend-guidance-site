@@ -4,12 +4,7 @@
 {% from "moduk/components/phase-banner/macro.njk" import modukPhaseBanner %}
 {% from "moduk/components/skip-link/macro.njk" import modukSkipLink -%}
 
-{%- set defaultDescription =
-  "MOD.UK Frontend contains the code for components you’ll need to build user "
-  + "interfaces for Defence products and services." -%}
-
 {%- set headTitle = headTitle | default(title) -%}
-{%- set computedDescription = description or defaultDescription -%}
 {%- set siteName = "MOD.UK Design System" -%}
 
 {%- if headTitle -%}
@@ -31,9 +26,9 @@
   {% if noIndex or vars.noIndex %}
   <meta name="robots" content="noindex, nofollow">
   {% endif %}
-  <meta name="description" content="{{ computedDescription }}">
+  {% if description %}<meta name="description" content="{{ description }}">{% endif %}
   <meta property="og:title" content="{{ computedTitle }}">
-  <meta property="og:description" content="{{ computedDescription }}">
+  {% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
   <meta property="og:site_name" content="{{ siteName }}">
   <meta property="og:image" content="{{ vars.baseUrl }}/assets/images/tile-social.png">
   <meta property="og:image:alt" content="Ministry of Defence">
