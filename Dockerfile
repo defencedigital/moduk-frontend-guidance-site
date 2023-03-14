@@ -14,6 +14,8 @@ RUN npm run build
 # Copy to the RedHat Nginx image
 FROM registry.access.redhat.com/ubi9/nginx-120:latest
 
+RUN rm -r "${HOME}/nginx-start/"
+
 COPY --from=builder /app-build/dist "${HOME}"
 
 COPY nginx/startup.sh /opt/app-root/startup.sh
