@@ -57,7 +57,7 @@
       'analytics_storage': 'denied'
     });
     gtag('js', new Date());
-    gtag('config', window.googleTagId);
+    gtag('config', window.googleTagId, { debug_mode: window.location.host !== '{{ vars.hostname }}' });
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ vars.googleTagId }}"></script>
   {% endif %}
