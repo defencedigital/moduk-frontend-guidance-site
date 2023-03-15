@@ -2,11 +2,13 @@
 FROM registry.access.redhat.com/ubi9/nodejs-18:latest AS builder
 
 USER root
-
-COPY . /app-build
 WORKDIR /app-build
 
+COPY package.json /app-build/
+COPY package-lock.json /app-build/
 RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+
+COPY . /app-build
 RUN npm run build
 
 # Copy to the RedHat Nginx image
