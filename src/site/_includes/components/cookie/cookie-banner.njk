@@ -6,11 +6,11 @@
 {% endset %}
 
 {% set acceptHtml %}
-  <p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/cookies/">change your cookie settings</a> at any time.</p>
+  <p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link moduk-link--maroon" href="/cookies/">change your cookie settings</a> at any time.</p>
 {% endset %}
 
 {% set rejectHtml %}
-  <p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/cookies/">change your cookie settings</a> at any time.</p>
+  <p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link moduk-link--maroon" href="/cookies/">change your cookie settings</a> at any time.</p>
 {% endset %}
 
 {{ modukCookieBanner({
@@ -38,7 +38,8 @@
         },
         {
           text: "View cookies",
-          href: "/cookies/"
+          href: "/cookies/",
+          classes: "moduk-link--maroon"
         }
       ]
     },
