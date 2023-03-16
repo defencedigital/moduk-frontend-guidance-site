@@ -19,6 +19,7 @@ RUN rm -r "${HOME}/nginx-start/"
 COPY --from=builder /app-build/dist "${HOME}"
 
 COPY nginx/startup.sh /opt/app-root/startup.sh
+COPY nginx/nginx.conf "${NGINX_CONF_PATH}"
 COPY nginx/conf/server/*.conf "${NGINX_DEFAULT_CONF_PATH}"
 COPY nginx/conf/http/*.conf "${NGINX_CONFIGURATION_PATH}"
 COPY nginx/conf/include/*.conf "${NGINX_APP_ROOT}/etc/include/"
