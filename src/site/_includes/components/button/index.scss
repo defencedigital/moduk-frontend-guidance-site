@@ -20,14 +20,14 @@ $hover-background-colour: moduk.govuk-colour('light-grey');
 }
 
 .guidance-button--inverted:hover {
-  color: $foreground-colour;
+  color: moduk.$govuk-focus-text-colour;
   background-color: $hover-background-colour;
 }
 
 .guidance-button--inverted:active,
 .guidance-button--inverted:focus {
   border-color: moduk.$govuk-focus-colour;
-  color: $foreground-colour;
+  color: moduk.$govuk-focus-text-colour;
   background-color: $hover-background-colour;
   box-shadow: inset 0 0 0 2px moduk.$govuk-focus-colour;
 }
