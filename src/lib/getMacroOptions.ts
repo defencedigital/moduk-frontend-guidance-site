@@ -92,16 +92,14 @@ export async function addInternalComponents(transformedOptions: TransformedOptio
     (param) => param.name,
   )
 
-  const uniqueComponentsToEmbed = new Set(componentsToEmbed)
   const updatedOptions = transformedOptions
-
-  // eslint-disable-next-line no-restricted-syntax
-  for (const componentName of uniqueComponentsToEmbed) {
-    // eslint-disable-next-line no-await-in-loop
+  const uniqueComponentsToEmbed = [...new Set(componentsToEmbed)]
+  const embeddedOptionsPromises = uniqueComponentsToEmbed.map(async (componentName) => {
     const rawOptions = await getRawMacroOptions(componentName)
-    // Further unnesting is not handled for these, as there are no current cases of this
-    updatedOptions.nested.push({ name: componentName, path: componentName, params: rawOptions })
-  }
+    return { name: componentName, path: componentName, params: rawOptions }
+  })
+  updatedOptions.nested.push(...await Promise.all(embeddedOptionsPromises))
+
   return updatedOptions
 }
 
