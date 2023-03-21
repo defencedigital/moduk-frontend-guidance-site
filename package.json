@@ -62,7 +62,7 @@
     "@types/node": "^18.15.3",
     "@types/nunjucks": "^3.2.2",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
-    "@typescript-eslint/parser": "^5.55.0",
+    "@typescript-eslint/parser": "^5.56.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
     "dprint": "^0.34.5",
