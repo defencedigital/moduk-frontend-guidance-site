@@ -2,12 +2,13 @@
 
 @mixin moduk-link-maroon {
   &,
+  &:link,
   &:visited {
-    color: moduk.moduk-colour('light-maroon');
+    color: moduk.moduk-colour('maroon');
   }
 
   &:hover {
-    color: moduk.moduk-colour('dark-maroon');
+    color: moduk.govuk-colour('black');
   }
 
   &:active,

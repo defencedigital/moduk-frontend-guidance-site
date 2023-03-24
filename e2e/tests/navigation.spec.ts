@@ -102,31 +102,40 @@ test.describe('navigation', () => {
           })
         })
       })
-    })
-
-    test.describe('when JavaScript is disabled', () => {
-      test.use({ javaScriptEnabled: false })
-      test('top level navigation is shown', async ({ navigation }) => {
-        await expect(navigation.getByRole('button')).toHaveCount(0)
-        await expect(navigation.getByRole('link')).toHaveCount(ALL_PAGES.filter((data) => data.isRoot).length)
-      })
-    })
-
-    test.describe('@visual-regression', () => {
-      test('matches the saved screenshot', async ({ page }) => {
-        await page.getByRole('button', { name: 'Menu' }).click()
-        await expect(page.getByRole('document')).toHaveScreenshot(
-          'mobile-menu-expanded-screenshot.png',
-        )
+      test.describe('@visual-regression', () => {
+        test('secondary nav expanded matches the saved screenshot', async ({ page }) => {
+          await page.goto('/get-started/')
+          await page.getByRole('button', { name: 'Menu' }).click()
+          await expect(page.getByRole('document')).toHaveScreenshot(
+            'mobile-secondary-menu-expanded-screenshot.png',
+          )
+        })
       })
 
       test.describe('when JavaScript is disabled', () => {
         test.use({ javaScriptEnabled: false })
+        test('top level navigation is shown', async ({ navigation }) => {
+          await expect(navigation.getByRole('button')).toHaveCount(0)
+          await expect(navigation.getByRole('link')).toHaveCount(ALL_PAGES.filter((data) => data.isRoot).length)
+        })
+      })
 
+      test.describe('@visual-regression', () => {
         test('matches the saved screenshot', async ({ page }) => {
+          await page.getByRole('button', { name: 'Menu' }).click()
           await expect(page.getByRole('document')).toHaveScreenshot(
-            'mobile-menu-expanded-screenshot-js-disabled.png',
+            'mobile-menu-expanded-screenshot.png',
           )
+        })
+
+        test.describe('when JavaScript is disabled', () => {
+          test.use({ javaScriptEnabled: false })
+
+          test('matches the saved screenshot', async ({ page }) => {
+            await expect(page.getByRole('document')).toHaveScreenshot(
+              'mobile-menu-expanded-screenshot-js-disabled.png',
+            )
+          })
         })
       })
     })

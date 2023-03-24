@@ -37,6 +37,9 @@
   background-color: moduk.govuk-colour('white');
 }
 
-.guidance-side-nav__section-item--current .guidance-side-nav__link {
-  font-weight: bold;
+.guidance-side-nav__section-item--current
+  .guidance-side-nav__link.govuk-link.moduk-link--maroon {
+  @include moduk.govuk-typography-weight-bold;
+
+  color: moduk.govuk-colour('black');
 }
