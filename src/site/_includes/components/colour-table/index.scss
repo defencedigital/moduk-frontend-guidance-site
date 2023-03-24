@@ -1,0 +1,25 @@
+@use '@moduk/frontend/src/css' as moduk;
+
+.guidance-colour-table {
+  @include moduk.govuk-responsive-margin(7, 'top');
+  @include moduk.govuk-responsive-margin(7, 'bottom');
+
+  width: 100%;
+  border-collapse: collapse;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  caption {
+    @extend %govuk-heading-m;
+
+    display: table-caption;
+    text-align: left;
+  }
+
+  th {
+    font-weight: 400;
+    text-align: left;
+  }
+}

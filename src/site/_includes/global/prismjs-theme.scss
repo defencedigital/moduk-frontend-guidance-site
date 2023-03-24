@@ -1,5 +1,6 @@
 @use 'sass:color';
 @use '@moduk/frontend/src/css/index' as moduk;
+@use 'variables';
 
 code[class*='language-'],
 pre[class*='language-'] {
@@ -10,7 +11,7 @@ pre[class*='language-'] {
 
   color: black;
   background: none;
-  font-family: ui-monospace, monospace;
+  font-family: variables.$monospace-font-stack;
   text-align: left;
   white-space: pre;
   word-spacing: normal;

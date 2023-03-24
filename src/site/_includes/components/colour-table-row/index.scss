@@ -1,0 +1,95 @@
+@use '@moduk/frontend/src/css' as moduk;
+@use 'sass:list';
+@use 'sass:map';
+
+$circle-size: 42px;
+
+// These breakpoints are set based on the current contents of the colours table.
+// If the contents are amended (to add new colours etc) then these should be
+// reviewed at the same time.
+$multiple-columns-breakpoint: 900px;
+$limit-variable-column-width-breakpoint: 1150px;
+
+.guidance-colour-table--colour-variable-row {
+  th,
+  td {
+    display: block;
+
+    @include moduk.govuk-media-query($from: $multiple-columns-breakpoint) {
+      display: table-cell;
+    }
+  }
+
+  &:not(:last-child) {
+    td {
+      padding-bottom: moduk.govuk-spacing(2);
+    }
+  }
+
+  @include moduk.govuk-media-query($from: $multiple-columns-breakpoint) {
+    &:not(:last-child) {
+      td {
+        padding-bottom: 0;
+      }
+    }
+
+    &:not(:first-child) {
+      th,
+      td {
+        padding-top: moduk.govuk-spacing(3);
+      }
+    }
+  }
+}
+
+.guidance-colour-table--colour-variable-cell {
+  display: block;
+
+  @include moduk.govuk-media-query($from: $multiple-columns-breakpoint) {
+    width: 75%;
+  }
+
+  @include moduk.govuk-media-query(
+    $from: $limit-variable-column-width-breakpoint
+  ) {
+    width: 50%;
+  }
+}
+
+.guidance-colour-table--cell-contents {
+  position: relative;
+  padding-left: $circle-size + moduk.govuk-spacing(2);
+
+  @include moduk.govuk-media-query($from: $multiple-columns-breakpoint) {
+    position: static;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+  }
+}
+
+.guidance-colour-table--circle {
+  display: block;
+  border-radius: 999px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $circle-size;
+  width: $circle-size;
+  flex: 0 0 auto;
+
+  @include moduk.govuk-media-query($from: $multiple-columns-breakpoint) {
+    position: static;
+    margin-right: moduk.govuk-spacing(3);
+  }
+}
+
+.guidance-colour-table--circle--brand-colour {
+  background: moduk.$moduk-brand-colour;
+}
+
+@each $colour in map.keys(moduk.$moduk-colours) {
+  .guidance-colour-table--circle--#{$colour} {
+    background: moduk.moduk-colour($colour);
+  }
+}

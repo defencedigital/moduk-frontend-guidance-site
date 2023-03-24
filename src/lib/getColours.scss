@@ -1,0 +1,14 @@
+// Minimal imports are used here, to avoid outputting anything other than
+// the CSS variables declared below.
+@use '@moduk/frontend/src/css/colour-palette' as palette;
+@use '@moduk/frontend/src/css/variables' as variables;
+@use 'sass:list';
+@use 'sass:map';
+
+:root {
+  --moduk-brand-colour: #{variables.$moduk-brand-colour};
+
+  @each $colour-name in map.keys(palette.$moduk-colours) {
+    --#{unquote($colour-name)}: #{palette.moduk-colour('#{$colour-name}')};
+  }
+}

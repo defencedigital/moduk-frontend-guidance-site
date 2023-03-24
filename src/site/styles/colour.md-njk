@@ -1,0 +1,105 @@
+---
+layout: layouts/markdown-page-with-side-nav.njk
+title: Colour
+description: How to apply the MOD.UK colour palette.
+tags: styles
+order: 100
+---
+
+{% from "components/colour-table/macro.njk" import guidanceColourTable -%}
+{% from "components/colour-table-row/macro.njk" import guidanceColourTableRow -%}
+
+{% set paletteColours = [
+  "purple",
+  "grey",
+  "blue",
+  "green",
+  "yellow",
+  "orange",
+  "pink"
+] -%}
+
+Always use the MOD.UK colour palette.
+
+## Colour contrast
+
+You must make sure that the contrast ratio of text and interactive elements in
+your service meets
+[level AA of the Web Content Accessibility Guidelines
+(WCAG 2.1)](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
+## Main colours
+
+If you are using MOD.UK Frontend, use the Sass variables provided rather than
+copying the hexadecimal (hex) colour values. For example, use
+`$moduk-brand-colour` rather than `{{ colours["moduk-brand-colour"] }}`.
+This means that your service will always use the most recent colour palette
+whenever you update.
+
+{% call guidanceColourTable({
+  caption: "Brand colour"
+}) %}
+
+{{ guidanceColourTableRow({
+  colourName: "brand-colour",
+  sassCode: "$moduk-brand-colour",
+  hexValue: colours["moduk-brand-colour"]
+}) }}
+
+{% endcall %}
+
+
+## Colour palette
+
+You can use all our colours in tints of 80%, 60%, 40% and 20%.
+
+Our colours are based on the
+[Ministry of Defence brand guidelines 2021 (requires sign in)](https://www.defencebrandportal.mod.uk).
+
+{% call guidanceColourTable({
+  caption: "Dark palette"
+}) -%}
+
+{% for colour in paletteColours -%}
+  {% set colourName = "dark-" + colour -%}
+
+  {{ guidanceColourTableRow({
+    colourName: colourName,
+    sassCode: "moduk-colour('" + colourName + "')",
+    hexValue: colours[colourName]
+  }) -}}
+{% endfor -%}
+
+{% endcall %}
+
+{% call guidanceColourTable({
+  caption: "Muted palette"
+}) %}
+
+{% for colour in paletteColours -%}
+  {% set colourName = "muted-" + colour -%}
+
+  {{ guidanceColourTableRow({
+    colourName: colourName,
+    sassCode: "moduk-colour('" + colourName + "')",
+    hexValue: colours[colourName]
+  }) -}}
+{% endfor -%}
+
+{% endcall %}
+
+{% call guidanceColourTable({
+  caption: "Bright palette"
+}) %}
+
+{% for colour in paletteColours -%}
+  {% set colourName = "bright-" + colour -%}
+
+  {{ guidanceColourTableRow({
+    colourName: colourName,
+    sassCode: "moduk-colour('" + colourName + "')",
+    hexValue: colours[colourName]
+  }) -}}
+{% endfor -%}
+
+{% endcall %}
