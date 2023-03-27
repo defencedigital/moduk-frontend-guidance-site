@@ -65,7 +65,7 @@
     "@typescript-eslint/parser": "^5.56.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
-    "dprint": "^0.34.5",
+    "dprint": "^0.35.3",
     "eleventy-plugin-rev": "^1.1.1",
     "eleventy-sass": "^2.2.1",
     "eslint": "^8.35.0",
