@@ -2,6 +2,7 @@ name: Lint and test
 
 on:
   pull_request:
+  push:
   workflow_call:
   workflow_dispatch:
 
@@ -56,6 +57,31 @@ jobs:
       - name: Run unit tests
         run: npm run test
 
+  build-container-image:
+    name: Build container image
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: ${{ github.event.repository.name }}
+      CONTAINER_NAME: ${{ github.event.repository.name }}
+    steps:
+      - name: Git clone repository
+        uses: actions/checkout@v3
+
+      - name: Set up environment
+        uses: ./.github/actions/prepare-environment
+
+      - name: Build container image
+        run: podman build --tag $IMAGE_NAME --file Dockerfile
+
+      - name: Export container image
+        run: podman save $IMAGE_NAME > /tmp/container-image.tar
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: container-image
+          path: /tmp/container-image.tar
+          retention-days: 1
+
   read-playwright-version:
     name: Read Playwright version
     runs-on: ubuntu-latest
@@ -75,9 +101,13 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - read-playwright-version
+      - build-container-image
+    env:
+      IMAGE_NAME: ${{ github.event.repository.name }}
+      CONTAINER_NAME: ${{ github.event.repository.name }}
     container:
       image: mcr.microsoft.com/playwright:${{ needs.read-playwright-version.outputs.version }}-jammy
-      options: --user 1001
+      options: --privileged
     strategy:
       matrix:
         shard: [1, 2]
@@ -89,8 +119,25 @@ jobs:
       - name: Set up environment
         uses: ./.github/actions/prepare-environment
 
-      - name: Build site
-        run: npm run build
+      - name: Install podman
+        run: |
+          apt-get update --yes
+          apt-get install --yes podman
+
+      - name: Download container image
+        uses: actions/download-artifact@v3
+        with:
+          name: container-image
+          path: /tmp
+
+      - name: Import container image
+        run: podman import /tmp/container-image.tar $IMAGE_NAME
+
+      - name: Start container
+        id: start-container
+        run: |
+          set -xe
+          podman run --detach -p8080:8080 --name $CONTAINER_NAME $IMAGE_NAME
 
       - name: Run e2e tests
         run: npm run test:e2e -- --shard ${{ matrix.shard }}/${{ matrix.total_shards }}
@@ -100,6 +147,10 @@ jobs:
         with:
           name: e2e-test-results-${{ matrix.shard }}
           path: e2e/output
+
+      - name: Stop container
+        if: always() && steps.start-container.conclusion == 'success'
+        run: docker stop $CONTAINER_NAME
 
   test-visual-regression:
     name: Run visual regression tests (${{ matrix.shard }}/${{ matrix.total_shards }})
