@@ -11,11 +11,38 @@ axe_disabled_rules:
 
 Use a notification banner to tell the user about something they need to know about, but that’s not directly related to the page content.
 
+## Telling the user about a problem that affects the whole service
+
+Use a purple notification banner if the user needs to know about a problem with the service as a whole.
+
 {{ guidanceComponentPreview({
   componentName: "notification-banner",
   exampleName: "default",
   macroOptions: macroOptions["notification-banner"]
 }) }}
+
+
+## Telling the user about something that’s happening elsewhere
+
+Use a purple notification banner if the user needs to know about something that’s happening elsewhere in the service.
+
+{{ guidanceComponentPreview({
+  componentName: "notification-banner",
+  exampleName: "with-html",
+  macroOptions: macroOptions["notification-banner"]
+}) }}
+
+
+## Reacting to something the user has done
+
+Use the green version of the notification banner to confirm that something the user is expecting to happen has happened.
+
+{{ guidanceComponentPreview({
+  componentName: "notification-banner",
+  exampleName: "success",
+  macroOptions: macroOptions["notification-banner"]
+}) }}
+
 
 [See GOV.UK notification banner component guidance](https://design-system.service.gov.uk/components/notification-banner/) for:
 
