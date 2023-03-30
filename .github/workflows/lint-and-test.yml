@@ -132,6 +132,38 @@ jobs:
           name: visual-regression-test-results-${{ matrix.shard }}
           path: e2e/output
 
+  build-and-test-container:
+    name: Build and test container
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: ${{ github.event.repository.name }}
+      CONTAINER_NAME: ${{ github.event.repository.name }}
+    steps:
+      - name: Git clone repository
+        uses: actions/checkout@v3
+
+      - name: Set up environment
+        uses: ./.github/actions/prepare-environment
+
+      - name: Build container
+        run: podman build --tag $IMAGE_NAME --file Dockerfile
+
+      - name: Start container
+        id: start-container
+        run: podman run --detach -p8080:8080 --name $CONTAINER_NAME $IMAGE_NAME
+
+      - name: Check root URL
+        run: |
+          RESPONSE="$(curl --no-progress-meter --fail --retry 10 --retry-connrefused --retry-delay 1 http://localhost:8080)"
+          if [[ "$RESPONSE" != *"Design and build consistent Defence service"* ]]; then
+            echo "Response didn't contain the expected text";
+            exit 1
+          fi
+
+      - name: Stop container
+        if: always() && steps.start-container.conclusion == 'success'
+        run: podman stop $CONTAINER_NAME
+
   audit-dependencies:
     name: Audit dependencies
     runs-on: ubuntu-latest
