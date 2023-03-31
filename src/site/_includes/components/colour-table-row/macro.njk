@@ -1,0 +1,17 @@
+{% macro guidanceColourTableRow(params) -%}
+
+<tr class="guidance-colour-table--colour-variable-row">
+  <th class="guidance-colour-table--colour-variable-cell" scope="row">
+    <div class="guidance-colour-table--cell-contents">
+        <div class="guidance-colour-table--circle guidance-colour-table--circle--{{ params.colourName }}"></div>
+      <code>{{ params.sassCode }}</code>
+    </div>
+  </th>
+  <td>
+    <div class="guidance-colour-table--cell-contents">
+      <code>{{ params.hexValue }}</code>
+    </div>
+  </td>
+</tr>
+
+{%- endmacro %}

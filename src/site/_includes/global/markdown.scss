@@ -1,6 +1,7 @@
 @use 'sass:color';
 @use '@moduk/frontend/src/css' as moduk;
-@use 'global/links';
+@use 'links';
+@use 'variables';
 
 @mixin markdown-styles {
   h1 {
@@ -59,6 +60,7 @@
         $lightness: -35%,
         $saturation: 100%
       );
+      font-family: variables.$monospace-font-stack;
       word-break: break-word;
 
       @include moduk.govuk-media-query($from: tablet) {

@@ -1,0 +1,8 @@
+{% macro guidanceColourTable(params) -%}
+
+<table class="guidance-colour-table">
+  <caption>{{ params.caption }}</caption>
+  {{ caller() }}
+</table>
+
+{%- endmacro %}
