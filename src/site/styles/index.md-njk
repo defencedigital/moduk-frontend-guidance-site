@@ -1,0 +1,33 @@
+---
+layout: layouts/markdown-page-with-side-nav.njk
+title: Styles
+description: Make your service look and feel like other Defence services for internal users.
+is_root: true
+order: 2
+tags: styles
+---
+
+Make your service look and feel like other Defence services for internal users.
+
+If you are using MOD.UK Frontend in your build, the coded examples in the Design
+System will not need additional styling.
+
+If you need to apply styles manually, you should still follow existing
+conventions. For example, do not assign new meanings to colours, do not change
+the style of buttons or adjust the thickness of borders on form inputs.
+
+## Typography, spacing and layout
+
+The [MOD.UK Figma Design Library]({{ vars.figmaURLs.designLibrary }}) shows how
+to apply:
+
+- [typography]({{vars.figmaURLs.typography}})
+- [spacing]({{vars.figmaURLs.spacing}})
+- [layout]({{vars.figmaURLs.layout}})
+
+This section has a guide for [applying MOD colours](/styles/colour/).
+
+If you cannot find what you need, contact the
+[user-centred design community](https://servicemanual.digital.mod.uk/your-community/user-centred-design/)
+or check the
+[GOV.UK Design System](https://design-system.service.gov.uk/).
