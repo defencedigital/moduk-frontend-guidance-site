@@ -18,12 +18,11 @@ the style of buttons or adjust the thickness of borders on form inputs.
 
 ## Typography, spacing and layout
 
-The [MOD.UK Figma Design Library]({{ vars.figmaURLs.designLibrary }}) shows how
-to apply:
+Some of our guides are in the [MOD.UK Figma Design Library]({{ vars.figmaURLs.designLibrary }}) – the following links open in new tabs in Figma:
 
-- [typography]({{vars.figmaURLs.typography}})
-- [spacing]({{vars.figmaURLs.spacing}})
-- [layout]({{vars.figmaURLs.layout}})
+- <a rel="noreferrer noopener" target="_blank" href="{{ vars.figmaURLs.typography }}">typography<span class="govuk-visually-hidden">(opens in new tab)</span></a>
+- <a rel="noreferrer noopener" target="_blank" href="{{ vars.figmaURLs.spacing }}">spacing<span class="govuk-visually-hidden">(opens in new tab)</span></a>
+- <a rel="noreferrer noopener" target="_blank" href="{{ vars.figmaURLs.layout }}">layout<span class="govuk-visually-hidden">(opens in new tab)</span></a>
 
 This section has a guide for [applying MOD colours](/styles/colour/).
 
