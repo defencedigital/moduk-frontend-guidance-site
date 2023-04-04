@@ -1,6 +1,6 @@
 {%- macro guidanceCard(params) -%}
 {% for item in params %}
-  <div class="govuk-grid-column-one-half-from-desktop govuk-!-margin-bottom-8">
+  <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
     <h2 class="govuk-heading-m govuk-!-font-weight-bold">{{item.heading}}</h2>
     <p class="govuk-body">{{item.text}}</p>
     {%- if item.link -%}
