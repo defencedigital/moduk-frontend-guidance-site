@@ -2,7 +2,6 @@
 require('ts-node').register()
 
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const autoprefixer = require('autoprefixer')
 const revPlugin = require('eleventy-plugin-rev')
 const sassPlugin = require('eleventy-sass')
 const { minify } = require('html-minifier-terser')
@@ -15,6 +14,7 @@ const { join, relative } = require('node:path')
 const { runtime: { SafeString } } = require('nunjucks')
 const postcss = require('postcss')
 const postcssFailOnWarn = require('postcss-fail-on-warn')
+const postcssPresetEnv = require('postcss-preset-env')
 const prettier = require('prettier')
 const webpack = require('webpack')
 const { createNunjucksEnvironment, getNunjucksPaths } = require('@moduk/frontend')
@@ -32,7 +32,7 @@ module.exports = (config) => {
       quietDeps: true,
     },
     postcss: postcss([
-      autoprefixer,
+      postcssPresetEnv(),
       postcssFailOnWarn,
     ]),
   })
