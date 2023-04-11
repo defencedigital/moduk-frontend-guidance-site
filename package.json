@@ -85,7 +85,7 @@
     "nunjucks": "^3.2.3",
     "postcss": "^8.4.21",
     "postcss-fail-on-warn": "^0.2.1",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.7",
     "release-it": "^15.9.0",
     "sass": "^1.59.3",
     "serve": "^14.2.0",
