@@ -21,6 +21,7 @@ module.exports = {
   rules: {
     'comma-dangle': 'off',
     'eol-last': 'off',
+    'func-call-spacing': 'off',
     'function-paren-newline': 'off',
     'implicit-arrow-linebreak': 'off',
     'import/extensions': [
@@ -52,6 +53,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     indent: 'off',
     'max-len': 'off',
+    'no-spaced-func': 'off',
     'object-curly-newline': 'off',
     'operator-linebreak': 'off',
     semi: ['error', 'never'],
