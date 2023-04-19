@@ -1,5 +1,6 @@
 {%- extends "layouts/_base.njk" -%}
 
+{%- from "components/back-to-top/macro.njk" import guidanceBackToTop -%}
 {%- from "components/side-nav/macro.njk" import guidanceSideNav -%}
 
 {%- block body -%}
@@ -20,5 +21,6 @@
       </div>
     </main>
   </div>
+  {{ guidanceBackToTop() }}
 </div>
 {%- endblock -%}

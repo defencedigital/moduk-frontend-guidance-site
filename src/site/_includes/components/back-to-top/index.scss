@@ -1,0 +1,43 @@
+/**
+ * Based on
+ * https://github.com/alphagov/govuk-design-system/blob/e770df0ebc43439b828d46f2c7f5a71a8eff3007/src/stylesheets/components/_back-to-top.scss
+ */
+
+@use '@moduk/frontend/src/css' as moduk;
+
+.guidance-back-to-top {
+  margin: moduk.govuk-spacing(4) 0 moduk.govuk-spacing(6);
+}
+
+@include moduk.govuk-media-query($from: tablet) {
+  .guidance-back-to-top {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 moduk.govuk-spacing(8);
+  }
+
+  .js-enabled .guidance-back-to-top--fixed {
+    position: fixed;
+    top: calc(100% - #{moduk.govuk-spacing(8)});
+    bottom: auto;
+    left: auto;
+  }
+
+  .js-enabled .guidance-back-to-top--hidden .guidance-back-to-top__link {
+    @include moduk.govuk-visually-hidden-focusable;
+  }
+}
+
+.guidance-back-to-top__link {
+  display: inline-flex;
+}
+
+.guidance-back-to-top__icon {
+  display: inline-block;
+  align-self: baseline;
+  width: 0.8em;
+  height: 1em;
+  margin-right: moduk.govuk-spacing(2);
+  vertical-align: middle;
+}

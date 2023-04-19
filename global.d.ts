@@ -11,7 +11,7 @@ declare global {
   namespace PlaywrightTest {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     interface Matchers<R, T> {
-      toHaveNoViolations(disabledRules?: string[]): Promise<void>
+      toHaveNoViolations(disabledRules?: string[], excludedElements?: string[]): Promise<void>
     }
   }
 

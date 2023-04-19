@@ -6,8 +6,10 @@ expect.extend({
   toHaveNoViolations: async (
     page: Page,
     disabledRules?: string[],
+    excludedElements: string[] = [],
   ) => {
     const axeResults = await new AxeBuilder({ page })
+      .exclude(excludedElements)
       .disableRules(disabledRules ?? [])
       .analyze()
 
