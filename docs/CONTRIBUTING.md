@@ -1,4 +1,4 @@
-# Contributing to MOD.UK Frontend
+# Contributing to this repository
 
 ## Branching strategy
 
@@ -62,6 +62,7 @@ type(scope?): Subject
 - fix
 - perf
 - refactor
+- release
 - revert
 - style
 - test
