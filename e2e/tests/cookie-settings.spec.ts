@@ -24,7 +24,6 @@ const testOptions = () => {
 
     test('cookie preference is set to the correct value', async ({ browserName, page }) => {
       test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
-      // @ts-expect-error See https://github.com/microsoft/playwright/issues/21453
       expect(await page.evaluate(() => document.cookie)).toMatch(`${cookiePreferenceKey}=1`)
     })
 
@@ -51,7 +50,6 @@ const testOptions = () => {
 
     test('cookie preference is set to the correct value', async ({ browserName, page }) => {
       test.skip(browserName === 'webkit', 'WebKit does not let you set Secure cookies on localhost')
-      // @ts-expect-error See https://github.com/microsoft/playwright/issues/21453
       expect(await page.evaluate(() => document.cookie)).toMatch(`${cookiePreferenceKey}=0`)
     })
 
