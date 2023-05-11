@@ -51,6 +51,10 @@ module.exports = (config) => {
   })
   config.setLibrary('njk', nunjucksEnv)
 
+  config.addNunjucksGlobal('flags', {
+    showReactCodeSnippets: (process.env.SHOW_REACT_CODE_SNIPPETS ?? '').toLowerCase() === 'true',
+  })
+
   const markdownIt = new MarkdownIt()
   config.addFilter('markdown', (markdown) => markdown && new SafeString(markdownIt.render(markdown)))
 
@@ -88,6 +92,16 @@ module.exports = (config) => {
       }
     }
     throw new Error('readTemplate tag: unexpectedly reached end of template include directories')
+  })
+
+  config.addShortcode('readReactExample', (componentName, exampleName) => {
+    try {
+      const examplePath = require.resolve(`@moduk/frontend/src/react/${componentName}/__examples__/${exampleName}.tsx`)
+      const code = readFileSync(examplePath, 'utf8')
+      return prettier.format(code, { parser: 'typescript' })
+    } catch {
+      return ''
+    }
   })
 
   config.addShortcode(
