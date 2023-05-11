@@ -2,26 +2,6 @@
 
 $border-value: 1px solid moduk.$govuk-border-colour;
 
-@mixin active-tab-link {
-  &,
-  &:visited,
-  &:hover {
-    color: moduk.govuk-colour('black');
-  }
-
-  &:not(:hover) {
-    text-decoration: none;
-  }
-}
-
-@mixin extend-click-area {
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-  }
-}
-
 .guidance-component-preview {
   border: $border-value;
   border-bottom: none;
@@ -66,81 +46,4 @@ $border-value: 1px solid moduk.$govuk-border-colour;
   display: block;
   width: 100%;
   border: none;
-}
-
-.guidance-component-preview__tabs {
-  display: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  border-top: $border-value;
-
-  @include moduk.govuk-media-query($from: tablet) {
-    display: flex;
-  }
-}
-
-.guidance-component-preview__tab-item-spacing {
-  display: inline-block;
-  flex: 1 0 auto;
-  border-bottom: $border-value;
-}
-
-.guidance-component-preview__tab-item-link {
-  @include extend-click-area;
-}
-
-.guidance-component-preview__tab-item {
-  position: relative;
-  display: inline-block;
-  padding: moduk.govuk-spacing(4);
-  border-bottom: $border-value;
-
-  &:not(:first-of-type) {
-    border-left: 1px solid transparent;
-  }
-
-  &.guidance-component-preview__tab-item--current {
-    border-bottom: none;
-
-    &:not(:first-of-type) {
-      border-left: $border-value;
-    }
-
-    .guidance-component-preview__tab-item-link.govuk-link.moduk-link--maroon {
-      @include active-tab-link;
-    }
-
-    + .guidance-component-preview__tab-item,
-    + .guidance-component-preview__tab-item-spacing {
-      border-left: $border-value;
-    }
-  }
-}
-
-.guidance-component-preview__mobile-button-wrapper {
-  position: relative;
-  padding: moduk.govuk-spacing(3);
-  border-bottom: $border-value;
-
-  @include moduk.govuk-media-query($from: tablet) {
-    display: none;
-  }
-
-  .guidance-component-preview__mobile-button--current.govuk-link {
-    @include active-tab-link;
-  }
-}
-
-.guidance-component-preview__mobile-button-wrapper--first {
-  border-top: $border-value;
-}
-
-.guidance-component-preview__mobile-button {
-  @include extend-click-area;
-}
-
-.guidance-component-preview__tab-contents {
-  padding: moduk.govuk-spacing(4);
-  border-bottom: $border-value;
 }
