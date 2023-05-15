@@ -37,6 +37,7 @@ module.exports = (config) => {
     ]),
   })
   config.addPlugin(syntaxHighlight, {
+    lineSeparator: '<br>',
     preAttributes: {
       tabindex: 0,
     },
