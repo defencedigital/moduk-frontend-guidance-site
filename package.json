@@ -51,7 +51,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.4",
     "@commitlint/cli": "^17.5.1",
-    "@commitlint/config-conventional": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.3",
     "@playwright/test": "^1.32.3",
     "@release-it/conventional-changelog": "^5.1.1",
     "@testing-library/dom": "^9.2.0",
