@@ -74,7 +74,7 @@
     "eslint-plugin-unicorn": "^46.0.0",
     "glob": "^10.2.2",
     "happy-dom": "^8.6.0",
-    "html-minifier-terser": "^7.1.0",
+    "html-minifier-terser": "^7.2.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "lodash": "^4.17.21",
