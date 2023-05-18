@@ -46,6 +46,16 @@ If you’re asking more than one question on the page, do not set the contents o
   macroOptions: macroOptions["input"]
 }) }}
 
+### Hint text
+
+Use hint text for help that’s relevant to the majority of users, like how their information will be used, or where to find it.
+
+{{ guidanceComponentPreview({
+  componentName: "input",
+  exampleName: "with-hint",
+  macroOptions: macroOptions["input"]
+}) }}
+
 ### Prefixes and suffixes
 
 {{ guidanceComponentPreview({
