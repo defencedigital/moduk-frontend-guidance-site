@@ -45,6 +45,27 @@ If your summary list does not have any actions, you can choose to remove the sep
   macroOptions: macroOptions["summary-list"]
 }) }}
 
+## Summary cards
+
+If you’re showing multiple summary lists on a page, you can show each list within a summary
+card. This lets you visually separate each summary list and give each a title and some actions.
+
+{{ guidanceComponentPreview({
+  componentName: "summary-list",
+  exampleName: "cards",
+  macroOptions: macroOptions["summary-list"]
+}) }}
+
+### Adding card actions
+
+You can add card actions in the header, which will be shown after the summary card’s title.
+
+{{ guidanceComponentPreview({
+  componentName: "summary-list",
+  exampleName: "cards-with-action",
+  macroOptions: macroOptions["summary-list"]
+}) }}
+
 ## Changes from the GOV.UK version
 
 MOD.UK Design System components are closely based on [GOV.UK Design System](https://design-system.service.gov.uk/) components.
