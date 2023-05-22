@@ -38,7 +38,6 @@ If you’re asking just [one question per page](https://design-system.service.go
   macroOptions: macroOptions["character-count"]
 }) }}
 
-
 ### If you’re asking more than one question on the page
 
 If you’re asking more than one question on the page, do not set the contents of the `<label>` as the page heading.
@@ -46,6 +45,16 @@ If you’re asking more than one question on the page, do not set the contents o
 {{ guidanceComponentPreview({
   componentName: "character-count",
   exampleName: "not-as-page-heading",
+  macroOptions: macroOptions["character-count"]
+}) }}
+
+### Error messages
+
+Error messages should be styled like this:
+
+{{ guidanceComponentPreview({
+  componentName: "character-count",
+  exampleName: "with-error-message",
   macroOptions: macroOptions["character-count"]
 }) }}
 
