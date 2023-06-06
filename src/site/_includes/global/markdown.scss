@@ -1,7 +1,6 @@
-@use 'sass:color';
 @use '@moduk/frontend/src/css' as moduk;
+@use 'components/inline-code';
 @use 'links';
-@use 'variables';
 
 @mixin markdown-styles {
   h1 {
@@ -51,21 +50,7 @@
     }
 
     code {
-      @include moduk.govuk-typography-responsive($size: 16);
-
-      padding: 2px 4px;
-      background: moduk.govuk-colour('light-grey');
-      color: color.scale(
-        moduk.govuk-colour('pink'),
-        $lightness: -35%,
-        $saturation: 100%
-      );
-      font-family: variables.$monospace-font-stack;
-      word-break: break-word;
-
-      @include moduk.govuk-media-query($from: tablet) {
-        padding: 3px 5px;
-      }
+      @include inline-code.inline-code;
     }
   }
 

@@ -1,0 +1,114 @@
+{% from "moduk/components/tag/macro.njk" import modukTag -%}
+{% from "moduk/components/table/macro.njk" import modukTable -%}
+
+{{ modukTable({
+  head: [
+    {
+      text: "Class name"
+    },
+    {
+      text: "Tag"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: "<code class='guidance-inline-code'>govuk-tag--grey</code>"
+      },
+      {
+        html: modukTag({
+          text: "Inactive",
+          classes: "govuk-tag--grey"
+        })
+      }
+    ],
+    [
+      {
+        html: "<code class='guidance-inline-code'>govuk-tag--green</code>"
+      },
+      {
+        html: modukTag({
+          text: "New",
+          classes: "govuk-tag--green"
+        })
+      }
+    ],
+    [
+      {
+        html: "<code class='guidance-inline-code'>govuk-tag--turquoise</code>"
+      },
+      {
+        html: modukTag({
+          text: "Active",
+          classes: "govuk-tag--turquoise"
+        })
+      }
+    ],
+    [
+      {
+        html: "<code class='guidance-inline-code'>govuk-tag--blue</code>"
+      },
+      {
+        html: modukTag({
+          text: "Pending",
+          classes: "govuk-tag--blue"
+        })
+      }
+    ],
+    [
+      {
+        html: "<code class='guidance-inline-code'>govuk-tag--purple</code>"
+      },
+      {
+        html: modukTag({
+          text: "Received",
+          classes: "govuk-tag--purple"
+        })
+      }
+    ],
+    [
+      {
+        html: "<code class='guidance-inline-code'>govuk-tag--pink</code>"
+      },
+      {
+        html: modukTag({
+          text: "Sent",
+          classes: "govuk-tag--pink"
+        })
+      }
+    ],
+    [
+      {
+        html: "<code class='guidance-inline-code'>govuk-tag--red</code>"
+      },
+      {
+        html: modukTag({
+          text: "Rejected",
+          classes: "govuk-tag--red"
+        })
+      }
+    ],
+    [
+      {
+        html: "<code class='guidance-inline-code'>govuk-tag--orange</code>"
+      },
+      {
+        html: modukTag({
+          text: "Declined",
+          classes: "govuk-tag--orange"
+        })
+      }
+    ],
+    [
+      {
+        html: "<code class='guidance-inline-code'>govuk-tag--yellow</code>"
+      },
+      {
+        html: modukTag({
+          text: "Delayed",
+          classes: "govuk-tag--yellow"
+        })
+      }
+    ]
+  ]
+}) -}}
