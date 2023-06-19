@@ -15,11 +15,21 @@ Use the tag component to show users the status of something.
   macroOptions: macroOptions["tag"]
 }) }}
 
-[See GOV.UK phase banner component guidance](https://design-system.service.gov.uk/components/tag/) for:
+[See GOV.UK tag component guidance](https://design-system.service.gov.uk/components/tag/) for:
 
 - when to use this component
 - how it works
 - using colour with tags
+
+## Additional colours
+
+If you need more tag colours, you can use the following tints.
+
+{{ guidanceComponentPreview({
+  componentName: "tag",
+  exampleName: "additional-colours",
+  macroOptions: macroOptions["tag"]
+}) }}
 
 ## Changes from the GOV.UK version
 
