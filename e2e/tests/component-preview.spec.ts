@@ -125,7 +125,10 @@ test.describe('component preview', () => {
 
   test.describe('when the Nunjucks tab is clicked', () => {
     test.beforeEach(async ({ page, tabRole }) => {
-      await page.getByRole(tabRole, { name: 'Nunjucks' }).click()
+      const nunjucksTabButton = page.getByRole(tabRole, { name: 'Nunjucks' })
+      await nunjucksTabButton.click()
+      await nunjucksTabButton.blur()
+      await page.mouse.move(0, 0)
     })
 
     test('shows the Nunjucks tab contents', async ({ page, tabRole }) => {
@@ -154,7 +157,6 @@ test.describe('component preview', () => {
       // https://github.com/microsoft/playwright/issues/12077
       test.describe('nunjucks macro options link', () => {
         test('matches the saved screenshot', async ({ page }) => {
-          await page.mouse.move(0, 0)
           const detailsSummary = page.locator('summary', { hasText: 'Nunjucks macro options' })
           await expect(detailsSummary).toHaveScreenshot(
             'component-preview-nunjucks-tab-open-macro-options-details-default.png',
