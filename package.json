@@ -46,7 +46,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@axe-core/playwright": "^4.7.1",
+    "@axe-core/playwright": "^4.7.3",
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.4",
@@ -110,11 +110,6 @@
     "*.{md,yaml,yml}": [
       "dprint fmt"
     ]
-  },
-  "overrides": {
-    "@axe-core/playwright": {
-      "playwright": "$@playwright/test"
-    }
   },
   "dependencies": {
     "@moduk/frontend": "^1.1.19",
