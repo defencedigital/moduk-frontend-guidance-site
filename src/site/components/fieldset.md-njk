@@ -15,7 +15,7 @@ Use the fieldset component to group related form inputs.
   macroOptions: macroOptions["fieldset"]
 }) }}
 
-[See GOV.UK error summary component guidance](https://design-system.service.gov.uk/components/fieldset/) for:
+[See GOV.UK fieldset component guidance](https://design-system.service.gov.uk/components/fieldset/) for:
 
 - when to use this component
 - how it works
