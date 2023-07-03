@@ -112,11 +112,12 @@
     ]
   },
   "dependencies": {
-    "@moduk/frontend": "^1.1.23",
+    "@moduk/frontend": "^1.1.27",
     "core-js": "^3.31.0",
     "iframe-resizer": "^4.3.5"
   },
   "overrides": {
-    "semver": "^7.5.3"
+    "semver": "^7.5.3",
+    "optionator": "^0.9.3"
   }
 }
