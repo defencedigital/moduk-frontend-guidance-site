@@ -87,7 +87,7 @@
     "postcss-preset-env": "^8.5.1",
     "prettier": "^2.8.8",
     "release-it": "^15.11.0",
-    "sass": "^1.62.1",
+    "sass": "^1.63.6",
     "serve": "^14.2.0",
     "shx": "^0.3.4",
     "stylelint": "^15.9.0",
