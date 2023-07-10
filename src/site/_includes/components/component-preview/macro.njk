@@ -7,6 +7,11 @@
 {% macro guidanceComponentPreview(params) -%}
 
 {%- set exampleTemplatePath = "moduk/components/" + params.componentName + "/__examples__/" + params.exampleName + ".njk" -%}
+
+{% set reactExampleCode -%}
+{% readReactExample params.componentName, params.exampleName -%}
+{% endset -%}
+
 {%- if params.idSuffix -%}
   {%- set idSuffix = "--" + params.idSuffix -%}
 {%- else -%}
@@ -49,6 +54,32 @@
 {% endcall -%}
 {% endset -%}
 
+{% set tabs = [{
+  label: "HTML",
+  contents: htmlTabContents | safe,
+  panelId: idPrefix + "--html"
+}, {
+  label: "Nunjucks",
+  contents: nunjucksTabContents | safe,
+  panelId: idPrefix + "--nunjucks"
+}] -%}
+
+{% if flags.showReactCodeSnippets and reactExampleCode -%}
+
+{% set reactTabContents %}
+{% call guidanceCodeSnippet({ language: "tsx" }) -%}
+{{ reactExampleCode | safe -}}
+{% endcall -%}
+{% endset -%}
+
+{% set tabs = (tabs.push({
+  label: "React",
+  contents: reactTabContents | safe,
+  panelId: idPrefix + "--tsx"
+}), tabs) -%}
+
+{% endif -%}
+
 <div class="guidance-component-preview js-guidance-component-preview">
   <div class="guidance-component-preview__toolbar">
     <a href="/components/{{ params.componentName }}/preview/{{ params.exampleName }}/" class="govuk-link moduk-link--maroon" target="_blank">
@@ -63,15 +94,7 @@
     </div>
   </div>
   {{ guidanceComponentPreviewTabs({
-    tabs: [{
-      label: "HTML",
-      contents: htmlTabContents | safe,
-      panelId: idPrefix + "--html"
-    }, {
-     label: "Nunjucks",
-     contents: nunjucksTabContents | safe,
-     panelId: idPrefix + "--nunjucks"
-   }]
+    tabs: tabs
   }) }}
 </div>
 {%- endmacro %}

@@ -1,5 +1,7 @@
 import { expect, test as base } from '@playwright/test'
 
+const showReactCodeSnippets = (process.env.SHOW_REACT_CODE_SNIPPETS ?? '').toLowerCase() === 'true'
+
 const test = base.extend({
   tabRole: ({ viewport }, use) => {
     use(viewport && viewport.width < 641 ? 'button' : 'tab')
@@ -174,11 +176,38 @@ test.describe('component preview', () => {
     })
   })
 
+  test.describe('when the React tab is clicked', () => {
+    test.skip(!showReactCodeSnippets, 'React code snippets are not enabled')
+
+    test.beforeEach(async ({ page, tabRole }) => {
+      const htmlTabButton = page.getByRole(tabRole, { name: 'React' })
+      await htmlTabButton.click()
+      await htmlTabButton.blur()
+      await page.mouse.move(0, 0)
+    })
+
+    test('shows the React tab contents when clicked', async ({ page, tabRole }) => {
+      await expect(page.getByRole('tabpanel')).toContainText('<BackLink href=')
+      await expect(page.getByRole(tabRole, { name: 'React' })).toHaveAttribute('aria-expanded', 'true')
+      await expect(page.getByRole(tabRole, { name: 'Nunjucks' })).toHaveAttribute('aria-expanded', 'false')
+      await expect(page.getByRole(tabRole, { name: 'HTML' })).toHaveAttribute('aria-expanded', 'false')
+    })
+
+    test.describe('@visual-regression', () => {
+      test('matches the saved screenshot', async ({ page }) => {
+        const firstPreview = page.locator('.guidance-component-preview')
+        await expect(firstPreview).toHaveScreenshot(
+          'component-preview-react-tab-open.png',
+        )
+      })
+    })
+  })
+
   test.describe('when JavaScript is disabled', () => {
     test.use({ javaScriptEnabled: false })
 
     test('shows the tab contents on load', async ({ page }) => {
-      await expect(page.getByRole('tabpanel')).toHaveCount(2)
+      await expect(page.getByRole('tabpanel')).toHaveCount(showReactCodeSnippets ? 3 : 2)
     })
   })
 })
