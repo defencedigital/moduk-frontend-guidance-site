@@ -72,7 +72,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-unicorn": "^48.0.0",
+    "eslint-plugin-unicorn": "^48.0.1",
     "glob": "^10.3.3",
     "happy-dom": "^8.6.0",
     "html-minifier-terser": "^7.2.0",
