@@ -15,7 +15,7 @@ const { runtime: { SafeString } } = require('nunjucks')
 const postcss = require('postcss')
 const postcssFailOnWarn = require('postcss-fail-on-warn')
 const postcssPresetEnv = require('postcss-preset-env')
-const prettier = require('prettier')
+const prettier = require('@prettier/sync')
 const webpack = require('webpack')
 const { createNunjucksEnvironment, getNunjucksPaths } = require('@moduk/frontend')
 
