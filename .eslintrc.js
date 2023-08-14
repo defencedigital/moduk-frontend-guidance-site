@@ -51,6 +51,17 @@ module.exports = {
       ],
       optionalDependencies: false,
     }],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          ['builtin', 'external'],
+          'parent',
+          'sibling',
+          'index',
+        ],
+      },
+    ],
     'import/prefer-default-export': 'off',
     indent: 'off',
     'max-len': 'off',
