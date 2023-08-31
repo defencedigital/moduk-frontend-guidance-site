@@ -21,14 +21,15 @@
   "includes": ["*.{ts,tsx,mts,js,jsx,cjs,mjs,json,md,dockerfile,html,css,sass,scss,yml,yaml}"],
   "excludes": [
     "dist/",
+    "e2e/output/",
     "node_modules/",
     "*-lock.json"
   ],
   "plugins": [
-    "https://plugins.dprint.dev/typescript-0.83.0.wasm",
-    "https://plugins.dprint.dev/json-0.17.0.wasm",
-    "https://plugins.dprint.dev/markdown-0.15.2.wasm",
+    "https://plugins.dprint.dev/typescript-0.87.1.wasm",
+    "https://plugins.dprint.dev/json-0.17.4.wasm",
+    "https://plugins.dprint.dev/markdown-0.16.0.wasm",
     "https://plugins.dprint.dev/dockerfile-0.3.0.wasm",
-    "https://plugins.dprint.dev/prettier-0.20.0.json@a858510ad0110784e7583b02c38d6ee6bfd448c8087ba2303312ca3cd5899561"
+    "https://plugins.dprint.dev/prettier-0.27.0.json@3557a62b4507c55a47d8cde0683195b14d13c41dda66d0f0b0e111aed107e2fe"
   ]
 }
