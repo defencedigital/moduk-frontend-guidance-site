@@ -61,7 +61,7 @@
     "@types/gtag.js": "^0.0.12",
     "@types/lodash": "^4.14.195",
     "@types/node": "^18.16.19",
-    "@types/nunjucks": "^3.2.2",
+    "@types/nunjucks": "^3.2.3",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
     "babel-loader": "^9.1.2",
