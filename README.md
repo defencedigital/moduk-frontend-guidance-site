@@ -1,13 +1,17 @@
 # MOD.UK Frontend guidance site
 
-This repo contains the source code for the MOD.UK Frontend guidance website.
+This repo contains the source code for the
+[MOD.UK Frontend guidance website](https://design-system.service.mod.gov.uk).
 
 ## Development
 
 The library uses [Eleventy](https://www.11ty.dev/),
 [Sass](https://sass-lang.com), [ESLint](https://eslint.org),
-[dprint](https://dprint.dev) and [commitlint](https://commitlint.js.org). Git
-hooks are used for enforcing linting and formatting rules.
+[Stylelint](https://stylelint.io/), [dprint](https://dprint.dev) and
+[commitlint](https://commitlint.js.org). Git hooks (via
+[Husky](https://typicode.github.io/husky/) and
+[lint-staged](https://github.com/okonet/lint-staged)) are used for enforcing
+linting and formatting rules.
 
 The unit test suite uses [Vitest](https://vitest.dev) and
 [Testing Library](https://testing-library.com).
@@ -17,11 +21,18 @@ run across a variety of browsers and configurations against a local web server
 that serves examples of components. This includes accessibility checks using
 [axe](https://www.deque.com/axe/) and visual regression tests.
 
-Local development requires Node.js 16 or 18 and npm 8.
+Local development requires Node.js 16 or 18 and npm 8 or newer.
 
 ### Setting up your development environment
 
-1. Clone the repository:
+1. Clone the repository via SSH:
+
+   ```shell
+   git clone git@github.com:defencedigital/moduk-frontend-guidance-site.git
+   cd moduk-frontend-guidance-site
+   ```
+
+   If you haven’t set up an SSH key for GitHub, you can clone via HTTPS instead:
 
    ```shell
    git clone https://github.com/defencedigital/moduk-frontend-guidance-site.git
@@ -48,11 +59,11 @@ Local development requires Node.js 16 or 18 and npm 8.
 5. Ensure jq is installed. On macOS it can be installed using
    [Homebrew](https://brew.sh/):
 
-   jq is required only for running visual regression tests.
-
    ```shell
    brew install jq
    ```
+
+   jq is required only for running visual regression tests.
 
 ### Commands
 
@@ -86,17 +97,30 @@ npm test
 npm run test:e2e
 ```
 
+This runs end-to-end tests using Playwright for all configured browser
+configurations. The Eleventy dev server is started automatically, and so does
+not need to be started separately.
+
 ##### Run specific files using a regex
 
 ```shell
 npm run test:e2e <regex>
 ```
 
+You can also use `test.only` or `test.desribe.only` within a test file to run
+only that test (and any other tests using `.only`).
+
 ##### Run tests with tracing
 
 ```shell
 npm run test:e2e:trace
 ```
+
+[Playwright traces](https://playwright.dev/docs/trace-viewer-intro) record
+failed tests for debugging later, or on a different machine.
+
+You can also debug tests [using VS code](https://playwright.dev/docs/debug), or
+by [using the built-in inspector debugger](https://playwright.dev/docs/debug).
 
 #### Run visual regression tests in a container
 
@@ -129,6 +153,23 @@ npm run test:visual:clean
 
 This can be useful after renaming or deleting visual regression tests or
 component examples.
+
+#### Build the static site
+
+```shell
+npm run build
+```
+
+The built site is output to the `dist` directory.
+
+#### Build and run the container image
+
+```shell
+podman build --tag moduk-frontend-guidance-site .
+podman run --rm -p 8080:8080 -it moduk-frontend-guidance-site
+```
+
+The server will then be available at http://localhost:8080.
 
 ## Configuration
 
