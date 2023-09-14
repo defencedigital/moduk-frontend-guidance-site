@@ -68,7 +68,7 @@
     "dprint": "^0.40.2",
     "eleventy-plugin-rev": "^1.1.1",
     "eleventy-sass": "^2.2.3",
-    "eslint": "^8.48.0",
+    "eslint": "^8.49.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-typescript": "^3.6.0",
     "eslint-plugin-import": "^2.28.1",
