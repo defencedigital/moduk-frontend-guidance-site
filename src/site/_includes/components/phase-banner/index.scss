@@ -6,9 +6,14 @@
   }
 }
 
-.moduk--primary-nav-expanded,
-.moduk--has-hero {
-  .govuk-phase-banner.guidance-phase-banner {
+.moduk--has-hero .govuk-phase-banner.guidance-phase-banner {
+  @media not (prefers-contrast) {
+    border-bottom: none;
+  }
+}
+
+.moduk--primary-nav-expanded .govuk-phase-banner.guidance-phase-banner {
+  @media not (prefers-contrast) {
     border-bottom: none;
   }
 }

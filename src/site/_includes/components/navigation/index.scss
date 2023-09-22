@@ -16,6 +16,23 @@ $navigation-height: 50px;
 
 .guidance-navigation {
   background-color: moduk.govuk-colour('light-grey');
+  border-bottom: 1px solid moduk.govuk-colour('mid-grey');
+
+  @include moduk.govuk-media-query($from: tablet) {
+    border-top: 1px solid moduk.govuk-colour('mid-grey');
+  }
+
+  @media not (prefers-contrast) {
+    border: none;
+  }
+}
+
+.moduk--has-hero .guidance-navigation {
+  border-bottom-color: moduk.moduk-colour('dark-purple');
+
+  @media not (prefers-contrast) {
+    border: none;
+  }
 }
 
 .guidance-navigation__list {
@@ -61,20 +78,16 @@ $navigation-height: 50px;
 
   &::after {
     content: '';
+    pointer-events: none;
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: $border-width;
-    background-color: moduk.$moduk-brand-colour;
+    inset: 0;
+    border-left: $border-width solid moduk.$moduk-brand-colour;
   }
 
   @include moduk.govuk-media-query($from: tablet) {
     &::after {
-      top: auto;
-      bottom: 0;
-      width: 100%;
-      height: $border-width;
+      border-left: none;
+      border-bottom: $border-width solid moduk.$moduk-brand-colour;
     }
   }
 }
@@ -142,19 +155,14 @@ $navigation-height: 50px;
       &::after {
         content: '';
         position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: $border-width;
-        background-color: moduk.moduk-colour('maroon');
+        inset: 0;
+        border-left: $border-width solid moduk.$moduk-brand-colour;
       }
 
       @include moduk.govuk-media-query($from: tablet) {
         &::after {
-          top: auto;
-          bottom: 0;
-          width: 100%;
-          height: $border-width;
+          border-left: none;
+          border-bottom: $border-width solid moduk.$moduk-brand-colour;
         }
       }
     }
