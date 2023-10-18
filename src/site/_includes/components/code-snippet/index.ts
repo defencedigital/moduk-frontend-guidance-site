@@ -1,5 +1,5 @@
 function createTextOverrider(element: HTMLElement, timeoutMs: number) {
-  let timeoutId: NodeJS.Timer | number | null
+  let timeoutId: NodeJS.Timeout | number | null
   const initialText = element.innerText
 
   return {
