@@ -33,3 +33,12 @@ updates:
       - ci
     commit-message:
       prefix: 'ci:'
+
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    labels:
+      - ci
+    commit-message:
+      prefix: 'deps:'
