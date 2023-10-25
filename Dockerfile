@@ -1,5 +1,5 @@
 # Build stage
-FROM registry.access.redhat.com/ubi9/nodejs-18:latest AS builder
+FROM registry.access.redhat.com/ubi8/nodejs-18:1-71.1697652955 AS builder
 
 USER root
 WORKDIR /app-build
@@ -12,7 +12,7 @@ COPY . /app-build
 RUN npm run build
 
 # Copy to the RedHat Nginx image
-FROM registry.access.redhat.com/ubi9/nginx-120:latest
+FROM registry.access.redhat.com/ubi8/nginx-120:1-127.1697652948
 
 RUN rm -r "${HOME}/nginx-start/"
 
