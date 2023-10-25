@@ -1,18 +1,18 @@
 # Build stage
-FROM registry.access.redhat.com/ubi9/nodejs-18:latest AS builder
+FROM registry.access.redhat.com/ubi8/nodejs-18:1-71.1697652955 AS builder
 
 USER root
 WORKDIR /app-build
 
 COPY package.json /app-build/
 COPY package-lock.json /app-build/
-RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && NODE_OPTIONS=--openssl-legacy-provider && npm ci
 
 COPY . /app-build
 RUN npm run build
 
 # Copy to the RedHat Nginx image
-FROM registry.access.redhat.com/ubi9/nginx-120:latest
+FROM registry.access.redhat.com/ubi8/nginx-120:1-127.1697652948
 
 RUN rm -r "${HOME}/nginx-start/"
 
