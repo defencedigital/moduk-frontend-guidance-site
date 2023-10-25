@@ -6,7 +6,7 @@ WORKDIR /app-build
 
 COPY package.json /app-build/
 COPY package-lock.json /app-build/
-RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && NODE_OPTIONS=--openssl-legacy-provider && npm ci
 
 COPY . /app-build
 RUN npm run build
