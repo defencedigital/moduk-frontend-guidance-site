@@ -18,10 +18,14 @@ const postcssPresetEnv = require('postcss-preset-env')
 const prettier = require('@prettier/sync')
 const webpack = require('webpack')
 const { createNunjucksEnvironment, getNunjucksPaths } = require('@moduk/frontend')
-
+const crypto = require('node:crypto')
 const webpackConfig = require('./webpack.config')
 
 const templatePath = join(__dirname, 'src/site/_includes')
+
+// HACK: OpenSSL 3 does not support md5 any more, but eleventy-plugin-rev hardcodes it
+const cryptoOriginalCreateHash = crypto.createHash
+crypto.createHash = (algorithm) => cryptoOriginalCreateHash(algorithm === 'md5' ? 'sha256' : algorithm)
 
 module.exports = (config) => {
   config.addPlugin(revPlugin)
