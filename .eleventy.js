@@ -25,7 +25,11 @@ const templatePath = join(__dirname, 'src/site/_includes')
 
 // HACK: OpenSSL 3 does not support md5 any more, but eleventy-plugin-rev hardcodes it
 const cryptoOriginalCreateHash = crypto.createHash
-crypto.createHash = (algorithm) => cryptoOriginalCreateHash(algorithm === 'md5' ? 'sha256' : algorithm)
+crypto.createHash = (algorithm) => {
+  // eslint-disable-next-line no-console
+  console.log('crypto.createHash called with algorithm ', algorithm)
+  return cryptoOriginalCreateHash(algorithm === 'md5' ? 'sha256' : algorithm)
+}
 
 module.exports = (config) => {
   config.addPlugin(revPlugin)
