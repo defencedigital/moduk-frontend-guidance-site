@@ -87,7 +87,7 @@
     "postcss-fail-on-warn": "^0.2.1",
     "postcss-preset-env": "^9.1.4",
     "release-it": "^16.1.5",
-    "sass": "^1.68.0",
+    "sass": "^1.69.4",
     "serve": "^14.2.1",
     "shx": "^0.3.4",
     "stylelint": "^15.10.3",
