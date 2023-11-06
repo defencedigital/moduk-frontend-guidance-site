@@ -79,7 +79,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "lodash": "^4.17.21",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^13.0.2",
     "markdown-it-anchor": "^8.6.7",
     "node-html-parser": "^6.1.10",
     "nunjucks": "^3.2.4",
