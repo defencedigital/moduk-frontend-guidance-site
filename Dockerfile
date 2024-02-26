@@ -1,5 +1,5 @@
 # Build stage
-FROM registry.access.redhat.com/ubi8/nodejs-18:1-86 AS builder
+FROM registry.access.redhat.com/ubi8/nodejs-18:1-94 AS builder
 
 USER root
 WORKDIR /app-build
