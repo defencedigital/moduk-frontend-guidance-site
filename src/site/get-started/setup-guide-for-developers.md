@@ -168,7 +168,7 @@ Add a `<script>` at the start of your `<body>` section as follows:
 ```html
 <body>
     <script>
-        document.body.className = ((document.body.className) ? document.body.className + 'js-enabled' : 'js-enabled');
+        document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
     </script>
     ...
 </body>
