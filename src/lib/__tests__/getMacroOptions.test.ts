@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import { addInternalComponents, transformMacroOptions } from '../getMacroOptions'
 
-vi.mock('govuk-frontend/govuk/components/hint/macro-options.json', () => ({
+vi.mock('govuk-frontend/dist/govuk/components/hint/macro-options.json', () => ({
   default: [
     {
       name: 'hint-test',

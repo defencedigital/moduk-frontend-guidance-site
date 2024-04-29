@@ -4,10 +4,7 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  @include moduk.govuk-typography-responsive(
-    $size: 16,
-    $override-line-height: 1.5
-  );
+  @include moduk.govuk-font-size($size: 16, $line-height: 1.5);
 
   color: black;
   background: none;

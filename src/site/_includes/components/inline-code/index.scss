@@ -3,7 +3,7 @@
 @use 'global/variables';
 
 @mixin inline-code {
-  @include moduk.govuk-typography-responsive($size: 16);
+  @include moduk.govuk-font-size($size: 16);
 
   padding: 2px 4px;
   background: moduk.govuk-colour('light-grey');
