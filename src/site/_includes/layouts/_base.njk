@@ -59,7 +59,7 @@
 </head>
 <body class="govuk-template__body moduk--primary-nav-expanded{% if bodyClasses %} {{ bodyClasses }}{% endif %}">
 <script>
-  document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+  document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
 </script>
 
 {%- block bodyNav -%}
@@ -80,7 +80,7 @@
 
 {{- modukPhaseBanner({
   tag: {
-    text: "beta"
+    text: "Beta"
   },
   classes: "guidance-phase-banner guidance-width-container",
   html: 'This is a new service – your <a class="govuk-link moduk-link--maroon" href="mailto:' + vars.contactEmail + '">feedback</a> will help us to improve it.'

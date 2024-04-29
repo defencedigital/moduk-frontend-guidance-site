@@ -11,7 +11,7 @@ $border-value: 1px solid moduk.$govuk-border-colour;
 }
 
 .guidance-component-preview__toolbar {
-  @include moduk.govuk-typography-responsive($size: 14);
+  @include moduk.govuk-font-size($size: 16);
 
   padding: moduk.govuk-spacing(2);
   border-bottom: $border-value;
