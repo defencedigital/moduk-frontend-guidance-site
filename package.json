@@ -52,7 +52,7 @@
     "@babel/preset-typescript": "^7.24.1",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@playwright/test": "^1.38.1",
+    "@playwright/test": "^1.44.0",
     "@prettier/sync": "^0.3.0",
     "@release-it/conventional-changelog": "^7.0.1",
     "@testing-library/dom": "^9.3.4",
