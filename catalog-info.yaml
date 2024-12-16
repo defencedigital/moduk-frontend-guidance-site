@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: moduk-frontend-guidance-site
+  title: MOD.UK Frontend guidance site
+  annotations:
+    github.com/project-slug: defencedigital/moduk-frontend-guidance-site
+spec:
+  type: website
+  lifecycle: production
+  owner: group:default/d2s-reuse
+  system: moduk-frontend
+  dependsOn:
+    - resource:d2s-platform/o-dev
+    - resource:d2s-platform/o-prod
