@@ -5,11 +5,18 @@ metadata:
   title: MOD.UK Frontend guidance site
   annotations:
     github.com/project-slug: defencedigital/moduk-frontend-guidance-site
+    github.com/team-slug: defencedigital/design-system
+    sonarqube.org/project-key: moduk-frontend-guidance-site
+    vault.io/secrets-path: product-pages/kv/moduk-frontend-guidance-site
+  links:
+    - url: https://design-system.service.mod.gov.uk/
+      title: MOD.UK Design System
 spec:
   type: website
   lifecycle: production
-  owner: group:default/d2s-reuse
-  system: moduk-frontend
+  owner: group:default/design-system
+  system: moduk-design-system
   dependsOn:
+    - component:default/moduk-frontend
     - resource:d2s-platform/o-dev
     - resource:d2s-platform/o-prod
