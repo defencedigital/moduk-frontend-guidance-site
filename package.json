@@ -103,7 +103,7 @@
       "dprint fmt",
       "eslint --max-warnings 0"
     ],
-    "*.{scss}": [
+    "*.scss": [
       "dprint fmt",
       "stylelint"
     ],
