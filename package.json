@@ -114,7 +114,8 @@
   "dependencies": {
     "@moduk/frontend": "^2.0.3",
     "core-js": "^3.32.1",
-    "iframe-resizer": "^4.3.7"
+    "iframe-resizer": "^4.3.7",
+    "npm": "^11.1.0"
   },
   "overrides": {
     "optionator": "^0.9.3",
