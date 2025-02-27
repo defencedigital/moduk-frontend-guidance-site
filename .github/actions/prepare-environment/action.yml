@@ -9,6 +9,10 @@ runs:
         node-version-file: .nvmrc
         registry-url: 'https://registry.npmjs.org'
 
+    - name: Set ulimit
+      shell: bash
+      run: ulimit -u unlimited
+
     - name: Install dependencies
       shell: bash
       run: npm ci
