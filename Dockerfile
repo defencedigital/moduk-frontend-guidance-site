@@ -4,11 +4,11 @@ FROM registry.access.redhat.com/ubi8/nodejs-18:1-114 AS builder
 USER root
 WORKDIR /app-build
 
-RUN ulimit -u unlimited
-
 COPY package.json /app-build/
 COPY package-lock.json /app-build/
-RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && npm ci
+
+# RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && nmp ci
+RUN npm ci
 
 COPY . /app-build
 RUN npm run build
