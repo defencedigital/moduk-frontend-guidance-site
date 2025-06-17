@@ -1,6 +1,9 @@
-import { expect, test as base } from '@playwright/test'
+import { expect, Locator, test as base } from '@playwright/test'
+import { Role } from './role'
 
-const test = base.extend({
+const test = base.extend<
+  { tabRole: Role['role']; firstComponentPreview: Locator; clickFirstNunjucksTab: () => Promise<void> }
+>({
   tabRole: ({ viewport }, use) => {
     use(viewport && viewport.width < 641 ? 'button' : 'tab')
   },
