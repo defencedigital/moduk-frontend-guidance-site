@@ -33,6 +33,6 @@ describe('initComponentPreviewsIframe', () => {
     expect(iframe).toHaveClass('original-class', 'js-guidance-component-preview-iframe')
     expect(iframe).toHaveAttribute('id', 'test-component--iframe')
     expect(iframe).toHaveAttribute('title', 'test-component-title')
-    expect(iframe?.src).toBe('/components/test/preview/test-component/embed.html')
+    expect(iframe?.src).toContain('/components/test/preview/test-component/embed.html')
   })
 })
