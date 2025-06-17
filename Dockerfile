@@ -7,6 +7,8 @@ WORKDIR /app-build
 COPY package.json /app-build/
 COPY package-lock.json /app-build/
 
+RUN ulimit -Sn 65536
+
 RUN PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 && npm i
 
 COPY . /app-build
