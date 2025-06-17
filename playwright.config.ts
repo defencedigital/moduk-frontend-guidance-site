@@ -69,10 +69,10 @@ const config: PlaywrightTestConfig = {
       },
     },
     {
-      name: 'tablet-safari',
+      name: 'tablet-chrome',
       grepInvert: /(@mobile|@desktop)(\s|$)/,
       use: {
-        ...devices['iPad (gen 6)'],
+        ...devices['Galaxy Tab S4'],
       },
     },
   ],
@@ -109,6 +109,6 @@ const config: PlaywrightTestConfig = {
     url: 'http://localhost:8080',
     reuseExistingServer: true,
   },
-  workers: process.env.CI ? 2 : undefined,
+  workers: 4,
 }
 export default config

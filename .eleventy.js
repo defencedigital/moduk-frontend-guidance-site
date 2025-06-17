@@ -26,6 +26,9 @@ const templatePath = join(__dirname, 'src/site/_includes')
 revPlugin.settings.hashAlgorithm = 'sha256'
 
 module.exports = (config) => {
+  config.setServerOptions({
+    concurrentFileLimit: 50,
+  })
   config.addPlugin(revPlugin)
   config.addPlugin(sassPlugin, {
     rev: true,
