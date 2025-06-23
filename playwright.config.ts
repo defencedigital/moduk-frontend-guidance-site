@@ -1,4 +1,4 @@
-import AxeBuilder from '@axe-core/playwright'
+import { AxeBuilder } from '@axe-core/playwright'
 import { devices, expect, Page, PlaywrightTestConfig } from '@playwright/test'
 import { cookiePreferenceKey } from './src/lib/cookieSettings'
 

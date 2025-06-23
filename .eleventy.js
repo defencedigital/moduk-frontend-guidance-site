@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 require('ts-node').register()
 
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
@@ -88,7 +87,6 @@ module.exports = (config) => {
 
   config.addShortcode('readTemplate', (filePath) => {
     const templateDirs = [...getNunjucksPaths(), templatePath]
-    // eslint-disable-next-line no-restricted-syntax
     for (const templateDir of templateDirs) {
       try {
         return readFileSync(join(templateDir, filePath), 'utf8')
@@ -164,7 +162,6 @@ module.exports = (config) => {
                 reject(err)
               } else {
                 stats.compilation.assetsInfo.forEach((_value, outFile) => {
-                  // eslint-disable-next-line no-console
                   console.log(
                     `[Webpack] Writing ${join(relative(__dirname, compiler.outputPath), outFile)} from ${filename}`,
                   )
