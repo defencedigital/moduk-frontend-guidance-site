@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { getAllComponentNames, getMacroOptions } = require('../../lib')
 
 module.exports = async function getAllMacroOptions() {

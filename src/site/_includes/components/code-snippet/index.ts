@@ -10,11 +10,9 @@ function createTextOverrider(element: HTMLElement, timeoutMs: number) {
       }
     },
     overrideText: (newText: string) => {
-      // eslint-disable-next-line no-param-reassign
       element.innerText = newText
 
       timeoutId = setTimeout(() => {
-        // eslint-disable-next-line no-param-reassign
         element.innerText = initialText
         timeoutId = null
       }, timeoutMs)
@@ -27,7 +25,6 @@ export function initCodeSnippets() {
 
   copyButtons.forEach((copyButton) => {
     if (!navigator.clipboard?.writeText) {
-      // eslint-disable-next-line no-param-reassign
       copyButton.className += ' no-navigator-clipboard'
       return
     }

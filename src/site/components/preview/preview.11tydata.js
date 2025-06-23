@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const { globSync } = require('glob')
 const { basename, dirname, join } = require('node:path')
 

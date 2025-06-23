@@ -5,7 +5,7 @@
   .govuk-table__header,
   .govuk-table__cell {
     padding-right: moduk.govuk-spacing(2);
-    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   @include moduk.govuk-media-query(mobile) {

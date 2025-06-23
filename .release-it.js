@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const commitlintConfig = require('./commitlint.config')
 
 module.exports = {
@@ -7,17 +6,14 @@ module.exports = {
     push: false,
     requireBranch: 'main',
     requireCommits: true,
-    // eslint-disable-next-line no-template-curly-in-string
     tagName: 'v${version}',
   },
   github: {
     release: true,
-    // eslint-disable-next-line no-template-curly-in-string
     releaseName: 'v${version}',
   },
   npm: false,
   hooks: {
-    // eslint-disable-next-line no-template-curly-in-string
     'before:github:release': 'git push origin v${version}',
   },
   plugins: {
