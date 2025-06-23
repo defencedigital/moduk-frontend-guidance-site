@@ -76,7 +76,7 @@
     "glob": "^10.3.10",
     "happy-dom": "^16.7.2",
     "html-minifier-terser": "^7.2.0",
-    "husky": "^8.0.3",
+    "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
     "lodash": "^4.17.21",
     "markdown-it": "^13.0.2",
