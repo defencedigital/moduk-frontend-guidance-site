@@ -112,7 +112,7 @@
     ]
   },
   "dependencies": {
-    "@moduk/frontend": "^2.0.3",
+    "@moduk/frontend": "^2.0.26",
     "core-js": "^3.32.1",
     "globals": "^16.2.0",
     "iframe-resizer": "^4.3.7",
