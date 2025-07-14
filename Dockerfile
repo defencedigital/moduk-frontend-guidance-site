@@ -1,5 +1,5 @@
 # Build stage
-FROM registry.access.redhat.com/ubi9/nodejs-22@sha256:d375bc6dbb7d496c1ec482b16a69aebaaeb1ad8cefc5fc07a0e6a872ce02aec5 AS builder
+FROM registry.access.redhat.com/ubi9/nodejs-22@sha256:22130efa6b3d680a9cd11bb7a414fa3815a7e5b7d353c8ebaa7512387f52c09a AS builder
 
 USER root
 WORKDIR /app-build
@@ -13,7 +13,7 @@ COPY . /app-build
 RUN npm run build
 
 # Copy to the RedHat Nginx image
-FROM registry.access.redhat.com/ubi9/nginx-120@sha256:16a64c700ff9b4a224274954238ae044c6e8fe5f09e13656f637ddefa1a62c98
+FROM registry.access.redhat.com/ubi9/nginx-120@sha256:2838ce373b81cff340e89b5fdbf4f0fab93585d1df51753a60cb98b8a7595e75
 
 RUN rm -r "${HOME}/nginx-start/"
 
