@@ -54,7 +54,7 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
     "@eslint/js": "^9.29.0",
-    "@playwright/test": "^1.53.1",
+    "@playwright/test": "^1.54.1",
     "@prettier/sync": "^0.3.0",
     "@release-it/conventional-changelog": "^10.0.0",
     "@testing-library/dom": "^10.4.0",
@@ -95,7 +95,7 @@
     "typescript": "^5.2.2",
     "typescript-eslint": "^8.35.0",
     "vitest": "^3.0.7",
-    "webpack": "^5.89.0",
+    "webpack": "^5.100.1",
     "webpack-cli": "^6.0.1"
   },
   "lint-staged": {
@@ -113,7 +113,7 @@
   },
   "dependencies": {
     "@moduk/frontend": "^2.0.26",
-    "core-js": "^3.32.1",
+    "core-js": "^3.44.0",
     "globals": "^16.2.0",
     "iframe-resizer": "^4.3.7",
     "npm": "^11.1.0"
