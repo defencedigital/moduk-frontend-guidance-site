@@ -1,5 +1,5 @@
 # Build stage
-FROM registry.access.redhat.com/ubi9/nodejs-22@sha256:22130efa6b3d680a9cd11bb7a414fa3815a7e5b7d353c8ebaa7512387f52c09a AS builder
+FROM registry.access.redhat.com/ubi9/nodejs-22@sha256:51459cfa6fd6742099a25da8b80e99d505e9ccae933401df256958cd99dd7da7 AS builder
 
 USER root
 WORKDIR /app-build
