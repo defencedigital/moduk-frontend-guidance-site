@@ -13,7 +13,7 @@ COPY . /app-build
 RUN npm run build
 
 # Copy to the RedHat Nginx image
-FROM registry.access.redhat.com/ubi9/nginx-120@sha256:2838ce373b81cff340e89b5fdbf4f0fab93585d1df51753a60cb98b8a7595e75
+FROM registry.access.redhat.com/ubi9/nginx-120@sha256:704d319a4b97e441f7286910fc12bb8a3ecb644e99ed38beff4adaa8ede04fec
 
 RUN rm -r "${HOME}/nginx-start/"
 
